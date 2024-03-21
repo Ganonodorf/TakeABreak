@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 865006adb463a30499b14c56b7e9a408
+  m_SerializeEntries:
+  - m_GUID: 4a45e3c750e4eeb4294c2b2f2e4ab2cd
+    m_Address: Assets/Sprites/Jugador/Jugador_Cabeza.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 604f3991e9ee3d641895a5720923152c
+    m_Address: Assets/Sprites/Jugador/Jugador_Cabeza_Inversa.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 152afba237baf6f43acb6198de4b6a58, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c7a12bd606d49434b81f51d940342583, type: 2}
+    - {fileID: 11400000, guid: 10ea67d0173cfd54fa8237dcd9956d76, type: 2}
