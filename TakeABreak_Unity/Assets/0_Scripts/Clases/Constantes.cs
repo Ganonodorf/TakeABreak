@@ -1,17 +1,11 @@
 public class Constantes
 {
-    /*
-     * Diálogos info
-     */
     public class Dialogos
     {
         public static readonly int FIN_CONVERSACION = -1;
         public static readonly int DISTANCIA_BOTONES = 11;
     }
 
-    /*
-     * Tag info
-     */
     public class Tags
     {
         public static readonly string INTERACTUABLE = "Interactuable";
@@ -23,9 +17,6 @@ public class Constantes
         public static readonly string JUGADOR = "Player";
     }
 
-    /*
-     * Información de los objetos interactuables
-     */
     public class ObjetosInteractuables
     {
         public static readonly string ESPEJO_NOMBRE = "Espejo";
@@ -42,9 +33,6 @@ public class Constantes
         public static readonly string NPC_PRUEBA_PATH_SPRITE = "Assets/Sprites/Jugador/Jugador_Cabeza_Inversa.png";
     }
 
-    /*
-     * Información del jugador
-     */
     public class Jugador
     {
         public class Movimiento
@@ -59,5 +47,12 @@ public class Constantes
             public static readonly string ANDANDO_ALANTE = "Jugador_Andando_Alante";
             public static readonly string ANDANDO_ATRAS = "Jugador_Andando_Atras";
         }
+    }
+
+    public class Camara
+    {
+        public static readonly float VELOCIDAD = 20.0f;
+        public static readonly float LIMITE_IZQ = 0.0f;
+        public static readonly float LIMITE_DER = 640.0f;
     }
 }

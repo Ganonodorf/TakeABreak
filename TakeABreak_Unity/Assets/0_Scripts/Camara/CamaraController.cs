@@ -8,10 +8,6 @@ public class CamaraController : MonoBehaviour
     // Variables privadas
     private GameObject jugadorGO;
 
-    private float velocidadCamara = 20.0f;
-    private float limiteCamaraIzq = 0.0f;
-    private float limiteCamaraDer = 640.0f;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -30,13 +26,13 @@ public class CamaraController : MonoBehaviour
     {
         float xDestino;
 
-        if(jugadorGO.transform.position.x < limiteCamaraIzq)
+        if(jugadorGO.transform.position.x < Constantes.Camara.LIMITE_IZQ)
         {
-            xDestino = limiteCamaraIzq;
+            xDestino = Constantes.Camara.LIMITE_IZQ;
         }
-        else if (jugadorGO.transform.position.x > limiteCamaraDer)
+        else if (jugadorGO.transform.position.x > Constantes.Camara.LIMITE_DER)
         {
-            xDestino = limiteCamaraDer;
+            xDestino = Constantes.Camara.LIMITE_DER;
         }
         else
         {
@@ -49,6 +45,6 @@ public class CamaraController : MonoBehaviour
 
         Vector2 dirSoloX = new Vector2(dirNormalizada.x, 0.0f);
 
-        this.transform.Translate(dirSoloX * velocidadCamara * Time.fixedDeltaTime);
+        this.transform.Translate(dirSoloX * Constantes.Camara.VELOCIDAD * Time.fixedDeltaTime);
     }
 }

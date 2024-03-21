@@ -45,18 +45,28 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
+        BuscarGO();
+
+        InicializarVariables();
+    }
+
+    private void BuscarGO()
+    {
         bocadilloGO = GameObject.FindGameObjectWithTag(Constantes.Tags.BOCADILLO);
+        panelOpcionesGO = GameObject.FindGameObjectWithTag(Constantes.Tags.PANEL_OPCIONES);
+        jugadorSpriteGO = GameObject.FindGameObjectWithTag(Constantes.Tags.SPRITE_JUGADOR);
+        npcSpriteGO = GameObject.FindGameObjectWithTag(Constantes.Tags.SPRITE_NPC);
+    }
+
+    private void InicializarVariables()
+    {
         textoBocadillo = bocadilloGO.GetComponentInChildren<TextMeshProUGUI>();
         imagenBocadillo = bocadilloGO.GetComponent<Image>();
         imagenBocadillo.enabled = false;
 
-        panelOpcionesGO = GameObject.FindGameObjectWithTag(Constantes.Tags.PANEL_OPCIONES);
-
-        jugadorSpriteGO = GameObject.FindGameObjectWithTag(Constantes.Tags.SPRITE_JUGADOR);
         imagenJugador = jugadorSpriteGO.GetComponent<Image>();
         imagenJugador.enabled = false;
 
-        npcSpriteGO = GameObject.FindGameObjectWithTag(Constantes.Tags.SPRITE_NPC);
         imagenNPC = npcSpriteGO.GetComponent<Image>();
         imagenNPC.enabled = false;
 

@@ -1,69 +1,24 @@
 public class Frase
 {
     private int _id;
-    public int ID
-    {
-        get
-        {
-            return _id;
-        }
-        set
-        {
-            _id = value;
-        }
-    }
+    public int ID { get { return _id; }
+                    set { _id = value; } }
 
     private string _texto;
-    public string Texto
-    {
-        get
-        {
-            return _texto;
-        }
-        set
-        {
-            _texto  = value;
-        }
-    }
+    public string Texto { get { return _texto; }
+                          set { _texto  = value; } }
 
     private InterlocutorEnum _interlocutor;
-    public InterlocutorEnum Interlocutor
-    {
-        get
-        {
-            return _interlocutor;
-        }
-        set
-        {
-            _interlocutor = value;
-        }
-    }
+    public InterlocutorEnum Interlocutor { get { return _interlocutor; }
+                                           set { _interlocutor = value; } }
 
     private bool _mostrar;
-    public bool Mostrar
-    {
-        get
-        {
-            return _mostrar;
-        }
-        set
-        {
-            _mostrar = value;
-        }
-    }
+    public bool Mostrar { get { return _mostrar; }
+                          set { _mostrar = value; } }
 
     private int[] _siguienteFrase;
-    public int[] SiguienteFrase
-    {
-        get
-        {
-            return _siguienteFrase;
-        }
-        set
-        {
-            _siguienteFrase = value;
-        }
-    }
+    public int[] SiguienteFrase { get { return _siguienteFrase; }
+                                  set { _siguienteFrase = value; } }
 
     public Frase() { }
 
