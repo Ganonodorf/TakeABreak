@@ -3,45 +3,34 @@ using UnityEngine;
 
 public class MovimientoCont : MonoBehaviour
 {
-    // Variables privadas
-    private bool mirandoAlante;
-
     public static event Action<EstadoMovimiento> OnMovimientoChanged;
 
-    private void Start()
+    private void Awake()
     {
-        mirandoAlante = true;
+        InputManager.Instance.controlesJugador.Andando.Derecha.performed += contexto => AndarDerecha();
+        InputManager.Instance.controlesJugador.Andando.Izquierda.performed += contexto => AndarIzquierda();
+        InputManager.Instance.controlesJugador.Andando.Derecha.canceled += contexto => IdleDerecha();
+        InputManager.Instance.controlesJugador.Andando.Izquierda.canceled += contexto => IdleIzquierda();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void AndarDerecha()
     {
-        if (GameManager.Instance.GetEstadoJuego() == EstadoJuego.Andando)
-        {
-            if(Input.GetAxis("Horizontal") > 0)
-            {
-                mirandoAlante = true;
-                OnMovimientoChanged?.Invoke(EstadoMovimiento.AndandoAlante);
-            }
-            else if(Input.GetAxis("Horizontal") < 0)
-            {
-                mirandoAlante = false;
-                OnMovimientoChanged?.Invoke(EstadoMovimiento.AndandoAtras);
-            }
-            else if(mirandoAlante == true)
-            {
-                OnMovimientoChanged?.Invoke(EstadoMovimiento.Idle_Alante);
-            }
-            else
-            {
-                OnMovimientoChanged?.Invoke(EstadoMovimiento.Idle_Atras);
-            }
-        }
+        OnMovimientoChanged?.Invoke(EstadoMovimiento.AndandoAlante);
     }
 
-    private void FixedUpdate()
+    private void AndarIzquierda()
     {
-        //this.transform.Translate(dirMovimiento * Constantes.Jugador.Movimiento.VELOCIDAD);
+        OnMovimientoChanged?.Invoke(EstadoMovimiento.AndandoAtras);
+    }
+
+    private void IdleDerecha()
+    {
+        OnMovimientoChanged?.Invoke(EstadoMovimiento.Idle_Alante);
+    }
+
+    private void IdleIzquierda()
+    {
+        OnMovimientoChanged?.Invoke(EstadoMovimiento.Idle_Atras);
     }
 
     public void MovimientoAlante()

@@ -1,4 +1,6 @@
+using System;
 using TMPro;
+using UnityEditor.Build.Pipeline.Interfaces;
 using UnityEngine;
 
 public class InteractuableCont : MonoBehaviour
@@ -6,21 +8,23 @@ public class InteractuableCont : MonoBehaviour
     private GameObject _objetoInteractuableGO;
     private IObjetoInteractuable _objetoInteractuable;
 
+    private void Awake()
+    {
+        InputManager.Instance.controlesJugador.Andando.Accion.performed += contexto => EjecutarAccion();
+    }
+
     private void Start()
     {
         _objetoInteractuableGO = null;
         _objetoInteractuable = null;
     }
 
-    private void Update()
+    private void EjecutarAccion()
     {
-        if (GameManager.Instance.GetEstadoJuego() == EstadoJuego.Andando)
+        if (_objetoInteractuable != null)
         {
-            if (Input.GetKeyDown(KeyCode.Q) && _objetoInteractuable != null)
-            {
-                _objetoInteractuable.Accion();
-                OcultarAccion(_objetoInteractuableGO);
-            }
+            _objetoInteractuable.Accion();
+            OcultarAccion(_objetoInteractuableGO);
         }
     }
 

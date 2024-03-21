@@ -13,15 +13,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
-        {
-            DontDestroyOnLoad(gameObject);
-            Instance = this;
-        }
-        else if(Instance != this)
-        {
-            Destroy(gameObject);
-        }
+        HacerInmortal();
     }
 
     private void Start()
@@ -55,6 +47,19 @@ public class GameManager : MonoBehaviour
         }
 
         CambioEstadoJuego?.Invoke(nuevoEstado);
+    }
+
+    private void HacerInmortal()
+    {
+        if (Instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            Instance = this;
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
     }
 }
 

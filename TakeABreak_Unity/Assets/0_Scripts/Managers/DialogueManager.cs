@@ -32,14 +32,16 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
+        HacerInmortal();
+
+        InputManager.Instance.controlesJugador.Conversando.Continuar.performed += contexto => Continuar();
+    }
+
+    private void Continuar()
+    {
+        if (estaEscribiendo == false)
         {
-            DontDestroyOnLoad(gameObject);
-            Instance = this;
-        }
-        else if (Instance != this)
-        {
-            Destroy(gameObject);
+            SiguienteFrase();
         }
     }
 
@@ -48,41 +50,6 @@ public class DialogueManager : MonoBehaviour
         BuscarGO();
 
         InicializarVariables();
-    }
-
-    private void BuscarGO()
-    {
-        bocadilloGO = GameObject.FindGameObjectWithTag(Constantes.Tags.BOCADILLO);
-        panelOpcionesGO = GameObject.FindGameObjectWithTag(Constantes.Tags.PANEL_OPCIONES);
-        jugadorSpriteGO = GameObject.FindGameObjectWithTag(Constantes.Tags.SPRITE_JUGADOR);
-        npcSpriteGO = GameObject.FindGameObjectWithTag(Constantes.Tags.SPRITE_NPC);
-    }
-
-    private void InicializarVariables()
-    {
-        textoBocadillo = bocadilloGO.GetComponentInChildren<TextMeshProUGUI>();
-        imagenBocadillo = bocadilloGO.GetComponent<Image>();
-        imagenBocadillo.enabled = false;
-
-        imagenJugador = jugadorSpriteGO.GetComponent<Image>();
-        imagenJugador.enabled = false;
-
-        imagenNPC = npcSpriteGO.GetComponent<Image>();
-        imagenNPC.enabled = false;
-
-        conversacionActual = null;
-        estaEscribiendo = false;
-    }
-
-    private void Update()
-    {
-        if (GameManager.Instance.GetEstadoJuego() == EstadoJuego.Conversando && estaEscribiendo == false)
-        {
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                SiguienteFrase();
-            }
-        }
     }
 
     private IEnumerator TextoLetraPorLetra(string texto)
@@ -243,5 +210,42 @@ public class DialogueManager : MonoBehaviour
         }
 
         MostrarBocadillo(fraseActual);
+    }
+
+    private void HacerInmortal()
+    {
+        if (Instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            Instance = this;
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void BuscarGO()
+    {
+        bocadilloGO = GameObject.FindGameObjectWithTag(Constantes.Tags.BOCADILLO);
+        panelOpcionesGO = GameObject.FindGameObjectWithTag(Constantes.Tags.PANEL_OPCIONES);
+        jugadorSpriteGO = GameObject.FindGameObjectWithTag(Constantes.Tags.SPRITE_JUGADOR);
+        npcSpriteGO = GameObject.FindGameObjectWithTag(Constantes.Tags.SPRITE_NPC);
+    }
+
+    private void InicializarVariables()
+    {
+        textoBocadillo = bocadilloGO.GetComponentInChildren<TextMeshProUGUI>();
+        imagenBocadillo = bocadilloGO.GetComponent<Image>();
+        imagenBocadillo.enabled = false;
+
+        imagenJugador = jugadorSpriteGO.GetComponent<Image>();
+        imagenJugador.enabled = false;
+
+        imagenNPC = npcSpriteGO.GetComponent<Image>();
+        imagenNPC.enabled = false;
+
+        conversacionActual = null;
+        estaEscribiendo = false;
     }
 }
