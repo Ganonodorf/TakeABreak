@@ -5,12 +5,9 @@ public class MovimientoCont : MonoBehaviour
 {
     public static event Action<EstadoMovimiento> OnMovimientoChanged;
 
-    private void Awake()
+    private void Start()
     {
-        InputManager.Instance.controlesJugador.Andando.Derecha.performed += contexto => AndarDerecha();
-        InputManager.Instance.controlesJugador.Andando.Izquierda.performed += contexto => AndarIzquierda();
-        InputManager.Instance.controlesJugador.Andando.Derecha.canceled += contexto => IdleDerecha();
-        InputManager.Instance.controlesJugador.Andando.Izquierda.canceled += contexto => IdleIzquierda();
+        RecogerInfoInputs();
     }
 
     private void AndarDerecha()
@@ -43,6 +40,15 @@ public class MovimientoCont : MonoBehaviour
     {
         gameObject.transform.position = new Vector2(gameObject.transform.position.x - 1,
                                                     gameObject.transform.position.y);
+    }
+
+    private void RecogerInfoInputs()
+    {
+        Debug.Log("MovimientoCont");
+        InputManager.Instance.controlesJugador.Andando.Derecha.performed += contexto => AndarDerecha();
+        InputManager.Instance.controlesJugador.Andando.Izquierda.performed += contexto => AndarIzquierda();
+        InputManager.Instance.controlesJugador.Andando.Derecha.canceled += contexto => IdleDerecha();
+        InputManager.Instance.controlesJugador.Andando.Izquierda.canceled += contexto => IdleIzquierda();
     }
 }
 

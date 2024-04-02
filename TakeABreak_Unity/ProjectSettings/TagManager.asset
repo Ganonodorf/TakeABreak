@@ -50,11 +50,11 @@ TagManager:
   - name: Fondo
     uniqueID: 2222325507
     locked: 0
-  - name: Jugador
-    uniqueID: 778267153
-    locked: 0
   - name: Objetos
     uniqueID: 585711717
+    locked: 0
+  - name: Jugador
+    uniqueID: 778267153
     locked: 0
   - name: UI
     uniqueID: 445766379

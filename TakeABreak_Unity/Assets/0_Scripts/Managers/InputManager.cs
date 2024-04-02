@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class InputManager : MonoBehaviour
@@ -69,10 +68,12 @@ public class InputManager : MonoBehaviour
     private void InicializarVariables()
     {
         controlesJugador = new ControlesJugador();
+        controlesJugador.Andando.Enable();
     }
 
     private void SuscribirseEventos()
     {
         GameManager.CambioEstadoJuego += GameManager_CambioEstadoJuego;
+        Debug.Log("Input manager");
     }
 }

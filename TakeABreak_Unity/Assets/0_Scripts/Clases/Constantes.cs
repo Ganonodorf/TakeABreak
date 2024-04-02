@@ -31,6 +31,9 @@ public class Constantes
         public static readonly string NPC_PRUEBA_NOMBRE = "Taza";
         public static readonly string NPC_PRUEBA_TEXTOAMOSTRAR = "Pulsa Q para hablar con este NPC";
         public static readonly string NPC_PRUEBA_PATH_SPRITE = "Assets/Sprites/Jugador/Jugador_Cabeza_Inversa.png";
+
+        public static readonly string ESCALERAS_NOMBRE = "Escaleras";
+        public static readonly string ESCALERAS_TEXTOAMOSTRAR = "Pulsa Q para subir las escaleras";
     }
 
     public class Jugador

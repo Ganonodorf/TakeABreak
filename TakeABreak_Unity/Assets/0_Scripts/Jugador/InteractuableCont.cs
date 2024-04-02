@@ -1,6 +1,4 @@
-using System;
 using TMPro;
-using UnityEditor.Build.Pipeline.Interfaces;
 using UnityEngine;
 
 public class InteractuableCont : MonoBehaviour
@@ -8,15 +6,11 @@ public class InteractuableCont : MonoBehaviour
     private GameObject _objetoInteractuableGO;
     private IObjetoInteractuable _objetoInteractuable;
 
-    private void Awake()
-    {
-        InputManager.Instance.controlesJugador.Andando.Accion.performed += contexto => EjecutarAccion();
-    }
-
     private void Start()
     {
-        _objetoInteractuableGO = null;
-        _objetoInteractuable = null;
+        InicializarVariables(); 
+
+        RecogerInfoInputs();
     }
 
     private void EjecutarAccion()
@@ -78,5 +72,16 @@ public class InteractuableCont : MonoBehaviour
     {
         bocadilloAccion.GetComponent<SpriteRenderer>().enabled = estado;
         bocadilloAccion.GetComponentInChildren<TextMeshPro>().text = texto;
+    }
+
+    private void InicializarVariables()
+    {
+        _objetoInteractuableGO = null;
+        _objetoInteractuable = null;
+    }
+
+    private void RecogerInfoInputs()
+    {
+        InputManager.Instance.controlesJugador.Andando.Accion.performed += contexto => EjecutarAccion();
     }
 }
