@@ -33,7 +33,8 @@ public class Constantes
         public static readonly string NPC_PRUEBA_PATH_SPRITE = "Assets/Sprites/Jugador/Jugador_Cabeza_Inversa.png";
 
         public static readonly string ESCALERAS_NOMBRE = "Escaleras";
-        public static readonly string ESCALERAS_TEXTOAMOSTRAR = "Pulsa Q para subir las escaleras";
+        public static readonly string ESCALERAS_ABAJO_TEXTOAMOSTRAR = "Pulsa Q para subir las escaleras";
+        public static readonly string ESCALERAS_ARRIBA_TEXTOAMOSTRAR = "Pulsa Q para bajar las escaleras";
     }
 
     public class Jugador
@@ -49,6 +50,10 @@ public class Constantes
             public static readonly string IDLE_ATRAS = "Jugador_Idle_Atras";
             public static readonly string ANDANDO_ALANTE = "Jugador_Andando_Alante";
             public static readonly string ANDANDO_ATRAS = "Jugador_Andando_Atras";
+            public static readonly string SUBIENDO_ESCALERAS_DER = "Jugador_Subiendo_Escaleras_Derecha";
+            public static readonly string BAJANDO_ESCALERAS_DER = "Jugador_Bajando_Escaleras_Derecha";
+            public static readonly string SUBIENDO_ESCALERAS_IZQ = "Jugador_Subiendo_Escaleras_Izquierda";
+            public static readonly string BAJANDO_ESCALERAS_IZQ = "Jugador_Bajando_Escaleras_Izquierda";
         }
     }
 

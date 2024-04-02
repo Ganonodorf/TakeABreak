@@ -58,12 +58,15 @@ public class InteractuableCont : MonoBehaviour
 
     private void OcultarAccion(GameObject objetoInteractuableGO)
     {
-        foreach (Transform child in objetoInteractuableGO.transform)
+        if(objetoInteractuableGO != null)
         {
-            if (child.tag == Constantes.Tags.BOCADILLO_ACCION)
+            foreach (Transform child in objetoInteractuableGO.transform)
             {
-                MostrarOcultarBocadillo(child, false, string.Empty);
-                return;
+                if (child.tag == Constantes.Tags.BOCADILLO_ACCION)
+                {
+                    MostrarOcultarBocadillo(child, false, string.Empty);
+                    return;
+                }
             }
         }
     }
