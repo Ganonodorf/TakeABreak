@@ -4,7 +4,7 @@ using UnityEngine;
 public class PuertaController : MonoBehaviour
 {
     GameObject jugadorGO;
-    SpriteRenderer puertaSprite;
+    SpriteRenderer[] puertaSprites;
     float posXInicial;
     float posXCollider;
     float longitudXCollider;
@@ -30,9 +30,7 @@ public class PuertaController : MonoBehaviour
 
     private void Start()
     {
-        puertaSprite = GetComponent<SpriteRenderer>();
-        posXCollider = GetComponent<BoxCollider2D>().transform.position.x;
-        longitudXCollider = GetComponent<BoxCollider2D>().size.x;
+        InicializarVariables();
     }
 
     private void Update()
@@ -45,29 +43,31 @@ public class PuertaController : MonoBehaviour
 
     private void ActualizarColorSprite()
     {
-        Debug.Log("posXInicial: " + posXInicial);
-        Debug.Log("jugadorGO.transform.position.x: " + jugadorGO.transform.position.x);
-        puertaSprite.color = new Color(puertaSprite.color.r,
-                                       puertaSprite.color.g,
-                                       puertaSprite.color.b,
-                                       CalcularNuevaAlfa());
-        Debug.Log("Color sprite: " + puertaSprite.color);
+        float nuevaAlfa = CalcularNuevaAlfa();
+
+        foreach(var sprite in puertaSprites)
+        {
+            sprite.color = new Color(sprite.color.r,
+                                     sprite.color.g,
+                                     sprite.color.b,
+                                     nuevaAlfa);
+        }
     }
 
     private float CalcularNuevaAlfa()
     {
         float restaPosiciones = jugadorGO.transform.position.x - posXInicial;
-        float nuevaAlfa;
 
-        if(fadeOut)
-        {
-            nuevaAlfa = 1.0f - (restaPosiciones / longitudXCollider);
-        }
-        else
-        {
-            nuevaAlfa = -1.0f * (restaPosiciones / longitudXCollider);
-        }
+        float nuevaAlfa = fadeOut ? 1.0f - (restaPosiciones / longitudXCollider) :
+                                   -1.0f * (restaPosiciones / longitudXCollider);
 
         return nuevaAlfa;
+    }
+
+    private void InicializarVariables()
+    {
+        puertaSprites = GetComponentsInChildren<SpriteRenderer>();
+        posXCollider = GetComponent<BoxCollider2D>().transform.position.x;
+        longitudXCollider = GetComponent<BoxCollider2D>().size.x;
     }
 }
