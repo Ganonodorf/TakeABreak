@@ -28,6 +28,9 @@ public class InputManager : MonoBehaviour
             case EstadoJuego.Eligiendo:
                 EnablearControlesEligiendo();
                 break;
+            case EstadoJuego.HaciendoAnimacion:
+                DisablearTodo();
+                break;
             default:
                 break;
         }
@@ -49,6 +52,12 @@ public class InputManager : MonoBehaviour
     {
         controlesJugador.Andando.Disable();
         controlesJugador.Conversando.Enable();
+    }
+
+    private void DisablearTodo()
+    {
+        controlesJugador.Andando.Disable();
+        controlesJugador.Conversando.Disable();
     }
 
     private void HacerInmortal()
@@ -74,6 +83,5 @@ public class InputManager : MonoBehaviour
     private void SuscribirseEventos()
     {
         GameManager.CambioEstadoJuego += GameManager_CambioEstadoJuego;
-        Debug.Log("Input manager");
     }
 }

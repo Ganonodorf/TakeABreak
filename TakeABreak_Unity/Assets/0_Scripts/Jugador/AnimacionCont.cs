@@ -8,7 +8,7 @@ public class AnimacionCont : MonoBehaviour
 
     private void Awake()
     {
-        MovimientoCont.OnMovimientoChanged += MovimientoCont_OnMovimientoChanted;
+        MovimientoCont.OnMovimientoChanged += MovimientoCont_OnMovimientoChanged;
     }
 
     // Start is called before the first frame update
@@ -18,16 +18,16 @@ public class AnimacionCont : MonoBehaviour
         animacionActual = Constantes.Jugador.Animacion.IDLE_ALANTE;
     }
 
-    private void MovimientoCont_OnMovimientoChanted(EstadoMovimiento nuevoEstadoMovimiento)
+    private void MovimientoCont_OnMovimientoChanged(EstadoMovimiento nuevoEstadoMovimiento)
     {
         string animacionNueva;
 
         switch (nuevoEstadoMovimiento)
         {
-            case EstadoMovimiento.Idle_Alante:
+            case EstadoMovimiento.IdleAlante:
                 animacionNueva = Constantes.Jugador.Animacion.IDLE_ALANTE;
                 break;
-            case EstadoMovimiento.Idle_Atras:
+            case EstadoMovimiento.IdleAtras:
                 animacionNueva = Constantes.Jugador.Animacion.IDLE_ATRAS;
                 break;
             case EstadoMovimiento.AndandoAlante:
@@ -35,6 +35,18 @@ public class AnimacionCont : MonoBehaviour
                 break;
             case EstadoMovimiento.AndandoAtras:
                 animacionNueva = Constantes.Jugador.Animacion.ANDANDO_ATRAS;
+                break;
+            case EstadoMovimiento.SubiendoEscIzq:
+                animacionNueva = Constantes.Jugador.Animacion.SUBIENDO_ESCALERAS_IZQ;
+                break;
+            case EstadoMovimiento.BajandoEscIzq:
+                animacionNueva = Constantes.Jugador.Animacion.BAJANDO_ESCALERAS_IZQ;
+                break;
+            case EstadoMovimiento.SubiendoEscDer:
+                animacionNueva = Constantes.Jugador.Animacion.SUBIENDO_ESCALERAS_DER;
+                break;
+            case EstadoMovimiento.BajandoEscDer:
+                animacionNueva = Constantes.Jugador.Animacion.BAJANDO_ESCALERAS_DER;
                 break;
             default:
                 animacionNueva = Constantes.Jugador.Animacion.IDLE_ALANTE;
@@ -46,5 +58,10 @@ public class AnimacionCont : MonoBehaviour
             animator.Play(animacionNueva);
             animacionActual = animacionNueva;
         }
+    }
+
+    public void FinAnimacion()
+    {
+        GameManager.Instance.CambiarEstadoJuego(EstadoJuego.Andando);
     }
 }
