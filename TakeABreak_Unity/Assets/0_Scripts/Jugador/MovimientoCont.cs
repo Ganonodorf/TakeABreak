@@ -72,7 +72,8 @@ public class MovimientoCont : MonoBehaviour
 
     private bool SePuede(float posicionDeseada)
     {
-        if (posicionDeseada >= 118.0f && posicionDeseada <= 153.0f)
+        if ((posicionDeseada >= 118.0f && posicionDeseada <= 153.0f) ||
+            (posicionDeseada >= 604.0f && posicionDeseada <= 638.0f))
         {
             return false;
         }

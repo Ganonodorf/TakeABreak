@@ -56,6 +56,9 @@ TagManager:
   - name: Jugador
     uniqueID: 778267153
     locked: 0
+  - name: Puertas
+    uniqueID: 1944845201
+    locked: 0
   - name: UI
     uniqueID: 445766379
     locked: 0
