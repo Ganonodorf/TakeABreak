@@ -1,6 +1,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using static Constantes;
 
 public class MovimientoCont : MonoBehaviour
 {
@@ -33,26 +34,35 @@ public class MovimientoCont : MonoBehaviour
 
     public void SubirEscalerasIzq()
     {
-        GameManager.Instance.CambiarEstadoJuego(EstadoJuego.HaciendoAnimacion);
         OnMovimientoChanged?.Invoke(EstadoMovimiento.SubiendoEscIzq);
     }
 
     public void BajarEscalerasIzq()
     {
-        GameManager.Instance.CambiarEstadoJuego(EstadoJuego.HaciendoAnimacion);
         OnMovimientoChanged?.Invoke(EstadoMovimiento.BajandoEscIzq);
     }
 
     public void SubirEscalerasDer()
     {
-        GameManager.Instance.CambiarEstadoJuego(EstadoJuego.HaciendoAnimacion);
         OnMovimientoChanged?.Invoke(EstadoMovimiento.SubiendoEscDer);
     }
 
     public void BajarEscalerasDer()
     {
-        GameManager.Instance.CambiarEstadoJuego(EstadoJuego.HaciendoAnimacion);
         OnMovimientoChanged?.Invoke(EstadoMovimiento.BajandoEscDer);
+    }
+
+    public void SentarseSillon(Vector3 posicionSillon)
+    {
+        transform.position = new Vector3(posicionSillon.x,
+                                         posicionSillon.y);
+
+        OnMovimientoChanged?.Invoke(EstadoMovimiento.SentandoseSillon);
+    }
+
+    public void LevantarseSillon()
+    {
+        OnMovimientoChanged?.Invoke(EstadoMovimiento.LevantandoseSillon);
     }
 
     public void MovimientoHorizontal(float cantidadMovimiento)
@@ -133,5 +143,7 @@ public enum EstadoMovimiento
     SubiendoEscDer,
     SubiendoEscIzq,
     BajandoEscDer,
-    BajandoEscIzq
+    BajandoEscIzq,
+    SentandoseSillon,
+    LevantandoseSillon
 }

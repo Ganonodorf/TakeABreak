@@ -290,6 +290,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Minijuegando",
+            "id": "f497169e-2805-45f8-99c9-00b676160297",
+            "actions": [
+                {
+                    "name": "Salir",
+                    "type": "Button",
+                    "id": "c33f4df4-3d5d-41ae-bc11-553798e06ca5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "758ea99b-d895-4d19-8adb-e59bc402424a",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Salir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

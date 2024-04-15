@@ -32,6 +32,10 @@ AnimationClip:
       value: {fileID: -236304396, guid: d5287b4786646ac4c9dfdc772c8a3178, type: 3}
     - time: 2.5
       value: {fileID: 98854783, guid: d5287b4786646ac4c9dfdc772c8a3178, type: 3}
+    - time: 3
+      value: {fileID: -1505098371, guid: d5287b4786646ac4c9dfdc772c8a3178, type: 3}
+    - time: 3.5
+      value: {fileID: -1465403329, guid: d5287b4786646ac4c9dfdc772c8a3178, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -60,12 +64,14 @@ AnimationClip:
     - {fileID: -1859052205, guid: d5287b4786646ac4c9dfdc772c8a3178, type: 3}
     - {fileID: -236304396, guid: d5287b4786646ac4c9dfdc772c8a3178, type: 3}
     - {fileID: 98854783, guid: d5287b4786646ac4c9dfdc772c8a3178, type: 3}
+    - {fileID: -1505098371, guid: d5287b4786646ac4c9dfdc772c8a3178, type: 3}
+    - {fileID: -1465403329, guid: d5287b4786646ac4c9dfdc772c8a3178, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 3
+    m_StopTime: 4
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -89,41 +95,55 @@ AnimationClip:
     functionName: MovimientoHorizontal
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 1
+    floatParameter: 2
     intParameter: 0
     messageOptions: 0
   - time: 0.5
     functionName: MovimientoHorizontal
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 1
+    floatParameter: 2
     intParameter: 0
     messageOptions: 0
   - time: 1
     functionName: MovimientoHorizontal
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 1
+    floatParameter: 2
     intParameter: 0
     messageOptions: 0
   - time: 1.5
     functionName: MovimientoHorizontal
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 1
+    floatParameter: 2
     intParameter: 0
     messageOptions: 0
   - time: 2
     functionName: MovimientoHorizontal
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 1
+    floatParameter: 2
     intParameter: 0
     messageOptions: 0
   - time: 2.5
     functionName: MovimientoHorizontal
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 1
+    floatParameter: 2
+    intParameter: 0
+    messageOptions: 0
+  - time: 3
+    functionName: MovimientoHorizontal
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 2
+    intParameter: 0
+    messageOptions: 0
+  - time: 3.5
+    functionName: MovimientoHorizontal
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 2
     intParameter: 0
     messageOptions: 0
