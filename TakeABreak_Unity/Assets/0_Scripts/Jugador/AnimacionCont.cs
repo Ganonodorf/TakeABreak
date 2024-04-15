@@ -38,15 +38,29 @@ public class AnimacionCont : MonoBehaviour
                 break;
             case EstadoMovimiento.SubiendoEscIzq:
                 animacionNueva = Constantes.Jugador.Animacion.SUBIENDO_ESCALERAS_IZQ;
+                GameManager.Instance.CambiarEstadoJuego(EstadoJuego.HaciendoAnimacion);
                 break;
             case EstadoMovimiento.BajandoEscIzq:
                 animacionNueva = Constantes.Jugador.Animacion.BAJANDO_ESCALERAS_IZQ;
+                GameManager.Instance.CambiarEstadoJuego(EstadoJuego.HaciendoAnimacion);
                 break;
             case EstadoMovimiento.SubiendoEscDer:
                 animacionNueva = Constantes.Jugador.Animacion.SUBIENDO_ESCALERAS_DER;
+                GameManager.Instance.CambiarEstadoJuego(EstadoJuego.HaciendoAnimacion);
                 break;
             case EstadoMovimiento.BajandoEscDer:
                 animacionNueva = Constantes.Jugador.Animacion.BAJANDO_ESCALERAS_DER;
+                GameManager.Instance.CambiarEstadoJuego(EstadoJuego.HaciendoAnimacion);
+                break;
+            case EstadoMovimiento.SentandoseSillon:
+                animacionNueva = Constantes.Jugador.Animacion.SENTANDOSE_SILLON;
+                GameManager.Instance.CambiarEstadoJuego(EstadoJuego.HaciendoAnimacion);
+                MinijuegoManager.Instance.SetTipoMinijuego(TipoMinijuego.Meditar);
+                break;
+            case EstadoMovimiento.LevantandoseSillon:
+                animacionNueva = Constantes.Jugador.Animacion.LEVANTANDOSE_SILLON;
+                GameManager.Instance.CambiarEstadoJuego(EstadoJuego.HaciendoAnimacion);
+                MinijuegoManager.Instance.SetTipoMinijuego(TipoMinijuego.Ninguno);
                 break;
             default:
                 animacionNueva = Constantes.Jugador.Animacion.IDLE_ALANTE;
@@ -60,8 +74,8 @@ public class AnimacionCont : MonoBehaviour
         }
     }
 
-    public void FinAnimacion()
+    public void FinAnimacion(EstadoJuego nuevoEstadoJuego)
     {
-        GameManager.Instance.CambiarEstadoJuego(EstadoJuego.Andando);
+        GameManager.Instance.CambiarEstadoJuego(nuevoEstadoJuego);
     }
 }

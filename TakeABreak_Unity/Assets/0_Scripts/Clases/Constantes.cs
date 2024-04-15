@@ -28,13 +28,16 @@ public class Constantes
         public static readonly string TAZA_NOMBRE = "Taza";
         public static readonly string TAZA_TEXTOAMOSTRAR = "Pulsa Q para coger la taza";
 
-        public static readonly string NPC_PRUEBA_NOMBRE = "Taza";
+        public static readonly string NPC_PRUEBA_NOMBRE = "NPC";
         public static readonly string NPC_PRUEBA_TEXTOAMOSTRAR = "Pulsa Q para hablar con este NPC";
         public static readonly string NPC_PRUEBA_PATH_SPRITE = "Assets/Sprites/Jugador/Jugador_Cabeza_Inversa.png";
 
         public static readonly string ESCALERAS_NOMBRE = "Escaleras";
         public static readonly string ESCALERAS_ABAJO_TEXTOAMOSTRAR = "Pulsa Q para subir las escaleras";
         public static readonly string ESCALERAS_ARRIBA_TEXTOAMOSTRAR = "Pulsa Q para bajar las escaleras";
+
+        public static readonly string SILLON_NOMBRE = "Sillon";
+        public static readonly string SILLON_TEXTOAMOSTRAR = "Pulsa Q para sentarte en el sillón";
     }
 
     public class Jugador
@@ -54,6 +57,8 @@ public class Constantes
             public static readonly string BAJANDO_ESCALERAS_DER = "Jugador_Bajando_Escaleras_Derecha";
             public static readonly string SUBIENDO_ESCALERAS_IZQ = "Jugador_Subiendo_Escaleras_Izquierda";
             public static readonly string BAJANDO_ESCALERAS_IZQ = "Jugador_Bajando_Escaleras_Izquierda";
+            public static readonly string SENTANDOSE_SILLON = "Jugador_Sentandose_Sillon";
+            public static readonly string LEVANTANDOSE_SILLON = "Jugador_Levantandose_Sillon";
         }
     }
 

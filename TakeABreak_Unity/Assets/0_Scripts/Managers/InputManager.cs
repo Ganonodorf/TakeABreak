@@ -17,7 +17,9 @@ public class InputManager : MonoBehaviour
 
     private void GameManager_CambioEstadoJuego(EstadoJuego nuevoEstadoJuego)
     {
-        switch(nuevoEstadoJuego)
+        DisablearTodo();
+
+        switch (nuevoEstadoJuego)
         {
             case EstadoJuego.Andando:
                 EnablearControlesAndando();
@@ -31,6 +33,9 @@ public class InputManager : MonoBehaviour
             case EstadoJuego.HaciendoAnimacion:
                 DisablearTodo();
                 break;
+            case EstadoJuego.Minijuego:
+                EnablearControlesMinijuego();
+                break;
             default:
                 break;
         }
@@ -39,25 +44,28 @@ public class InputManager : MonoBehaviour
     private void EnablearControlesAndando()
     {
         controlesJugador.Andando.Enable();
-        controlesJugador.Conversando.Disable();
     }
 
     private void EnablearControlesConversando()
     {
-        controlesJugador.Andando.Disable();
         controlesJugador.Conversando.Enable();
     }
 
     private void EnablearControlesEligiendo()
     {
-        controlesJugador.Andando.Disable();
         controlesJugador.Conversando.Enable();
+    }
+
+    private void EnablearControlesMinijuego()
+    {
+        controlesJugador.Minijuegando.Enable();
     }
 
     private void DisablearTodo()
     {
         controlesJugador.Andando.Disable();
         controlesJugador.Conversando.Disable();
+        controlesJugador.Minijuegando.Disable();
     }
 
     private void HacerInmortal()

@@ -312,6 +312,34 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Minijuegando"",
+            ""id"": ""f497169e-2805-45f8-99c9-00b676160297"",
+            ""actions"": [
+                {
+                    ""name"": ""Salir"",
+                    ""type"": ""Button"",
+                    ""id"": ""c33f4df4-3d5d-41ae-bc11-553798e06ca5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""758ea99b-d895-4d19-8adb-e59bc402424a"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Salir"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -326,6 +354,9 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
         m_Conversando_Continuar = m_Conversando.FindAction("Continuar", throwIfNotFound: true);
         m_Conversando_Arriba = m_Conversando.FindAction("Arriba", throwIfNotFound: true);
         m_Conversando_Abajo = m_Conversando.FindAction("Abajo", throwIfNotFound: true);
+        // Minijuegando
+        m_Minijuegando = asset.FindActionMap("Minijuegando", throwIfNotFound: true);
+        m_Minijuegando_Salir = m_Minijuegando.FindAction("Salir", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -507,6 +538,52 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
         }
     }
     public ConversandoActions @Conversando => new ConversandoActions(this);
+
+    // Minijuegando
+    private readonly InputActionMap m_Minijuegando;
+    private List<IMinijuegandoActions> m_MinijuegandoActionsCallbackInterfaces = new List<IMinijuegandoActions>();
+    private readonly InputAction m_Minijuegando_Salir;
+    public struct MinijuegandoActions
+    {
+        private @ControlesJugador m_Wrapper;
+        public MinijuegandoActions(@ControlesJugador wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Salir => m_Wrapper.m_Minijuegando_Salir;
+        public InputActionMap Get() { return m_Wrapper.m_Minijuegando; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MinijuegandoActions set) { return set.Get(); }
+        public void AddCallbacks(IMinijuegandoActions instance)
+        {
+            if (instance == null || m_Wrapper.m_MinijuegandoActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_MinijuegandoActionsCallbackInterfaces.Add(instance);
+            @Salir.started += instance.OnSalir;
+            @Salir.performed += instance.OnSalir;
+            @Salir.canceled += instance.OnSalir;
+        }
+
+        private void UnregisterCallbacks(IMinijuegandoActions instance)
+        {
+            @Salir.started -= instance.OnSalir;
+            @Salir.performed -= instance.OnSalir;
+            @Salir.canceled -= instance.OnSalir;
+        }
+
+        public void RemoveCallbacks(IMinijuegandoActions instance)
+        {
+            if (m_Wrapper.m_MinijuegandoActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IMinijuegandoActions instance)
+        {
+            foreach (var item in m_Wrapper.m_MinijuegandoActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_MinijuegandoActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public MinijuegandoActions @Minijuegando => new MinijuegandoActions(this);
     public interface IAndandoActions
     {
         void OnDerecha(InputAction.CallbackContext context);
@@ -518,5 +595,9 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
         void OnContinuar(InputAction.CallbackContext context);
         void OnArriba(InputAction.CallbackContext context);
         void OnAbajo(InputAction.CallbackContext context);
+    }
+    public interface IMinijuegandoActions
+    {
+        void OnSalir(InputAction.CallbackContext context);
     }
 }

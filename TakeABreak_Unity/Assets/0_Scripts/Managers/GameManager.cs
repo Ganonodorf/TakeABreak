@@ -44,6 +44,9 @@ public class GameManager : MonoBehaviour
             case EstadoJuego.HaciendoAnimacion:
                 Debug.Log("Estado del juego: HaciendoAnimacion");
                 break;
+            case EstadoJuego.Minijuego:
+                Debug.Log("Estado del juego: Minijuego");
+                break;
             default:
                 break;
 
@@ -71,5 +74,6 @@ public enum EstadoJuego
     Andando,
     Conversando,
     Eligiendo,
-    HaciendoAnimacion
+    HaciendoAnimacion,
+    Minijuego
 }
