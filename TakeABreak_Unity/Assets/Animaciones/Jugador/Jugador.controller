@@ -188,7 +188,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Jugador_Levantandose_Sillon
-  m_Speed: 3.5
+  m_Speed: 5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5712997242820171041}
@@ -237,7 +237,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Jugador_Idle_Sentado
-  m_Speed: 0.6
+  m_Speed: 4.5
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -263,7 +263,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Jugador_Meditando
-  m_Speed: 0.6
+  m_Speed: 4.5
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []

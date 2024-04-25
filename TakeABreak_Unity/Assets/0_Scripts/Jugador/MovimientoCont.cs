@@ -34,6 +34,7 @@ public class MovimientoCont : MonoBehaviour
 
     public void SubirEscalerasIzq()
     {
+        // x:120 y:-28
         OnMovimientoChanged?.Invoke(EstadoMovimiento.SubiendoEscIzq);
     }
 
@@ -93,10 +94,10 @@ public class MovimientoCont : MonoBehaviour
 
     public void MovSubirEscaleraIzq()
     {
-        gameObject.transform.position = new Vector2(gameObject.transform.position.x + 10.0f,
+        gameObject.transform.position = new Vector2(gameObject.transform.position.x + 5.0f,
                                                     gameObject.transform.position.y);
         gameObject.transform.position = new Vector2(gameObject.transform.position.x,
-                                                    gameObject.transform.position.y + 2.0f);
+                                                    gameObject.transform.position.y + 3.0f);
     }
 
     public void MovBajarEscaleraIzq()
