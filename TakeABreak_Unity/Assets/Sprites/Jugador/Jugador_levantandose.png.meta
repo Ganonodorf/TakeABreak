@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 776ac6b3d56419c4a971c0180e92d05b
+guid: 6ab9f87bfe73f5543a3691ec2566893a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jugador_sentandose_0
+      name: Jugador_levantandose_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c37860b5641fed644b7c4f19a960e700
-      internalID: 1177129060
+      spriteID: af1f9ca88b6c7c24cbf71adb57e66c00
+      internalID: 1514730579
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jugador_sentandose_1
+      name: Jugador_levantandose_1
       rect:
         serializedVersion: 2
         x: 64
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbcd3231d9b18c74a8980e354b413c6c
-      internalID: -567890721
+      spriteID: ed9a5dea72257c140bbb94b41ea762b2
+      internalID: -1256007080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jugador_sentandose_2
+      name: Jugador_levantandose_2
       rect:
         serializedVersion: 2
         x: 128
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 044423552cffd3e4d89ecfaa2215361b
-      internalID: 563980937
+      spriteID: 2e2e1c55c00fc8f4fa4c0353279e99ed
+      internalID: -112572689
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jugador_sentandose_3
+      name: Jugador_levantandose_3
       rect:
         serializedVersion: 2
         x: 192
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c88b1aae034b0145b3f2830bc1dc514
-      internalID: 1485731450
+      spriteID: ea70080477003e2439aa4b44ddf0d8df
+      internalID: -849919749
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jugador_sentandose_4
+      name: Jugador_levantandose_4
       rect:
         serializedVersion: 2
         x: 256
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 909ba61704e32a34e924a8a0c4b37f6d
-      internalID: 1557806511
+      spriteID: 79bb6b3d889a10741a52d9b1e508fd53
+      internalID: -1210260624
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jugador_sentandose_5
+      name: Jugador_levantandose_5
       rect:
         serializedVersion: 2
         x: 320
@@ -229,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a67569e874fbd9c468f712d66bae7a6f
-      internalID: 1205055117
+      spriteID: 8ff43172d47c3ea4180c2a4c6423f550
+      internalID: -83027242
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jugador_sentandose_6
+      name: Jugador_levantandose_6
       rect:
         serializedVersion: 2
         x: 384
@@ -250,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34edba294424cb9408235819b114949c
-      internalID: 81720832
+      spriteID: 33825baa48449054e8e7377c9425b438
+      internalID: 2065751532
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jugador_sentandose_7
+      name: Jugador_levantandose_7
       rect:
         serializedVersion: 2
         x: 448
@@ -271,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6219ba2ba9e95a24cb27f8996aaccb27
-      internalID: 1446891742
+      spriteID: 7b3fb59d7958f024ca4eeed2bfeb9a53
+      internalID: -2036078597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jugador_sentandose_8
+      name: Jugador_levantandose_8
       rect:
         serializedVersion: 2
         x: 512
@@ -292,14 +292,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa260f7e917b1194c84c4058b728d41f
-      internalID: 315724588
+      spriteID: 52bb264e70c0d2f4aaed6e0573d65ec4
+      internalID: 1872745859
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jugador_sentandose_9
+      name: Jugador_levantandose_9
       rect:
         serializedVersion: 2
         x: 576
@@ -313,14 +313,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 206ae7bf44cb6364ab2a4ee5c759466c
-      internalID: 1449536816
+      spriteID: 04fd074cc1a6cdf4896700987edf1c8e
+      internalID: 515821891
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jugador_sentandose_10
+      name: Jugador_levantandose_10
       rect:
         serializedVersion: 2
         x: 640
@@ -334,14 +334,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1cacf74907b4ce49a80556122ef00c2
-      internalID: -705687961
+      spriteID: bf166cd9ad1dd48468d749324e3d741d
+      internalID: 1316666911
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jugador_sentandose_11
+      name: Jugador_levantandose_11
       rect:
         serializedVersion: 2
         x: 704
@@ -355,14 +355,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fdc1c4a963fc3fa4a945e42dd80df674
-      internalID: 751783538
+      spriteID: 75a297ee419905740b43c103329ade04
+      internalID: -1818094780
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jugador_sentandose_12
+      name: Jugador_levantandose_12
       rect:
         serializedVersion: 2
         x: 768
@@ -376,14 +376,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b64a852ee512e9429f38fe8a3766b10
-      internalID: 1577321585
+      spriteID: 6121333b5b23a0b45bb0be6ded74c8b3
+      internalID: -359824116
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jugador_sentandose_13
+      name: Jugador_levantandose_13
       rect:
         serializedVersion: 2
         x: 832
@@ -397,14 +397,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d62959f0dc416a346a896a5eb21c389d
-      internalID: -2068764671
+      spriteID: d7b15f410c13c1a4597ed5d38cd15878
+      internalID: -1983246888
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jugador_sentandose_14
+      name: Jugador_levantandose_14
       rect:
         serializedVersion: 2
         x: 896
@@ -418,14 +418,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09e027ee9751b2949b92b0cbae9c4a02
-      internalID: 1867131862
+      spriteID: fe6f518df981f034d9878b5320ce5028
+      internalID: -668666401
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jugador_sentandose_15
+      name: Jugador_levantandose_15
       rect:
         serializedVersion: 2
         x: 960
@@ -439,218 +439,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f193ec6032e11a24589d02d53c34e5b1
-      internalID: -2024982478
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jugador_sentandose_16
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 705f785d5f02bfb4da8aca92f628c9f0
-      internalID: 1895233872
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jugador_sentandose_17
-      rect:
-        serializedVersion: 2
-        x: 1088
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7a8f6986ffb728543b2b5cca9e28ddc5
-      internalID: 216538290
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jugador_sentandose_18
-      rect:
-        serializedVersion: 2
-        x: 1152
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5808a6acc12532b4490d6cbf037d3ce3
-      internalID: 687316857
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jugador_sentandose_19
-      rect:
-        serializedVersion: 2
-        x: 1216
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 31cbb974c37f5e14e95f1e3215d40fb4
-      internalID: 1712196172
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jugador_sentandose_20
-      rect:
-        serializedVersion: 2
-        x: 1280
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4b9a55c2433d9864d99d0636b0582460
-      internalID: -1067113374
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jugador_sentandose_21
-      rect:
-        serializedVersion: 2
-        x: 1344
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb0c0e1c1fcc9db4baa35150d54be870
-      internalID: -772467360
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jugador_sentandose_22
-      rect:
-        serializedVersion: 2
-        x: 1408
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c19169fdcb5672409fd027b8743cd32
-      internalID: -471286627
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jugador_sentandose_23
-      rect:
-        serializedVersion: 2
-        x: 1472
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0b000fc9048dbdf4d9a73d5c2074cde7
-      internalID: 1165313035
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jugador_sentandose_24
-      rect:
-        serializedVersion: 2
-        x: 1536
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 38db38ed9353d614b9af6f18c5b34124
-      internalID: 1987678885
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jugador_sentandose_25
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c92585ad85d4a743954042052d5705e
-      internalID: -1957324905
+      spriteID: b7edb7fa06de3eb4ebe85b2e208adbfe
+      internalID: -2010914549
       vertices: []
       indices: 
       edges: []
@@ -666,32 +456,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Jugador_sentandose_0: 1177129060
-      Jugador_sentandose_1: -567890721
-      Jugador_sentandose_10: -705687961
-      Jugador_sentandose_11: 751783538
-      Jugador_sentandose_12: 1577321585
-      Jugador_sentandose_13: -2068764671
-      Jugador_sentandose_14: 1867131862
-      Jugador_sentandose_15: -2024982478
-      Jugador_sentandose_16: 1895233872
-      Jugador_sentandose_17: 216538290
-      Jugador_sentandose_18: 687316857
-      Jugador_sentandose_19: 1712196172
-      Jugador_sentandose_2: 563980937
-      Jugador_sentandose_20: -1067113374
-      Jugador_sentandose_21: -772467360
-      Jugador_sentandose_22: -471286627
-      Jugador_sentandose_23: 1165313035
-      Jugador_sentandose_24: 1987678885
-      Jugador_sentandose_25: -1957324905
-      Jugador_sentandose_3: 1485731450
-      Jugador_sentandose_4: 1557806511
-      Jugador_sentandose_5: 1205055117
-      Jugador_sentandose_6: 81720832
-      Jugador_sentandose_7: 1446891742
-      Jugador_sentandose_8: 315724588
-      Jugador_sentandose_9: 1449536816
+      Jugador_levantandose_0: 1514730579
+      Jugador_levantandose_1: -1256007080
+      Jugador_levantandose_10: 1316666911
+      Jugador_levantandose_11: -1818094780
+      Jugador_levantandose_12: -359824116
+      Jugador_levantandose_13: -1983246888
+      Jugador_levantandose_14: -668666401
+      Jugador_levantandose_15: -2010914549
+      Jugador_levantandose_2: -112572689
+      Jugador_levantandose_3: -849919749
+      Jugador_levantandose_4: -1210260624
+      Jugador_levantandose_5: -83027242
+      Jugador_levantandose_6: 2065751532
+      Jugador_levantandose_7: -2036078597
+      Jugador_levantandose_8: 1872745859
+      Jugador_levantandose_9: 515821891
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
