@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Constantes
 {
     public class Dialogos
@@ -60,6 +62,16 @@ public class Constantes
             public static readonly string SENTANDOSE_SILLON = "Jugador_Sentandose_Sillon";
             public static readonly string LEVANTANDOSE_SILLON = "Jugador_Levantandose_Sillon";
         }
+    }
+
+    public class PosicionesClave
+    {
+        public static readonly float PosYDentroDeCasa = -28.0f;
+        public static readonly float PosYFueraDeCasa = -37.0f;
+        public static readonly Vector2 AbajoEscalerasIzq = new Vector3(120.0f, PosYFueraDeCasa);
+        public static readonly Vector2 ArribaEscalerasIzq = new Vector3(153.0f, PosYDentroDeCasa);
+        public static readonly Vector2 AbajoEscalerasDer = new Vector3(636.0f, PosYFueraDeCasa);
+        public static readonly Vector2 ArribaEscalerasDer = new Vector3(612.0f, PosYDentroDeCasa);
     }
 
     public class Camara

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 71bf7b0580eac1a498e735ab5001b771
+guid: 1aeb820735e6627498ec025cc190cb84
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jugador_idle_sentado_0
+      name: Jugador_bajando_escaleras_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7369fece17bbe15439804bd053250a65
-      internalID: -794830504
+      spriteID: ec199679e53939047a8fcbfdb4c89360
+      internalID: -1845446616
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jugador_idle_sentado_1
+      name: Jugador_bajando_escaleras_1
       rect:
         serializedVersion: 2
         x: 80
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e62da3b48a7e31449aba0125882f769d
-      internalID: -2127266997
+      spriteID: 1acf8dee446fc1b47b65d09808f382f5
+      internalID: -1653144582
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jugador_idle_sentado_2
+      name: Jugador_bajando_escaleras_2
       rect:
         serializedVersion: 2
         x: 160
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8db16713599090f49a9d3fbe297424d5
-      internalID: -1307726
+      spriteID: 04d1e8ea283390f4eabfca24402ca546
+      internalID: -310110752
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jugador_idle_sentado_3
+      name: Jugador_bajando_escaleras_3
       rect:
         serializedVersion: 2
         x: 240
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fd9ef9473fbf8a45bd18d1d1123b34a
-      internalID: -305756434
+      spriteID: 93362f3a2bbde0f4c8dd4164dce116b1
+      internalID: -1272640266
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jugador_idle_sentado_4
+      name: Jugador_bajando_escaleras_4
       rect:
         serializedVersion: 2
         x: 320
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da70097a2577fa547bb15857ae667ea9
-      internalID: 1749155234
+      spriteID: 9b14f24546031c149ab09086f91e4297
+      internalID: 1447861195
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jugador_idle_sentado_5
+      name: Jugador_bajando_escaleras_5
       rect:
         serializedVersion: 2
         x: 400
@@ -229,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a047eb474536a5c469875a29e48e1052
-      internalID: 1696308966
+      spriteID: ed4fc8be81fe4b642848759de2315c33
+      internalID: 604690010
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jugador_idle_sentado_6
+      name: Jugador_bajando_escaleras_6
       rect:
         serializedVersion: 2
         x: 480
@@ -250,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0bb06a2b150a03438acc39ad2de6ac0
-      internalID: -1869181739
+      spriteID: 17cc69725471fc84f868281597626d51
+      internalID: -2099958702
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jugador_idle_sentado_7
+      name: Jugador_bajando_escaleras_7
       rect:
         serializedVersion: 2
         x: 560
@@ -271,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4fb8c5fb4c713a4d956315da7568703
-      internalID: -1327556942
+      spriteID: 9ab213266a4ff994d859059c17149ff8
+      internalID: 1777988131
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jugador_idle_sentado_8
+      name: Jugador_bajando_escaleras_8
       rect:
         serializedVersion: 2
         x: 640
@@ -292,8 +292,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9490e977ff8dfb64da9dd87b169238f3
-      internalID: -1993676350
+      spriteID: 9e66ba6b2aed6814589acef5f1ab34c1
+      internalID: 1994944297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jugador_bajando_escaleras_9
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 491504e90cec07b4594c12de3a6bfe3d
+      internalID: -1856118962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jugador_bajando_escaleras_10
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a62c0f314b4844e4bb9add1c813dbc4c
+      internalID: 1775055801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jugador_bajando_escaleras_11
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 398135d9e9c53f94cb75df418f0643a1
+      internalID: -1159404499
       vertices: []
       indices: 
       edges: []
@@ -309,15 +372,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Jugador_idle_sentado_0: -794830504
-      Jugador_idle_sentado_1: -2127266997
-      Jugador_idle_sentado_2: -1307726
-      Jugador_idle_sentado_3: -305756434
-      Jugador_idle_sentado_4: 1749155234
-      Jugador_idle_sentado_5: 1696308966
-      Jugador_idle_sentado_6: -1869181739
-      Jugador_idle_sentado_7: -1327556942
-      Jugador_idle_sentado_8: -1993676350
+      Jugador_bajando_escaleras_0: -1845446616
+      Jugador_bajando_escaleras_1: -1653144582
+      Jugador_bajando_escaleras_10: 1775055801
+      Jugador_bajando_escaleras_11: -1159404499
+      Jugador_bajando_escaleras_2: -310110752
+      Jugador_bajando_escaleras_3: -1272640266
+      Jugador_bajando_escaleras_4: 1447861195
+      Jugador_bajando_escaleras_5: 604690010
+      Jugador_bajando_escaleras_6: -2099958702
+      Jugador_bajando_escaleras_7: 1777988131
+      Jugador_bajando_escaleras_8: 1994944297
+      Jugador_bajando_escaleras_9: -1856118962
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

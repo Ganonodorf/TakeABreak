@@ -92,38 +92,28 @@ public class MovimientoCont : MonoBehaviour
         return true;
     }
 
-    public void MovSubirEscaleraIzq()
+    public void ColocarArribaEscIzq()
     {
-        gameObject.transform.position = new Vector2(gameObject.transform.position.x + 5.0f,
-                                                    gameObject.transform.position.y);
-        gameObject.transform.position = new Vector2(gameObject.transform.position.x,
-                                                    gameObject.transform.position.y + 3.0f);
+        gameObject.transform.position = new Vector2(PosicionesClave.ArribaEscalerasIzq.x,
+                                                    PosicionesClave.ArribaEscalerasIzq.y);
     }
 
-    public void MovBajarEscaleraIzq()
+    public void ColocarAbajoEscIzq()
     {
-
-        gameObject.transform.position = new Vector2(gameObject.transform.position.x - 10.0f,
-                                                    gameObject.transform.position.y);
-        gameObject.transform.position = new Vector2(gameObject.transform.position.x,
-                                                    gameObject.transform.position.y - 2.0f);
+        gameObject.transform.position = new Vector2(PosicionesClave.AbajoEscalerasIzq.x,
+                                                    PosicionesClave.AbajoEscalerasIzq.y);
     }
 
-    public void MovBajarEscaleraDer()
+    public void ColocarArribaEscDer()
     {
-        gameObject.transform.position = new Vector2(gameObject.transform.position.x + 10.0f,
-                                                    gameObject.transform.position.y);
-        gameObject.transform.position = new Vector2(gameObject.transform.position.x,
-                                                    gameObject.transform.position.y - 2.0f);
+        gameObject.transform.position = new Vector2(PosicionesClave.ArribaEscalerasDer.x,
+                                                    PosicionesClave.ArribaEscalerasDer.y);
     }
 
-    public void MovSubirEscaleraDer()
+    public void ColocarAbajoEscDer()
     {
-
-        gameObject.transform.position = new Vector2(gameObject.transform.position.x - 10.0f,
-                                                    gameObject.transform.position.y);
-        gameObject.transform.position = new Vector2(gameObject.transform.position.x,
-                                                    gameObject.transform.position.y + 2.0f);
+        gameObject.transform.position = new Vector2(PosicionesClave.AbajoEscalerasDer.x,
+                                                    PosicionesClave.AbajoEscalerasDer.y);
     }
 
     private void RecogerInfoInputs()
