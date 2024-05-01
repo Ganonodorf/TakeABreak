@@ -340,6 +340,45 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Inicio"",
+            ""id"": ""927783ee-d4e6-4ae4-9d75-ecf4ae662a8d"",
+            ""actions"": [
+                {
+                    ""name"": ""Accion"",
+                    ""type"": ""Button"",
+                    ""id"": ""d2887918-4201-4c84-9246-26e7eb6bb8ea"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""17d9e0c6-22b6-4ec3-a2f4-6451c2f90fec"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Accion"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""78a8b46d-003a-4e18-a7db-86b430585c0f"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Accion"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -357,6 +396,9 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
         // Minijuegando
         m_Minijuegando = asset.FindActionMap("Minijuegando", throwIfNotFound: true);
         m_Minijuegando_Salir = m_Minijuegando.FindAction("Salir", throwIfNotFound: true);
+        // Inicio
+        m_Inicio = asset.FindActionMap("Inicio", throwIfNotFound: true);
+        m_Inicio_Accion = m_Inicio.FindAction("Accion", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -584,6 +626,52 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
         }
     }
     public MinijuegandoActions @Minijuegando => new MinijuegandoActions(this);
+
+    // Inicio
+    private readonly InputActionMap m_Inicio;
+    private List<IInicioActions> m_InicioActionsCallbackInterfaces = new List<IInicioActions>();
+    private readonly InputAction m_Inicio_Accion;
+    public struct InicioActions
+    {
+        private @ControlesJugador m_Wrapper;
+        public InicioActions(@ControlesJugador wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Accion => m_Wrapper.m_Inicio_Accion;
+        public InputActionMap Get() { return m_Wrapper.m_Inicio; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(InicioActions set) { return set.Get(); }
+        public void AddCallbacks(IInicioActions instance)
+        {
+            if (instance == null || m_Wrapper.m_InicioActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_InicioActionsCallbackInterfaces.Add(instance);
+            @Accion.started += instance.OnAccion;
+            @Accion.performed += instance.OnAccion;
+            @Accion.canceled += instance.OnAccion;
+        }
+
+        private void UnregisterCallbacks(IInicioActions instance)
+        {
+            @Accion.started -= instance.OnAccion;
+            @Accion.performed -= instance.OnAccion;
+            @Accion.canceled -= instance.OnAccion;
+        }
+
+        public void RemoveCallbacks(IInicioActions instance)
+        {
+            if (m_Wrapper.m_InicioActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IInicioActions instance)
+        {
+            foreach (var item in m_Wrapper.m_InicioActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_InicioActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public InicioActions @Inicio => new InicioActions(this);
     public interface IAndandoActions
     {
         void OnDerecha(InputAction.CallbackContext context);
@@ -599,5 +687,9 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
     public interface IMinijuegandoActions
     {
         void OnSalir(InputAction.CallbackContext context);
+    }
+    public interface IInicioActions
+    {
+        void OnAccion(InputAction.CallbackContext context);
     }
 }

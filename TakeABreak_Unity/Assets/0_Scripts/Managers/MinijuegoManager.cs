@@ -44,24 +44,38 @@ public class MinijuegoManager : MonoBehaviour
         }
     }
 
+    private void MovimientoCont_OnMovimientoChanged(EstadoMovimiento nuevoEstadoMovimiento)
+    {
+        switch (nuevoEstadoMovimiento)
+        {
+            case EstadoMovimiento.SentandoseSillon:
+                SetTipoMinijuego(TipoMinijuego.Meditar);
+                break;
+            case EstadoMovimiento.LevantandoseSillon:
+                SetTipoMinijuego(TipoMinijuego.Ninguno);
+                break;
+            default:
+                SetTipoMinijuego(TipoMinijuego.Ninguno);
+                break;
+        }
+    }
+
     private void ComenzarMinijuego()
     {
         if(minijuegoActual == TipoMinijuego.Meditar)
         {
+            GameObject.Find(Constantes.ObjetosInteractuables.SILLON_NOMBRE).GetComponent<OI_Sillon>().ComenzarMinijuego();
             Debug.Log("Comienzo a meditar");
         }
     }
 
     private void SalirMinijuego()
     {
-        Debug.Log("A");
         if (minijuegoActual == TipoMinijuego.Meditar)
         {
             GameObject.Find(Constantes.ObjetosInteractuables.SILLON_NOMBRE).GetComponent<OI_Sillon>().Accion();
             Debug.Log("Termino de meditar");
         }
-
-        GameManager.Instance.CambiarEstadoJuego(EstadoJuego.Andando);
     }
 
     private void RecogerInfoInputs()
@@ -89,6 +103,8 @@ public class MinijuegoManager : MonoBehaviour
     private void SuscribirseEventos()
     {
         GameManager.CambioEstadoJuego += GameManager_CambioEstadoJuego;
+
+        MovimientoCont.OnMovimientoChanged += MovimientoCont_OnMovimientoChanged;
     }
 }
 

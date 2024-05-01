@@ -318,6 +318,45 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Inicio",
+            "id": "927783ee-d4e6-4ae4-9d75-ecf4ae662a8d",
+            "actions": [
+                {
+                    "name": "Accion",
+                    "type": "Button",
+                    "id": "d2887918-4201-4c84-9246-26e7eb6bb8ea",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "17d9e0c6-22b6-4ec3-a2f4-6451c2f90fec",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accion",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "78a8b46d-003a-4e18-a7db-86b430585c0f",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accion",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

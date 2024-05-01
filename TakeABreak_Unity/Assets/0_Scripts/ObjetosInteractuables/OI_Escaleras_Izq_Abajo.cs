@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class OI_Escaleras_Izq_Abajo : MonoBehaviour, IObjetoInteractuable
@@ -26,9 +24,11 @@ public class OI_Escaleras_Izq_Abajo : MonoBehaviour, IObjetoInteractuable
 
     private void SubirEscaleras()
     {
+        GetComponent<Animator>().Play(Constantes.Jugador.Animacion.SUBIENDO_ESCALERAS_IZQ);
+
         if (jugadorGO.TryGetComponent(out MovimientoCont movimientoCont))
         {
-            movimientoCont.SubirEscalerasIzq();
+            movimientoCont.CambiarEstadoMovimiento(EstadoMovimiento.SubiendoEscIzq);
         }
     }
 

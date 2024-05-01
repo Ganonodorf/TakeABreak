@@ -70,3 +70,4 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 [Aa]ssets/[Ss]treamingAssets/aa.meta
 [Aa]ssets/[Ss]treamingAssets/aa/*
+/TakeABreak_Unity/Assets/0_Scripts/ObjetosInteractuables/OI_Escaleras_Der_Arriba.cs
