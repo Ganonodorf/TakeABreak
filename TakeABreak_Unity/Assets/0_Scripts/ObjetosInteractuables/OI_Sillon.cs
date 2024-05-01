@@ -25,10 +25,12 @@ public class OI_Sillon : MonoBehaviour, IObjetoInteractuable
     }
 
     private void Sentarse()
-    { 
+    {
+        GetComponent<Animator>().Play(Constantes.Jugador.Animacion.SENTANDOSE_SILLON);
+
         if (jugadorGO.TryGetComponent(out MovimientoCont movimientoCont))
         {
-            movimientoCont.SentarseSillon(transform.position);
+            movimientoCont.CambiarEstadoMovimiento(EstadoMovimiento.SentandoseSillon);
         }
 
         sentado = true;
@@ -36,12 +38,19 @@ public class OI_Sillon : MonoBehaviour, IObjetoInteractuable
 
     private void Levantarse()
     {
+        GetComponent<Animator>().Play(Constantes.Jugador.Animacion.LEVANTANDOSE_SILLON);
+
         if (jugadorGO.TryGetComponent(out MovimientoCont movimientoCont))
         {
-            movimientoCont.LevantarseSillon();
+            movimientoCont.CambiarEstadoMovimiento(EstadoMovimiento.LevantandoseSillon);
         }
 
         sentado = false;
+    }
+
+    public void ComenzarMinijuego()
+    {
+        GetComponent<Animator>().Play(Constantes.Jugador.Animacion.MEDITANDO);
     }
 
     private void InicializarVariables()

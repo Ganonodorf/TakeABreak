@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -7,6 +8,12 @@ public class CamaraController : MonoBehaviour
 {
     // Variables privadas
     private GameObject jugadorGO;
+    private EstadoCamara estadoCamaraActual;
+
+    private void Awake()
+    {
+        MovimientoCont.OnMovimientoChanged += MovimientoCont_OnMovimientoChanged;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -24,27 +31,71 @@ public class CamaraController : MonoBehaviour
     // Después, calcula la dirección a la que tiene que ir y traslada la cámara hacia ese punto.
     private void TrasladarCamara()
     {
-        float xDestino;
+        Vector2 dirSoloX;
 
-        if(jugadorGO.transform.position.x < Constantes.Camara.LIMITE_IZQ)
+        if (estadoCamaraActual == EstadoCamara.MovDerecha)
         {
-            xDestino = Constantes.Camara.LIMITE_IZQ;
+            dirSoloX = new Vector2(0.6f, 0.0f);
         }
-        else if (jugadorGO.transform.position.x > Constantes.Camara.LIMITE_DER)
+
+        else if (estadoCamaraActual == EstadoCamara.MovIzquierda)
         {
-            xDestino = Constantes.Camara.LIMITE_DER;
+            dirSoloX = new Vector2(-0.6f, 0.0f);
         }
+
         else
         {
-            xDestino = jugadorGO.transform.position.x;
+            float xDestino;
+
+            if (jugadorGO.transform.position.x < Constantes.Camara.LIMITE_IZQ)
+            {
+                xDestino = Constantes.Camara.LIMITE_IZQ;
+            }
+            else if (jugadorGO.transform.position.x > Constantes.Camara.LIMITE_DER)
+            {
+                xDestino = Constantes.Camara.LIMITE_DER;
+            }
+            else
+            {
+                xDestino = jugadorGO.transform.position.x;
+            }
+
+            Vector3 dirDestino = new Vector3(xDestino, 0.0f);
+
+            Vector3 dirNormalizada = Vector3.Normalize(dirDestino - this.transform.position);
+
+            dirSoloX = new Vector2(dirNormalizada.x, 0.0f);
         }
-
-        Vector3 dirDestino = new Vector3(xDestino, 0.0f);
-
-        Vector3 dirNormalizada = Vector3.Normalize(dirDestino - this.transform.position);
-
-        Vector2 dirSoloX = new Vector2(dirNormalizada.x, 0.0f);
 
         this.transform.Translate(dirSoloX * Constantes.Camara.VELOCIDAD * Time.fixedDeltaTime);
     }
+
+    private void MovimientoCont_OnMovimientoChanged(EstadoMovimiento nuevoEstadoMovimiento)
+    {
+        switch (nuevoEstadoMovimiento)
+        {
+            case EstadoMovimiento.SubiendoEscIzq:
+                estadoCamaraActual = EstadoCamara.MovDerecha;
+                break;
+            case EstadoMovimiento.BajandoEscIzq:
+                estadoCamaraActual = EstadoCamara.MovIzquierda;
+                break;
+            case EstadoMovimiento.SubiendoEscDer:
+                estadoCamaraActual = EstadoCamara.MovIzquierda;
+                break;
+            case EstadoMovimiento.BajandoEscDer:
+                estadoCamaraActual = EstadoCamara.MovDerecha;
+                break;
+            default:
+                estadoCamaraActual = EstadoCamara.Persiguiendo;
+                break;
+        }
+    }
+}
+
+enum EstadoCamara
+{
+    Persiguiendo,
+    MovDerecha,
+    MovIzquierda
 }

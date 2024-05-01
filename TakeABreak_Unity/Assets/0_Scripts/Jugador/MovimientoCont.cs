@@ -1,5 +1,4 @@
 using System;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using static Constantes;
 
@@ -12,58 +11,70 @@ public class MovimientoCont : MonoBehaviour
         RecogerInfoInputs();
     }
 
-    private void AndarDerecha()
+    public void CambiarEstadoMovimiento(EstadoMovimiento nuevoEstadoMovimiento)
     {
-        OnMovimientoChanged?.Invoke(EstadoMovimiento.AndandoAlante);
-    }
+        switch (nuevoEstadoMovimiento)
+        {
+            case EstadoMovimiento.IdleEspalda:
+                break;
+            case EstadoMovimiento.Girandose:
+                break;
+            case EstadoMovimiento.IdleAlante:
+                break;
+            case EstadoMovimiento.IdleAtras:
+                break;
+            case EstadoMovimiento.AndandoAlante:
+                break;
+            case EstadoMovimiento.AndandoAtras:
+                break;
+            case EstadoMovimiento.SubiendoEscDer:
+                SubirEscalerasDer();
+                break;
+            case EstadoMovimiento.SubiendoEscIzq:
+                SubirEscalerasIzq();
+                break;
+            case EstadoMovimiento.BajandoEscDer:
+                BajarEscalerasDer();
+                break;
+            case EstadoMovimiento.BajandoEscIzq:
+                BajarEscalerasIzq();
+                break;
+            case EstadoMovimiento.SentandoseSillon:
+                SentarseSillon();
+                break;
+            case EstadoMovimiento.LevantandoseSillon:
+                break;
+            default:
+                break;
+        }
 
-    private void AndarIzquierda()
-    {
-        OnMovimientoChanged?.Invoke(EstadoMovimiento.AndandoAtras);
-    }
-
-    private void IdleDerecha()
-    {
-        OnMovimientoChanged?.Invoke(EstadoMovimiento.IdleAlante);
-    }
-
-    private void IdleIzquierda()
-    {
-        OnMovimientoChanged?.Invoke(EstadoMovimiento.IdleAtras);
-    }
-
-    public void SubirEscalerasIzq()
-    {
-        // x:120 y:-28
-        OnMovimientoChanged?.Invoke(EstadoMovimiento.SubiendoEscIzq);
-    }
-
-    public void BajarEscalerasIzq()
-    {
-        OnMovimientoChanged?.Invoke(EstadoMovimiento.BajandoEscIzq);
+        OnMovimientoChanged?.Invoke(nuevoEstadoMovimiento);
     }
 
     public void SubirEscalerasDer()
     {
-        OnMovimientoChanged?.Invoke(EstadoMovimiento.SubiendoEscDer);
+        ColocarArribaSubiendoEscDer();
+    }
+
+    public void SubirEscalerasIzq()
+    {
+        ColocarArribaSubiendoEscIzq();
     }
 
     public void BajarEscalerasDer()
     {
-        OnMovimientoChanged?.Invoke(EstadoMovimiento.BajandoEscDer);
+        ColocarAbajoBajandoEscDer();
     }
 
-    public void SentarseSillon(Vector3 posicionSillon)
+    public void BajarEscalerasIzq()
     {
-        transform.position = new Vector3(posicionSillon.x,
-                                         posicionSillon.y);
-
-        OnMovimientoChanged?.Invoke(EstadoMovimiento.SentandoseSillon);
+        ColocarAbajoBajandoEscIzq();
     }
 
-    public void LevantarseSillon()
+    public void SentarseSillon()
     {
-        OnMovimientoChanged?.Invoke(EstadoMovimiento.LevantandoseSillon);
+        ColocarPosFinalLevantarseSillon();
+
     }
 
     public void MovimientoHorizontal(float cantidadMovimiento)
@@ -83,8 +94,8 @@ public class MovimientoCont : MonoBehaviour
 
     private bool SePuede(float posicionDeseada)
     {
-        if ((posicionDeseada >= 118.0f && posicionDeseada <= 153.0f) ||
-            (posicionDeseada >= 604.0f && posicionDeseada <= 638.0f))
+        if ((posicionDeseada >= PosicionesClave.PosLimiteAbajoEscalerasIzq && posicionDeseada <= PosicionesClave.PosLimiteArribaEscalerasIzq) ||
+            (posicionDeseada >= PosicionesClave.PosLimiteArribaEscalerasDer && posicionDeseada <= PosicionesClave.PosLimiteAbajoEscalerasDer))
         {
             return false;
         }
@@ -92,51 +103,49 @@ public class MovimientoCont : MonoBehaviour
         return true;
     }
 
-    public void MovSubirEscaleraIzq()
+    public void ColocarAbajoBajandoEscIzq()
     {
-        gameObject.transform.position = new Vector2(gameObject.transform.position.x + 5.0f,
-                                                    gameObject.transform.position.y);
-        gameObject.transform.position = new Vector2(gameObject.transform.position.x,
-                                                    gameObject.transform.position.y + 3.0f);
+        gameObject.transform.position = new Vector2(PosicionesClave.AbajoBajandoEscalerasIzq.x,
+                                                    PosicionesClave.AbajoBajandoEscalerasIzq.y);
     }
 
-    public void MovBajarEscaleraIzq()
+    public void ColocarArribaSubiendoEscIzq()
     {
-
-        gameObject.transform.position = new Vector2(gameObject.transform.position.x - 10.0f,
-                                                    gameObject.transform.position.y);
-        gameObject.transform.position = new Vector2(gameObject.transform.position.x,
-                                                    gameObject.transform.position.y - 2.0f);
+        gameObject.transform.position = new Vector2(PosicionesClave.ArribaSubiendoEscalerasIzq.x,
+                                                    PosicionesClave.ArribaSubiendoEscalerasIzq.y);
     }
 
-    public void MovBajarEscaleraDer()
+    public void ColocarAbajoBajandoEscDer()
     {
-        gameObject.transform.position = new Vector2(gameObject.transform.position.x + 10.0f,
-                                                    gameObject.transform.position.y);
-        gameObject.transform.position = new Vector2(gameObject.transform.position.x,
-                                                    gameObject.transform.position.y - 2.0f);
+        gameObject.transform.position = new Vector2(PosicionesClave.AbajoBajandoEscalerasDer.x,
+                                                    PosicionesClave.AbajoBajandoEscalerasDer.y);
     }
 
-    public void MovSubirEscaleraDer()
+    public void ColocarArribaSubiendoEscDer()
     {
+        gameObject.transform.position = new Vector2(PosicionesClave.ArribaSubiendoEscalerasDer.x,
+                                                    PosicionesClave.ArribaSubiendoEscalerasDer.y);
+    }
 
-        gameObject.transform.position = new Vector2(gameObject.transform.position.x - 10.0f,
-                                                    gameObject.transform.position.y);
-        gameObject.transform.position = new Vector2(gameObject.transform.position.x,
-                                                    gameObject.transform.position.y + 2.0f);
+    private void ColocarPosFinalLevantarseSillon()
+    {
+        gameObject.transform.position = new Vector2(PosicionesClave.Sillon.x,
+                                                    PosicionesClave.Sillon.y);
     }
 
     private void RecogerInfoInputs()
     {
-        InputManager.Instance.controlesJugador.Andando.Derecha.performed += contexto => AndarDerecha();
-        InputManager.Instance.controlesJugador.Andando.Izquierda.performed += contexto => AndarIzquierda();
-        InputManager.Instance.controlesJugador.Andando.Derecha.canceled += contexto => IdleDerecha();
-        InputManager.Instance.controlesJugador.Andando.Izquierda.canceled += contexto => IdleIzquierda();
+        InputManager.Instance.controlesJugador.Andando.Derecha.performed += contexto => CambiarEstadoMovimiento(EstadoMovimiento.AndandoAlante);
+        InputManager.Instance.controlesJugador.Andando.Izquierda.performed += contexto => CambiarEstadoMovimiento(EstadoMovimiento.AndandoAtras);
+        InputManager.Instance.controlesJugador.Andando.Derecha.canceled += contexto => CambiarEstadoMovimiento(EstadoMovimiento.IdleAlante);
+        InputManager.Instance.controlesJugador.Andando.Izquierda.canceled += contexto => CambiarEstadoMovimiento(EstadoMovimiento.IdleAtras);
     }
 }
 
 public enum EstadoMovimiento
 {
+    IdleEspalda,
+    Girandose,
     IdleAlante,
     IdleAtras,
     AndandoAlante,

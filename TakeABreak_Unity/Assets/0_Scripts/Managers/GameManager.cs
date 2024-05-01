@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
 {
     // Variables privadas
     private EstadoJuego estado;
+    private GameObject jugador;
 
     // Variables públicas
     public static GameManager Instance;
@@ -14,11 +15,15 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         HacerInmortal();
+
+        BuscarGO();
     }
 
     private void Start()
     {
-        CambiarEstadoJuego(EstadoJuego.Andando);
+        RecogerInfoInputs();
+
+        CambiarEstadoJuego(EstadoJuego.Inicio);
     }
 
     public EstadoJuego GetEstadoJuego()
@@ -32,6 +37,10 @@ public class GameManager : MonoBehaviour
 
         switch (nuevoEstado)
         {
+            case EstadoJuego.Inicio:
+                EstadoInicial();
+                Debug.Log("Estado del juego: Inicio");
+                break;
             case EstadoJuego.Andando:
                 Debug.Log("Estado del juego: Andando");
                 break;
@@ -49,10 +58,19 @@ public class GameManager : MonoBehaviour
                 break;
             default:
                 break;
-
         }
 
         CambioEstadoJuego?.Invoke(nuevoEstado);
+    }
+
+    private void EstadoInicial()
+    {
+        jugador.GetComponent<MovimientoCont>().CambiarEstadoMovimiento(EstadoMovimiento.IdleEspalda);
+    }
+
+    private void IniciarJuego()
+    {
+        jugador.GetComponent<MovimientoCont>().CambiarEstadoMovimiento(EstadoMovimiento.Girandose);
     }
 
     private void HacerInmortal()
@@ -67,10 +85,21 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void BuscarGO()
+    {
+        jugador = GameObject.FindWithTag(Constantes.Tags.JUGADOR);
+    }
+
+    private void RecogerInfoInputs()
+    {
+        InputManager.Instance.controlesJugador.Inicio.Accion.performed += contexto => IniciarJuego();
+    }
 }
 
 public enum EstadoJuego
 {
+    Inicio,
     Andando,
     Conversando,
     Eligiendo,

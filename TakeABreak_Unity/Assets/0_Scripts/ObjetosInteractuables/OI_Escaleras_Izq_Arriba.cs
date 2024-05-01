@@ -26,9 +26,11 @@ public class OI_Escaleras_Izq_Arriba : MonoBehaviour, IObjetoInteractuable
 
     private void BajarEscaleras()
     {
+        GetComponent<Animator>().Play(Constantes.Jugador.Animacion.BAJANDO_ESCALERAS_IZQ);
+
         if (jugadorGO.TryGetComponent(out MovimientoCont movimientoCont))
         {
-            movimientoCont.BajarEscalerasIzq();
+            movimientoCont.CambiarEstadoMovimiento(EstadoMovimiento.BajandoEscIzq);
         }
     }
 

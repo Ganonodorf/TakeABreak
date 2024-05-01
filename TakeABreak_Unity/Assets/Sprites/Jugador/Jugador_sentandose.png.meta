@@ -114,9 +114,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 64
-        height: 64
+        y: 320
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c37860b5641fed644b7c4f19a960e700
-      internalID: 1177129060
+      spriteID: 90c28bfa65433d24e8d77a862ade045c
+      internalID: 1027478679
       vertices: []
       indices: 
       edges: []
@@ -134,10 +134,10 @@ TextureImporter:
       name: Jugador_sentandose_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
+        x: 80
+        y: 320
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbcd3231d9b18c74a8980e354b413c6c
-      internalID: -567890721
+      spriteID: 38887ff6baa8312439e195c882c1e0bb
+      internalID: -1356897813
       vertices: []
       indices: 
       edges: []
@@ -155,10 +155,10 @@ TextureImporter:
       name: Jugador_sentandose_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
+        x: 160
+        y: 320
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 044423552cffd3e4d89ecfaa2215361b
-      internalID: 563980937
+      spriteID: 1dc23f40e4602d444be44c9f6db71eb3
+      internalID: 2122022769
       vertices: []
       indices: 
       edges: []
@@ -176,10 +176,10 @@ TextureImporter:
       name: Jugador_sentandose_3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
+        x: 240
+        y: 320
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c88b1aae034b0145b3f2830bc1dc514
-      internalID: 1485731450
+      spriteID: 54d5ff6f978496a4f818441ad6ed44e7
+      internalID: 664726342
       vertices: []
       indices: 
       edges: []
@@ -197,10 +197,10 @@ TextureImporter:
       name: Jugador_sentandose_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
+        x: 320
+        y: 320
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 909ba61704e32a34e924a8a0c4b37f6d
-      internalID: 1557806511
+      spriteID: 9f3d2133a4ff4a74684e9979a7f451a8
+      internalID: -992605541
       vertices: []
       indices: 
       edges: []
@@ -218,10 +218,10 @@ TextureImporter:
       name: Jugador_sentandose_5
       rect:
         serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
+        x: 400
+        y: 320
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a67569e874fbd9c468f712d66bae7a6f
-      internalID: 1205055117
+      spriteID: fba5bd7c98b29d44b8cbef231fc571d4
+      internalID: 379589588
       vertices: []
       indices: 
       edges: []
@@ -239,10 +239,10 @@ TextureImporter:
       name: Jugador_sentandose_6
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
-        width: 64
-        height: 64
+        x: 0
+        y: 240
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,8 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34edba294424cb9408235819b114949c
-      internalID: 81720832
+      spriteID: 4d36cc1b250831041a73783965c0eb4f
+      internalID: -36699675
       vertices: []
       indices: 
       edges: []
@@ -260,10 +260,10 @@ TextureImporter:
       name: Jugador_sentandose_7
       rect:
         serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 64
+        x: 80
+        y: 240
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6219ba2ba9e95a24cb27f8996aaccb27
-      internalID: 1446891742
+      spriteID: 492fc9919a6fb2d47839880ed6b014ad
+      internalID: 1944614555
       vertices: []
       indices: 
       edges: []
@@ -281,10 +281,10 @@ TextureImporter:
       name: Jugador_sentandose_8
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
-        width: 64
-        height: 64
+        x: 160
+        y: 240
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,8 +292,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa260f7e917b1194c84c4058b728d41f
-      internalID: 315724588
+      spriteID: 1a40cd9018441a84a976e10add0d9ff3
+      internalID: 1757591475
       vertices: []
       indices: 
       edges: []
@@ -302,10 +302,10 @@ TextureImporter:
       name: Jugador_sentandose_9
       rect:
         serializedVersion: 2
-        x: 576
-        y: 0
-        width: 64
-        height: 64
+        x: 240
+        y: 240
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,8 +313,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 206ae7bf44cb6364ab2a4ee5c759466c
-      internalID: 1449536816
+      spriteID: d3f74f08d18105148ac9dd6afad188b2
+      internalID: 163428803
       vertices: []
       indices: 
       edges: []
@@ -323,10 +323,10 @@ TextureImporter:
       name: Jugador_sentandose_10
       rect:
         serializedVersion: 2
-        x: 640
-        y: 0
-        width: 64
-        height: 64
+        x: 320
+        y: 240
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,8 +334,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1cacf74907b4ce49a80556122ef00c2
-      internalID: -705687961
+      spriteID: 92ee550e76897164db396d9684957950
+      internalID: -1877012669
       vertices: []
       indices: 
       edges: []
@@ -344,10 +344,10 @@ TextureImporter:
       name: Jugador_sentandose_11
       rect:
         serializedVersion: 2
-        x: 704
-        y: 0
-        width: 64
-        height: 64
+        x: 400
+        y: 240
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -355,8 +355,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fdc1c4a963fc3fa4a945e42dd80df674
-      internalID: 751783538
+      spriteID: 46a6013a734835b439419b590ceb4851
+      internalID: 293729540
       vertices: []
       indices: 
       edges: []
@@ -365,10 +365,10 @@ TextureImporter:
       name: Jugador_sentandose_12
       rect:
         serializedVersion: 2
-        x: 768
-        y: 0
-        width: 64
-        height: 64
+        x: 0
+        y: 160
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -376,8 +376,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b64a852ee512e9429f38fe8a3766b10
-      internalID: 1577321585
+      spriteID: 5fb58cfe184870947b32e298d5954bf4
+      internalID: 1996915590
       vertices: []
       indices: 
       edges: []
@@ -386,10 +386,10 @@ TextureImporter:
       name: Jugador_sentandose_13
       rect:
         serializedVersion: 2
-        x: 832
-        y: 0
-        width: 64
-        height: 64
+        x: 80
+        y: 160
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -397,8 +397,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d62959f0dc416a346a896a5eb21c389d
-      internalID: -2068764671
+      spriteID: 2e50335aef03e9f4aa55f14755767533
+      internalID: 1306822611
       vertices: []
       indices: 
       edges: []
@@ -407,10 +407,10 @@ TextureImporter:
       name: Jugador_sentandose_14
       rect:
         serializedVersion: 2
-        x: 896
-        y: 0
-        width: 64
-        height: 64
+        x: 160
+        y: 160
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -418,8 +418,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09e027ee9751b2949b92b0cbae9c4a02
-      internalID: 1867131862
+      spriteID: 464b40c183f31774ab69d4f30e12a3a5
+      internalID: -1823811538
       vertices: []
       indices: 
       edges: []
@@ -428,10 +428,10 @@ TextureImporter:
       name: Jugador_sentandose_15
       rect:
         serializedVersion: 2
-        x: 960
-        y: 0
-        width: 64
-        height: 64
+        x: 240
+        y: 160
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -439,8 +439,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f193ec6032e11a24589d02d53c34e5b1
-      internalID: -2024982478
+      spriteID: 01c63dd0abf459f4689326caa5076542
+      internalID: -1000479794
       vertices: []
       indices: 
       edges: []
@@ -449,10 +449,10 @@ TextureImporter:
       name: Jugador_sentandose_16
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 64
-        height: 64
+        x: 320
+        y: 160
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -460,8 +460,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 705f785d5f02bfb4da8aca92f628c9f0
-      internalID: 1895233872
+      spriteID: 38c699721ce6343409bced7ce759821a
+      internalID: -916619432
       vertices: []
       indices: 
       edges: []
@@ -470,10 +470,10 @@ TextureImporter:
       name: Jugador_sentandose_17
       rect:
         serializedVersion: 2
-        x: 1088
-        y: 0
-        width: 64
-        height: 64
+        x: 400
+        y: 160
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -481,8 +481,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a8f6986ffb728543b2b5cca9e28ddc5
-      internalID: 216538290
+      spriteID: 1397d7010404dd7429ca69e5984be78e
+      internalID: 1447168006
       vertices: []
       indices: 
       edges: []
@@ -491,10 +491,10 @@ TextureImporter:
       name: Jugador_sentandose_18
       rect:
         serializedVersion: 2
-        x: 1152
-        y: 0
-        width: 64
-        height: 64
+        x: 0
+        y: 80
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -502,8 +502,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5808a6acc12532b4490d6cbf037d3ce3
-      internalID: 687316857
+      spriteID: ed93867db5cfbfa4ebb327eccde45ee6
+      internalID: 1443104455
       vertices: []
       indices: 
       edges: []
@@ -512,10 +512,10 @@ TextureImporter:
       name: Jugador_sentandose_19
       rect:
         serializedVersion: 2
-        x: 1216
-        y: 0
-        width: 64
-        height: 64
+        x: 80
+        y: 80
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -523,8 +523,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31cbb974c37f5e14e95f1e3215d40fb4
-      internalID: 1712196172
+      spriteID: 2aeafe6c58df1f24da12da69bc6f1ad6
+      internalID: -2016280371
       vertices: []
       indices: 
       edges: []
@@ -533,10 +533,10 @@ TextureImporter:
       name: Jugador_sentandose_20
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 0
-        width: 64
-        height: 64
+        x: 160
+        y: 80
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -544,8 +544,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b9a55c2433d9864d99d0636b0582460
-      internalID: -1067113374
+      spriteID: bd6b79a73d002904d82df96d83a6c69c
+      internalID: 1473550245
       vertices: []
       indices: 
       edges: []
@@ -554,10 +554,10 @@ TextureImporter:
       name: Jugador_sentandose_21
       rect:
         serializedVersion: 2
-        x: 1344
-        y: 0
-        width: 64
-        height: 64
+        x: 240
+        y: 80
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -565,8 +565,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb0c0e1c1fcc9db4baa35150d54be870
-      internalID: -772467360
+      spriteID: 413d40d53de645740bbfb3627d047768
+      internalID: -1657874104
       vertices: []
       indices: 
       edges: []
@@ -575,10 +575,10 @@ TextureImporter:
       name: Jugador_sentandose_22
       rect:
         serializedVersion: 2
-        x: 1408
-        y: 0
-        width: 64
-        height: 64
+        x: 320
+        y: 80
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -586,8 +586,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c19169fdcb5672409fd027b8743cd32
-      internalID: -471286627
+      spriteID: e8b610cf65d782a4499f6d13fc89bc79
+      internalID: 2079193643
       vertices: []
       indices: 
       edges: []
@@ -596,10 +596,10 @@ TextureImporter:
       name: Jugador_sentandose_23
       rect:
         serializedVersion: 2
-        x: 1472
-        y: 0
-        width: 64
-        height: 64
+        x: 400
+        y: 80
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -607,8 +607,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b000fc9048dbdf4d9a73d5c2074cde7
-      internalID: 1165313035
+      spriteID: e16984762a0cb904687733811d079520
+      internalID: 1454482427
       vertices: []
       indices: 
       edges: []
@@ -617,10 +617,10 @@ TextureImporter:
       name: Jugador_sentandose_24
       rect:
         serializedVersion: 2
-        x: 1536
+        x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -628,8 +628,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38db38ed9353d614b9af6f18c5b34124
-      internalID: 1987678885
+      spriteID: 38e33321b898e344cb939a38517b033a
+      internalID: -1675728875
       vertices: []
       indices: 
       edges: []
@@ -638,10 +638,10 @@ TextureImporter:
       name: Jugador_sentandose_25
       rect:
         serializedVersion: 2
-        x: 1600
+        x: 80
         y: 0
-        width: 64
-        height: 64
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -649,8 +649,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c92585ad85d4a743954042052d5705e
-      internalID: -1957324905
+      spriteID: df7a509ac1f9ff9419f6e84a611fd411
+      internalID: -967260602
       vertices: []
       indices: 
       edges: []
@@ -666,32 +666,32 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Jugador_sentandose_0: 1177129060
-      Jugador_sentandose_1: -567890721
-      Jugador_sentandose_10: -705687961
-      Jugador_sentandose_11: 751783538
-      Jugador_sentandose_12: 1577321585
-      Jugador_sentandose_13: -2068764671
-      Jugador_sentandose_14: 1867131862
-      Jugador_sentandose_15: -2024982478
-      Jugador_sentandose_16: 1895233872
-      Jugador_sentandose_17: 216538290
-      Jugador_sentandose_18: 687316857
-      Jugador_sentandose_19: 1712196172
-      Jugador_sentandose_2: 563980937
-      Jugador_sentandose_20: -1067113374
-      Jugador_sentandose_21: -772467360
-      Jugador_sentandose_22: -471286627
-      Jugador_sentandose_23: 1165313035
-      Jugador_sentandose_24: 1987678885
-      Jugador_sentandose_25: -1957324905
-      Jugador_sentandose_3: 1485731450
-      Jugador_sentandose_4: 1557806511
-      Jugador_sentandose_5: 1205055117
-      Jugador_sentandose_6: 81720832
-      Jugador_sentandose_7: 1446891742
-      Jugador_sentandose_8: 315724588
-      Jugador_sentandose_9: 1449536816
+      Jugador_sentandose_0: 1027478679
+      Jugador_sentandose_1: -1356897813
+      Jugador_sentandose_10: -1877012669
+      Jugador_sentandose_11: 293729540
+      Jugador_sentandose_12: 1996915590
+      Jugador_sentandose_13: 1306822611
+      Jugador_sentandose_14: -1823811538
+      Jugador_sentandose_15: -1000479794
+      Jugador_sentandose_16: -916619432
+      Jugador_sentandose_17: 1447168006
+      Jugador_sentandose_18: 1443104455
+      Jugador_sentandose_19: -2016280371
+      Jugador_sentandose_2: 2122022769
+      Jugador_sentandose_20: 1473550245
+      Jugador_sentandose_21: -1657874104
+      Jugador_sentandose_22: 2079193643
+      Jugador_sentandose_23: 1454482427
+      Jugador_sentandose_24: -1675728875
+      Jugador_sentandose_25: -967260602
+      Jugador_sentandose_3: 664726342
+      Jugador_sentandose_4: -992605541
+      Jugador_sentandose_5: 379589588
+      Jugador_sentandose_6: -36699675
+      Jugador_sentandose_7: 1944614555
+      Jugador_sentandose_8: 1757591475
+      Jugador_sentandose_9: 163428803
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

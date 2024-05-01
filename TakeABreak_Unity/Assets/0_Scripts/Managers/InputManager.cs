@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class InputManager : MonoBehaviour
@@ -21,6 +22,9 @@ public class InputManager : MonoBehaviour
 
         switch (nuevoEstadoJuego)
         {
+            case EstadoJuego.Inicio:
+                EnablearControlesInicio();
+                break;
             case EstadoJuego.Andando:
                 EnablearControlesAndando();
                 break;
@@ -39,6 +43,11 @@ public class InputManager : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    private void EnablearControlesInicio()
+    {
+        controlesJugador.Inicio.Enable();
     }
 
     private void EnablearControlesAndando()
@@ -66,6 +75,7 @@ public class InputManager : MonoBehaviour
         controlesJugador.Andando.Disable();
         controlesJugador.Conversando.Disable();
         controlesJugador.Minijuegando.Disable();
+        controlesJugador.Inicio.Disable();
     }
 
     private void HacerInmortal()

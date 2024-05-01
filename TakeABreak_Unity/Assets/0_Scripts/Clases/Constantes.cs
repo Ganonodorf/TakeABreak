@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Constantes
 {
     public class Dialogos
@@ -49,17 +51,53 @@ public class Constantes
 
         public class Animacion
         {
+            public static readonly string IDLE_ESPALDA = "Jugador_Idle_Espalda";
+            public static readonly string GIRANDOSE = "Jugador_Girandose";
             public static readonly string IDLE_ALANTE = "Jugador_Idle_Alante";
             public static readonly string IDLE_ATRAS = "Jugador_Idle_Atras";
             public static readonly string ANDANDO_ALANTE = "Jugador_Andando_Alante";
             public static readonly string ANDANDO_ATRAS = "Jugador_Andando_Atras";
-            public static readonly string SUBIENDO_ESCALERAS_DER = "Jugador_Subiendo_Escaleras_Derecha";
-            public static readonly string BAJANDO_ESCALERAS_DER = "Jugador_Bajando_Escaleras_Derecha";
-            public static readonly string SUBIENDO_ESCALERAS_IZQ = "Jugador_Subiendo_Escaleras_Izquierda";
-            public static readonly string BAJANDO_ESCALERAS_IZQ = "Jugador_Bajando_Escaleras_Izquierda";
-            public static readonly string SENTANDOSE_SILLON = "Jugador_Sentandose_Sillon";
-            public static readonly string LEVANTANDOSE_SILLON = "Jugador_Levantandose_Sillon";
+            public static readonly string NADA = "Jugador_Nada";
+
+            public static readonly string SUBIENDO_ESCALERAS_DER = "Subiendo_Escaleras_Der";
+            public static readonly string BAJANDO_ESCALERAS_DER = "Bajando_Escaleras_Der";
+            public static readonly string SUBIENDO_ESCALERAS_IZQ = "Subiendo_Escaleras_Izq";
+            public static readonly string BAJANDO_ESCALERAS_IZQ = "Bajando_Escaleras_Izq";
+
+            public static readonly string SENTANDOSE_SILLON = "Sentandose_Sillon";
+            public static readonly string LEVANTANDOSE_SILLON = "Levantandose_Sillon";
+
+            public static readonly string MEDITANDO = "Meditando";
+
+            public static readonly float DURACION_ESCALERAS = 2.4f;
+
+            public static readonly float DURACION_SENTANDOSE_SILLON = 5.2f;
+            public static readonly float DURACION_LEVANTANDOSE_SILLON = 3.2f;
         }
+    }
+
+    public class PosicionesClave
+    {
+        public static readonly float PosYDentroDeCasa = -28.0f;
+        public static readonly float PosYFueraDeCasa = -37.0f;
+
+        public static readonly float PosLimiteArribaEscalerasIzq = 143.0f;
+        public static readonly float PosLimiteAbajoEscalerasIzq = 122.0f;
+        public static readonly Vector2 ArribaBajandoEscalerasIzq = new Vector2(144.0f, PosYDentroDeCasa);
+        public static readonly Vector2 AbajoBajandoEscalerasIzq = new Vector2(116.0f, PosYFueraDeCasa);
+        public static readonly Vector2 ArribaSubiendoEscalerasIzq = new Vector2(148.0f, PosYDentroDeCasa);
+        public static readonly Vector2 AbajoSubiendoEscalerasIzq = new Vector2(121.0f, PosYFueraDeCasa);
+
+
+        public static readonly float PosLimiteArribaEscalerasDer = 613.0f;
+        public static readonly float PosLimiteAbajoEscalerasDer = 635.0f;
+        public static readonly Vector2 ArribaBajandoEscalerasDer = new Vector2(612.0f, PosYDentroDeCasa);
+        public static readonly Vector2 AbajoBajandoEscalerasDer = new Vector2(640.0f, PosYFueraDeCasa);
+        public static readonly Vector2 ArribaSubiendoEscalerasDer = new Vector2(609.0f, PosYDentroDeCasa);
+        public static readonly Vector2 AbajoSubiendoEscalerasDer = new Vector2(636.0f, PosYFueraDeCasa);
+
+
+        public static readonly Vector2 Sillon = new Vector2(315.0f, PosYDentroDeCasa);
     }
 
     public class Camara
