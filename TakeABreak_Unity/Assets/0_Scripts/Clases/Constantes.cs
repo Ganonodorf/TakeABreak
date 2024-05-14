@@ -17,6 +17,7 @@ public class Constantes
         public static readonly string SPRITE_NPC = "SpriteNPC";
         public static readonly string PANEL_OPCIONES = "PanelOpciones";
         public static readonly string JUGADOR = "Player";
+        public static readonly string CAMARA = "MainCamera";
     }
 
     public class ObjetosInteractuables
