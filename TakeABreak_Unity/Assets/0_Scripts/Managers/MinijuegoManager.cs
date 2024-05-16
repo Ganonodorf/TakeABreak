@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class MinijuegoManager : MonoBehaviour
@@ -7,11 +8,19 @@ public class MinijuegoManager : MonoBehaviour
 
     private TipoMinijuego minijuegoActual;
 
+    private OI_Sillon sillonController;
+    private Animator marAnimator;
+    private GameObject casaGO;
+
+    private Coroutine fadeCasa;
+
     private void Awake()
     {
         HacerInmortal();
 
         SuscribirseEventos();
+
+        BuscarGO();
     }
 
     private void Start()
@@ -35,8 +44,8 @@ public class MinijuegoManager : MonoBehaviour
     {
         switch (nuevoEstadoJuego)
         {
-            case EstadoJuego.Minijuego:
-                ComenzarMinijuego();
+            case EstadoJuego.Meditando:
+                ComenzarMeditacion();
                 break;
             default:
                 SetTipoMinijuego(TipoMinijuego.Ninguno);
@@ -48,7 +57,7 @@ public class MinijuegoManager : MonoBehaviour
     {
         switch (nuevoEstadoMovimiento)
         {
-            case EstadoMovimiento.SentandoseSillon:
+            case EstadoMovimiento.Meditando:
                 SetTipoMinijuego(TipoMinijuego.Meditar);
                 break;
             case EstadoMovimiento.LevantandoseSillon:
@@ -60,33 +69,112 @@ public class MinijuegoManager : MonoBehaviour
         }
     }
 
-    private void ComenzarMinijuego()
+    private void ComenzarMeditacion()
     {
-        if(minijuegoActual == TipoMinijuego.Meditar)
+        sillonController.ComenzarMinijuego();
+
+        FadeOutCasa();
+
+        marAnimator.Play(Constantes.Animacion.Mar.QUIETO);
+
+        Debug.Log("Comienzo a meditar");
+    }
+
+    private void FinalizarMeditacion()
+    {
+        sillonController.Accion();
+
+        FadeInCasa();
+
+        marAnimator.Play(Constantes.Animacion.Mar.IDLE);
+
+        Debug.Log("Termino de meditar");
+    }
+
+    private void FadeOutCasa()
+    {
+        if(fadeCasa != null)
         {
-            GameObject.Find(Constantes.ObjetosInteractuables.SILLON_NOMBRE).GetComponent<OI_Sillon>().ComenzarMinijuego();
-            Debug.Log("Comienzo a meditar");
+            StopCoroutine(fadeCasa);
+        }
+
+        fadeCasa = StartCoroutine(FadeOutCoroutine());
+    }
+
+    private void FadeInCasa()
+    {
+        if (fadeCasa != null)
+        {
+            StopCoroutine(fadeCasa);
+        }
+
+        fadeCasa = StartCoroutine(FadeInCoroutine());
+    }
+
+    private IEnumerator FadeOutCoroutine()
+    {
+        SpriteRenderer[] spritesCasa = casaGO.GetComponentsInChildren<SpriteRenderer>();
+
+        float nuevaAlfa = 1.0f;
+
+        while(nuevaAlfa > 0.0f)
+        {
+            foreach (SpriteRenderer sprite in spritesCasa)
+            {
+                sprite.color = new Color(sprite.color.r,
+                                         sprite.color.g,
+                                         sprite.color.b,
+                                         nuevaAlfa);
+            }
+
+            nuevaAlfa -= 0.01f;
+
+            yield return new WaitForFixedUpdate();
         }
     }
 
-    private void SalirMinijuego()
+    private IEnumerator FadeInCoroutine()
     {
-        if (minijuegoActual == TipoMinijuego.Meditar)
+        SpriteRenderer[] spritesCasa = casaGO.GetComponentsInChildren<SpriteRenderer>();
+
+        float nuevaAlfa = 0.0f;
+
+        while (nuevaAlfa < 1.0f)
         {
-            GameObject.Find(Constantes.ObjetosInteractuables.SILLON_NOMBRE).GetComponent<OI_Sillon>().Accion();
-            Debug.Log("Termino de meditar");
+            foreach (SpriteRenderer sprite in spritesCasa)
+            {
+                sprite.color = new Color(sprite.color.r,
+                                         sprite.color.g,
+                                         sprite.color.b,
+                                         nuevaAlfa);
+            }
+
+            nuevaAlfa += 0.01f;
+
+            yield return new WaitForFixedUpdate();
         }
     }
 
-    private void RecogerInfoInputs()
+    private void Inhalar()
     {
-        InputManager.Instance.controlesJugador.Minijuegando.Salir.performed += contexto => SalirMinijuego();
+        sillonController.gameObject.GetComponent<Animator>().Play(Constantes.Animacion.Sillon.MEDITANDO_INHALAR);
+
+        marAnimator.Play(Constantes.Animacion.Mar.INHALAR);
+        
+    }
+
+    private void Exhalar()
+    {
+        sillonController.gameObject.GetComponent<Animator>().Play(Constantes.Animacion.Sillon.MEDITANDO_EXHALAR);
+
+        marAnimator.Play(Constantes.Animacion.Mar.EXHALAR);
     }
 
     private void InicializarVariables()
     {
         minijuegoActual = TipoMinijuego.Ninguno;
     }
+
     private void HacerInmortal()
     {
         if (Instance == null)
@@ -105,6 +193,20 @@ public class MinijuegoManager : MonoBehaviour
         GameManager.CambioEstadoJuego += GameManager_CambioEstadoJuego;
 
         MovimientoCont.OnMovimientoChanged += MovimientoCont_OnMovimientoChanged;
+    }
+
+    private void BuscarGO()
+    {
+        sillonController = GameObject.Find(Constantes.ObjetosInteractuables.SILLON_NOMBRE).GetComponent<OI_Sillon>();
+        casaGO = GameObject.FindGameObjectWithTag(Constantes.Tags.CASA);
+        marAnimator = GameObject.FindGameObjectWithTag(Constantes.Tags.MAR).GetComponent<Animator>();
+    }
+
+    private void RecogerInfoInputs()
+    {
+        InputManager.Instance.controlesJugador.Meditando.Salir.performed += contexto => FinalizarMeditacion();
+        InputManager.Instance.controlesJugador.Meditando.Respirar.started += contexto => Inhalar();
+        InputManager.Instance.controlesJugador.Meditando.Respirar.canceled += contexto => Exhalar();
     }
 }
 

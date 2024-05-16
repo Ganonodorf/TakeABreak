@@ -24,7 +24,7 @@ public class OI_Escaleras_Izq_Abajo : MonoBehaviour, IObjetoInteractuable
 
     private void SubirEscaleras()
     {
-        GetComponent<Animator>().Play(Constantes.Jugador.Animacion.SUBIENDO_ESCALERAS_IZQ);
+        GetComponent<Animator>().Play(Constantes.Animacion.Escaleras.SUBIENDO_ESCALERAS_IZQ);
 
         if (jugadorGO.TryGetComponent(out MovimientoCont movimientoCont))
         {

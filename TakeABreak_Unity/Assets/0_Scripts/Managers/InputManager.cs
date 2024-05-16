@@ -37,8 +37,8 @@ public class InputManager : MonoBehaviour
             case EstadoJuego.HaciendoAnimacion:
                 DisablearTodo();
                 break;
-            case EstadoJuego.Minijuego:
-                EnablearControlesMinijuego();
+            case EstadoJuego.Meditando:
+                EnablearControlesMeditando();
                 break;
             default:
                 break;
@@ -65,16 +65,16 @@ public class InputManager : MonoBehaviour
         controlesJugador.Conversando.Enable();
     }
 
-    private void EnablearControlesMinijuego()
+    private void EnablearControlesMeditando()
     {
-        controlesJugador.Minijuegando.Enable();
+        controlesJugador.Meditando.Enable();
     }
 
     private void DisablearTodo()
     {
         controlesJugador.Andando.Disable();
         controlesJugador.Conversando.Disable();
-        controlesJugador.Minijuegando.Disable();
+        controlesJugador.Meditando.Disable();
         controlesJugador.Inicio.Disable();
     }
 

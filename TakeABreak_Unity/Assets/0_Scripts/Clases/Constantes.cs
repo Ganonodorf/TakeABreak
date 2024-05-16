@@ -18,6 +18,8 @@ public class Constantes
         public static readonly string PANEL_OPCIONES = "PanelOpciones";
         public static readonly string JUGADOR = "Player";
         public static readonly string CAMARA = "MainCamera";
+        public static readonly string CASA = "Casa";
+        public static readonly string MAR = "Mar";
     }
 
     public class ObjetosInteractuables
@@ -43,14 +45,9 @@ public class Constantes
         public static readonly string SILLON_TEXTOAMOSTRAR = "Pulsa Q para sentarte en el sillón";
     }
 
-    public class Jugador
+    public class Animacion
     {
-        public class Movimiento
-        {
-            public static readonly float VELOCIDAD = 0.25f;
-        }
-
-        public class Animacion
+        public class Jugador
         {
             public static readonly string IDLE_ESPALDA = "Jugador_Idle_Espalda";
             public static readonly string GIRANDOSE = "Jugador_Girandose";
@@ -59,26 +56,56 @@ public class Constantes
             public static readonly string ANDANDO_ALANTE = "Jugador_Andando_Alante";
             public static readonly string ANDANDO_ATRAS = "Jugador_Andando_Atras";
             public static readonly string NADA = "Jugador_Nada";
+        }
 
+        public class Escaleras
+        {
             public static readonly string SUBIENDO_ESCALERAS_DER = "Subiendo_Escaleras_Der";
             public static readonly string BAJANDO_ESCALERAS_DER = "Bajando_Escaleras_Der";
             public static readonly string SUBIENDO_ESCALERAS_IZQ = "Subiendo_Escaleras_Izq";
             public static readonly string BAJANDO_ESCALERAS_IZQ = "Bajando_Escaleras_Izq";
 
+            public static readonly float DURACION_ESCALERAS = 2.4f;
+        }
+
+        public class Sillon
+        {
+
             public static readonly string SENTANDOSE_SILLON = "Sentandose_Sillon";
             public static readonly string LEVANTANDOSE_SILLON = "Levantandose_Sillon";
 
             public static readonly string MEDITANDO = "Meditando";
+            public static readonly string MEDITANDO_INHALAR = "Meditando_Inhalar";
+            public static readonly string MEDITANDO_EXHALAR = "Meditando_Exhalar";
 
-            public static readonly float DURACION_ESCALERAS = 2.4f;
+            public static readonly string QUIETO = "Quieto";
 
             public static readonly float DURACION_SENTANDOSE_SILLON = 5.2f;
             public static readonly float DURACION_LEVANTANDOSE_SILLON = 3.2f;
+        }
+
+        public class Mar
+        {
+            public static readonly string IDLE = "Mar";
+            public static readonly string INHALAR = "MarInhalar";
+            public static readonly string EXHALAR = "MarExhalar";
+            public static readonly string QUIETO = "MarQuieto";
+        }
+
+        public class Reflejo
+        {
+            public static readonly string IDLE_ESPALDAS_ALANTE = "Jugador_idle_espaldas";
+            public static readonly string IDLE_ESPALDAS_ATRAS = "Jugador_idle_espaldas_atras";
+            public static readonly string ANDANDO_ESPALDAS_ALANTE = "Jugador_andando_espaldas";
+            public static readonly string ANDANDO_ESPALDAS_ATRAS = "Jugador_andando_espaldas_atras";
+            public static readonly string NADA = "Nada";
         }
     }
 
     public class PosicionesClave
     {
+        public static readonly float PosXInicial = -30.0f;
+
         public static readonly float PosYDentroDeCasa = -28.0f;
         public static readonly float PosYFueraDeCasa = -37.0f;
 
@@ -103,8 +130,12 @@ public class Constantes
 
     public class Camara
     {
-        public static readonly float VELOCIDAD = 20.0f;
+        public static readonly float VELOCIDAD = 20.0f; // El original son 20
         public static readonly float LIMITE_IZQ = 0.0f;
         public static readonly float LIMITE_DER = 640.0f;
+
+        public static readonly float DIRECCION_ESCALERAS = 0.6f;
+
+        public static readonly float POSICION_MEDITANDO = 388.0f;
     }
 }

@@ -42,6 +42,8 @@ public class MovimientoCont : MonoBehaviour
             case EstadoMovimiento.SentandoseSillon:
                 SentarseSillon();
                 break;
+            case EstadoMovimiento.Meditando:
+                break;
             case EstadoMovimiento.LevantandoseSillon:
                 break;
             default:
@@ -155,5 +157,6 @@ public enum EstadoMovimiento
     BajandoEscDer,
     BajandoEscIzq,
     SentandoseSillon,
+    Meditando,
     LevantandoseSillon
 }

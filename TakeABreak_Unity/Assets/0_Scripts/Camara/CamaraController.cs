@@ -35,12 +35,21 @@ public class CamaraController : MonoBehaviour
 
         if (estadoCamaraActual == EstadoCamara.MovDerecha)
         {
-            dirSoloX = new Vector2(0.6f, 0.0f);
+            dirSoloX = new Vector2(Constantes.Camara.DIRECCION_ESCALERAS, 0.0f);
         }
 
         else if (estadoCamaraActual == EstadoCamara.MovIzquierda)
         {
-            dirSoloX = new Vector2(-0.6f, 0.0f);
+            dirSoloX = new Vector2(-Constantes.Camara.DIRECCION_ESCALERAS, 0.0f);
+        }
+
+        else if (estadoCamaraActual == EstadoCamara.EstaticaMeditando)
+        {
+            Vector3 dirDestino = new Vector3(Constantes.Camara.POSICION_MEDITANDO, 0.0f);
+
+            Vector3 dirNormalizada = Vector3.Normalize(dirDestino - this.transform.position);
+
+            dirSoloX = new Vector2(dirNormalizada.x, 0.0f);
         }
 
         else
@@ -86,6 +95,9 @@ public class CamaraController : MonoBehaviour
             case EstadoMovimiento.BajandoEscDer:
                 estadoCamaraActual = EstadoCamara.MovDerecha;
                 break;
+            case EstadoMovimiento.Meditando:
+                estadoCamaraActual = EstadoCamara.EstaticaMeditando;
+                break;
             default:
                 estadoCamaraActual = EstadoCamara.Persiguiendo;
                 break;
@@ -97,5 +109,6 @@ enum EstadoCamara
 {
     Persiguiendo,
     MovDerecha,
-    MovIzquierda
+    MovIzquierda,
+    EstaticaMeditando
 }
