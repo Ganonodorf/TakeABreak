@@ -5,8 +5,9 @@ public class PuertaController : MonoBehaviour
 {
     GameObject jugadorGO;
     SpriteRenderer[] puertaSprites;
-    float posXInicial;
+    float posXInicialJugador;
     float posXCollider;
+    float offset;
     float longitudXCollider;
     bool fadeOut;
 
@@ -15,16 +16,17 @@ public class PuertaController : MonoBehaviour
         if (collision.gameObject.tag == Constantes.Tags.JUGADOR)
         {
             jugadorGO = collision.gameObject;
-            posXInicial = collision.transform.position.x;
-            fadeOut = posXCollider > posXInicial ? true : false;
+            posXInicialJugador = collision.transform.position.x;
+            fadeOut = posXCollider > posXInicialJugador ? true : false;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == Constantes.Tags.JUGADOR)
         {
+            ActualizarColorSprite();
             jugadorGO = null;
-            posXInicial = 0.0f;
+            posXInicialJugador = 0.0f;
         }
     }
 
@@ -43,7 +45,7 @@ public class PuertaController : MonoBehaviour
 
     private void ActualizarColorSprite()
     {
-        float nuevaAlfa = CalcularNuevaAlfa();
+        float nuevaAlfa = CalcularNuevaAlfaV2();
 
         foreach(var sprite in puertaSprites)
         {
@@ -54,9 +56,28 @@ public class PuertaController : MonoBehaviour
         }
     }
 
+    private float CalcularNuevaAlfaV2()
+    {
+        float restaPosiciones;
+
+        if(jugadorGO.transform.position.x > (posXCollider - offset) && jugadorGO.transform.position.x < (posXCollider + offset))
+        {
+            restaPosiciones = 0.0f;
+        }
+        else
+        {
+            restaPosiciones = jugadorGO.transform.position.x < posXCollider ? posXCollider - offset - jugadorGO.transform.position.x :
+                                                                              jugadorGO.transform.position.x - offset - posXCollider;
+        }
+
+        float nuevaAlfa = restaPosiciones / ((longitudXCollider / 2) - offset);
+
+        return nuevaAlfa;
+    }
+
     private float CalcularNuevaAlfa()
     {
-        float restaPosiciones = jugadorGO.transform.position.x - posXInicial;
+        float restaPosiciones = jugadorGO.transform.position.x - posXInicialJugador;
 
         float nuevaAlfa = fadeOut ? 1.0f - (restaPosiciones / longitudXCollider) :
                                    -1.0f * (restaPosiciones / longitudXCollider);
@@ -69,5 +90,6 @@ public class PuertaController : MonoBehaviour
         puertaSprites = GetComponentsInChildren<SpriteRenderer>();
         posXCollider = GetComponent<BoxCollider2D>().transform.position.x;
         longitudXCollider = GetComponent<BoxCollider2D>().size.x;
+        offset = 6.0f;
     }
 }

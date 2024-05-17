@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class ReflejoController : MonoBehaviour
 {
-    private SpriteRenderer spriteRendererJugador;
+    private GameObject jugadorGO;
 
     private Animator animator;
+
+    private bool reflejandose;
 
     // Start is called before the first frame update
     void Start()
@@ -19,14 +21,21 @@ public class ReflejoController : MonoBehaviour
         SuscribirseEventos();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        transform.position = new Vector3(spriteRendererJugador.transform.position.x - 11.0f,
-                                         transform.position.y,
-                                         transform.position.z);
-        transform.GetComponent<SpriteRenderer>().sprite = spriteRendererJugador.sprite;
+        if (reflejandose == false && jugadorGO.transform.position.x >= 200.0f && jugadorGO.transform.position.x <= 300.0f)
+        {
+            reflejandose = true;
+            transform.position = new Vector3(jugadorGO.transform.position.x - Constantes.PosicionesClave.DistanciaReflejo,
+                                             transform.position.y,
+                                             transform.position.z);
+        }
+        else if (reflejandose == true && (jugadorGO.transform.position.x < 200.0f || jugadorGO.transform.position.x > 300.0f))
+        {
+            reflejandose = false;
+        }
     }
+
     private void MovimientoCont_OnMovimientoChanged(EstadoMovimiento nuevoEstadoMovimiento)
     {
         switch (nuevoEstadoMovimiento)
@@ -74,6 +83,12 @@ public class ReflejoController : MonoBehaviour
         animator.Play(Constantes.Animacion.Reflejo.NADA);
     }
 
+    public void MovimientoHorizontal(float cantidadMovimiento)
+    {
+        gameObject.transform.position = new Vector2(gameObject.transform.position.x + cantidadMovimiento,
+                                                    gameObject.transform.position.y);
+    }
+
     private void InicializarVariables()
     {
         animator = transform.GetComponent<Animator>();
@@ -81,7 +96,7 @@ public class ReflejoController : MonoBehaviour
 
     private void BuscarGO()
     {
-        spriteRendererJugador = GameObject.FindGameObjectWithTag(Constantes.Tags.JUGADOR).GetComponent<SpriteRenderer>();
+        jugadorGO = GameObject.FindGameObjectWithTag(Constantes.Tags.JUGADOR);
     }
 
     private void SuscribirseEventos()

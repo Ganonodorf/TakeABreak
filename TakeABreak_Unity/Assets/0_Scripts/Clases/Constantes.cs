@@ -126,6 +126,8 @@ public class Constantes
 
 
         public static readonly Vector2 Sillon = new Vector2(315.0f, PosYDentroDeCasa);
+
+        public static readonly float DistanciaReflejo = 11.0f;
     }
 
     public class Camara
