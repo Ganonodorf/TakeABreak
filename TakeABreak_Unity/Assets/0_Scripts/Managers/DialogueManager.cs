@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +18,7 @@ public class DialogueManager : MonoBehaviour
     private GameObject panelOpcionesGO;
     private GameObject jugadorSpriteGO;
     private GameObject npcSpriteGO;
+    private GameObject jugadorGO;
 
     private Image imagenJugador;
     private Image imagenNPC;
@@ -136,9 +138,9 @@ public class DialogueManager : MonoBehaviour
 
         conversacionActual = conversacion;
 
-        imagenNPC.sprite = sprite;
-
         fraseActual = conversacionActual.Frases[0];
+
+        imagenNPC.sprite = sprite;
 
         MostrarBocadillo(fraseActual);
     }
@@ -150,7 +152,6 @@ public class DialogueManager : MonoBehaviour
         conversacionActual = null;
         fraseActual = null;
         imagenNPC.sprite = null;
-        GameManager.Instance.CambiarEstadoJuego(EstadoJuego.Andando);
     }
 
     private void SiguienteFrase()
@@ -159,6 +160,22 @@ public class DialogueManager : MonoBehaviour
         if (fraseActual.SiguienteFrase.Contains(Constantes.Dialogos.FIN_CONVERSACION))
         {
             FinalizarConversacion();
+
+            GameManager.Instance.CambiarEstadoJuego(EstadoJuego.Andando);
+        }
+        else if (fraseActual.SiguienteFrase.Contains(Constantes.Dialogos.SILLON_MEDITAR))
+        {
+            FinalizarConversacion();
+
+            GameManager.Instance.CambiarEstadoJuego(EstadoJuego.Meditando);
+
+            jugadorGO.GetComponent<MovimientoCont>().CambiarEstadoMovimiento(EstadoMovimiento.Meditando);
+        }
+        else if (fraseActual.SiguienteFrase.Contains(Constantes.Dialogos.SILLON_LEVANTARSE))
+        {
+            FinalizarConversacion();
+
+            jugadorGO.GetComponent<MovimientoCont>().CambiarEstadoMovimiento(EstadoMovimiento.LevantandoseSillon);
         }
         else
         {
@@ -231,6 +248,7 @@ public class DialogueManager : MonoBehaviour
         panelOpcionesGO = GameObject.FindGameObjectWithTag(Constantes.Tags.PANEL_OPCIONES);
         jugadorSpriteGO = GameObject.FindGameObjectWithTag(Constantes.Tags.SPRITE_JUGADOR);
         npcSpriteGO = GameObject.FindGameObjectWithTag(Constantes.Tags.SPRITE_NPC);
+        jugadorGO = GameObject.FindGameObjectWithTag(Constantes.Tags.JUGADOR);
     }
 
     private void InicializarVariables()

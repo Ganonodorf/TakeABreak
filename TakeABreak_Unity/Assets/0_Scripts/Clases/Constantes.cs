@@ -1,10 +1,14 @@
 using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class Constantes
 {
     public class Dialogos
     {
         public static readonly int FIN_CONVERSACION = -1;
+        public static readonly int SILLON_MEDITAR = -2;
+        public static readonly int SILLON_LEVANTARSE = -3;
+
         public static readonly int DISTANCIA_BOTONES = 11;
     }
 
@@ -43,6 +47,95 @@ public class Constantes
 
         public static readonly string SILLON_NOMBRE = "Sillon";
         public static readonly string SILLON_TEXTOAMOSTRAR = "Pulsa Q para sentarte en el sillón";
+
+        public static readonly Conversacion SILLON_CONVERSACION_SENTARSE = new Conversacion(
+            id: 0,
+            frases: new Frase[9]
+            {
+                new Frase(ID: 0,
+                          Texto: "Que mayor me he vuelto que me cuesta hasta sentarme en el sillón...",
+                          Interlocutor: InterlocutorEnum.Jugador,
+                          Mostrar: true,
+                          SiguienteFrase: new int[1] { 1 }),
+                new Frase(ID: 1,
+                          Texto: "Hoy aún no medité. No sé si me apetece.",
+                          Interlocutor: InterlocutorEnum.Jugador,
+                          Mostrar: true,
+                          SiguienteFrase: new int[1] { 2 }),
+                new Frase(ID: 2,
+                          Texto: "¿Quieres meditar?:",
+                          Interlocutor: InterlocutorEnum.Sillon,
+                          Mostrar: true,
+                          SiguienteFrase: new int[2] { 3, 4 }),
+                new Frase(ID: 3,
+                          Texto: "Sí",
+                          Interlocutor: InterlocutorEnum.Eleccion,
+                          Mostrar: true,
+                          SiguienteFrase: new int[1] { 5 }),
+                new Frase(ID: 4,
+                          Texto: "No",
+                          Interlocutor: InterlocutorEnum.Eleccion,
+                          Mostrar: true,
+                          SiguienteFrase: new int[1] { 7 }),
+                new Frase(ID: 5,
+                          Texto: "Intenta seguir una respiración pausada, cuenta 5 segundo en cada inspiración y exhalación.",
+                          Interlocutor: InterlocutorEnum.Sillon,
+                          Mostrar: true,
+                          SiguienteFrase: new int[1] { 6 }),
+                new Frase(ID: 6,
+                          Texto: "Para respirar usa el botón de acción. Al pulsar inhalarás y al soltar exhalarás.",
+                          Interlocutor: InterlocutorEnum.Sillon,
+                          Mostrar: true,
+                          SiguienteFrase: new int[1] { Constantes.Dialogos.SILLON_MEDITAR }),
+                new Frase(ID: 7,
+                          Texto: "Pues arriba entonces.",
+                          Interlocutor: InterlocutorEnum.Jugador,
+                          Mostrar: true,
+                          SiguienteFrase: new int[1] { Constantes.Dialogos.SILLON_LEVANTARSE }),
+                new Frase(ID: 8,
+                          Texto: "¿Voy a meditar de nuevo?",
+                          Interlocutor: InterlocutorEnum.Jugador,
+                          Mostrar: true,
+                          SiguienteFrase: new int[2] { 3, 4 })
+            }
+        );
+
+        public static readonly Conversacion SILLON_CONVERSACION_PARAR_MEDITAR = new Conversacion(
+            id: 0,
+            frases: new Frase[6]
+            {
+                new Frase(ID: 0,
+                          Texto: "Que bien me he quedado.",
+                          Interlocutor: InterlocutorEnum.Jugador,
+                          Mostrar: true,
+                          SiguienteFrase: new int[1] { 1 }),
+                new Frase(ID: 1,
+                          Texto: "¿Medito más?",
+                          Interlocutor: InterlocutorEnum.Jugador,
+                          Mostrar: true,
+                          SiguienteFrase: new int[2] { 2, 3 }),
+                new Frase(ID: 2,
+                          Texto: "Sí",
+                          Interlocutor: InterlocutorEnum.Eleccion,
+                          Mostrar: true,
+                          SiguienteFrase: new int[1] { 4 }),
+                new Frase(ID: 3,
+                          Texto: "No",
+                          Interlocutor: InterlocutorEnum.Eleccion,
+                          Mostrar: true,
+                          SiguienteFrase: new int[1] { 5 }),
+                new Frase(ID: 4,
+                          Texto: "Vamos allá.",
+                          Interlocutor: InterlocutorEnum.Sillon,
+                          Mostrar: true,
+                          SiguienteFrase: new int[1] { Constantes.Dialogos.SILLON_MEDITAR }),
+                new Frase(ID: 5,
+                          Texto: "Pues arriba entonces.",
+                          Interlocutor: InterlocutorEnum.Jugador,
+                          Mostrar: true,
+                          SiguienteFrase: new int[1] { Constantes.Dialogos.SILLON_LEVANTARSE })
+            }
+        );
     }
 
     public class Animacion
@@ -72,6 +165,7 @@ public class Constantes
         {
 
             public static readonly string SENTANDOSE_SILLON = "Sentandose_Sillon";
+            public static readonly string SENTADO_SILLON = "Idle_Sentado";
             public static readonly string LEVANTANDOSE_SILLON = "Levantandose_Sillon";
 
             public static readonly string MEDITANDO = "Meditando";

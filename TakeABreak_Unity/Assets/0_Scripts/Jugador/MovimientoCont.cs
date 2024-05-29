@@ -15,18 +15,6 @@ public class MovimientoCont : MonoBehaviour
     {
         switch (nuevoEstadoMovimiento)
         {
-            case EstadoMovimiento.IdleEspalda:
-                break;
-            case EstadoMovimiento.Girandose:
-                break;
-            case EstadoMovimiento.IdleAlante:
-                break;
-            case EstadoMovimiento.IdleAtras:
-                break;
-            case EstadoMovimiento.AndandoAlante:
-                break;
-            case EstadoMovimiento.AndandoAtras:
-                break;
             case EstadoMovimiento.SubiendoEscDer:
                 SubirEscalerasDer();
                 break;
@@ -41,10 +29,6 @@ public class MovimientoCont : MonoBehaviour
                 break;
             case EstadoMovimiento.SentandoseSillon:
                 SentarseSillon();
-                break;
-            case EstadoMovimiento.Meditando:
-                break;
-            case EstadoMovimiento.LevantandoseSillon:
                 break;
             default:
                 break;
@@ -157,6 +141,7 @@ public enum EstadoMovimiento
     BajandoEscDer,
     BajandoEscIzq,
     SentandoseSillon,
+    SentandoSillon,
     Meditando,
     LevantandoseSillon
 }

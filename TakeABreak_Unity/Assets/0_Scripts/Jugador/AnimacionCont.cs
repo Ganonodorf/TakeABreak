@@ -27,6 +27,11 @@ public class AnimacionCont : MonoBehaviour
         animacionActual = Constantes.Animacion.Jugador.IDLE_ALANTE;
     }
 
+    public EstadoMovimiento GetEstadoMovimientoActual()
+    {
+        return estadoMovimientoActual;
+    }
+
     private void MovimientoCont_OnMovimientoChanged(EstadoMovimiento nuevoEstadoMovimiento)
     {
         string animacionNueva;
@@ -84,6 +89,9 @@ public class AnimacionCont : MonoBehaviour
                 Invoke("FinSentandoseSillon", duracionAnimacion);
                 GameManager.Instance.CambiarEstadoJuego(EstadoJuego.HaciendoAnimacion);
                 break;
+            case EstadoMovimiento.SentandoSillon:
+                animacionNueva = Constantes.Animacion.Jugador.NADA;
+                break;
             case EstadoMovimiento.LevantandoseSillon:
                 animacionNueva = Constantes.Animacion.Jugador.NADA;
                 duracionAnimacion = Constantes.Animacion.Sillon.DURACION_LEVANTANDOSE_SILLON;
@@ -133,8 +141,8 @@ public class AnimacionCont : MonoBehaviour
 
     private void FinSentandoseSillon()
     {
-        movimientoCont.CambiarEstadoMovimiento(EstadoMovimiento.Meditando);
-        FinAnimacion(EstadoJuego.Meditando);
+        movimientoCont.CambiarEstadoMovimiento(EstadoMovimiento.SentandoSillon);
+        FinAnimacion(EstadoJuego.SentadoSillon);
     }
 
     private void FinLevantandoseSillon()

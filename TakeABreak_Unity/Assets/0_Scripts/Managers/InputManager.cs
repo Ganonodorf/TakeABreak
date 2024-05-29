@@ -37,6 +37,9 @@ public class InputManager : MonoBehaviour
             case EstadoJuego.HaciendoAnimacion:
                 DisablearTodo();
                 break;
+            case EstadoJuego.SentadoSillon:
+                EnablearControlesConversando();
+                break;
             case EstadoJuego.Meditando:
                 EnablearControlesMeditando();
                 break;
