@@ -314,9 +314,18 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""Minijuegando"",
+            ""name"": ""Meditando"",
             ""id"": ""f497169e-2805-45f8-99c9-00b676160297"",
             ""actions"": [
+                {
+                    ""name"": ""Respirar"",
+                    ""type"": ""Button"",
+                    ""id"": ""35dc5f93-43fb-4c55-8233-6478e52f93cf"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
                 {
                     ""name"": ""Salir"",
                     ""type"": ""Button"",
@@ -336,6 +345,28 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Salir"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""565958ab-98c8-49a1-8b90-16c9c843e11e"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Respirar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0360cbde-95c9-432e-8552-fc227a1ef3d0"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Respirar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -393,9 +424,10 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
         m_Conversando_Continuar = m_Conversando.FindAction("Continuar", throwIfNotFound: true);
         m_Conversando_Arriba = m_Conversando.FindAction("Arriba", throwIfNotFound: true);
         m_Conversando_Abajo = m_Conversando.FindAction("Abajo", throwIfNotFound: true);
-        // Minijuegando
-        m_Minijuegando = asset.FindActionMap("Minijuegando", throwIfNotFound: true);
-        m_Minijuegando_Salir = m_Minijuegando.FindAction("Salir", throwIfNotFound: true);
+        // Meditando
+        m_Meditando = asset.FindActionMap("Meditando", throwIfNotFound: true);
+        m_Meditando_Respirar = m_Meditando.FindAction("Respirar", throwIfNotFound: true);
+        m_Meditando_Salir = m_Meditando.FindAction("Salir", throwIfNotFound: true);
         // Inicio
         m_Inicio = asset.FindActionMap("Inicio", throwIfNotFound: true);
         m_Inicio_Accion = m_Inicio.FindAction("Accion", throwIfNotFound: true);
@@ -581,51 +613,59 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
     }
     public ConversandoActions @Conversando => new ConversandoActions(this);
 
-    // Minijuegando
-    private readonly InputActionMap m_Minijuegando;
-    private List<IMinijuegandoActions> m_MinijuegandoActionsCallbackInterfaces = new List<IMinijuegandoActions>();
-    private readonly InputAction m_Minijuegando_Salir;
-    public struct MinijuegandoActions
+    // Meditando
+    private readonly InputActionMap m_Meditando;
+    private List<IMeditandoActions> m_MeditandoActionsCallbackInterfaces = new List<IMeditandoActions>();
+    private readonly InputAction m_Meditando_Respirar;
+    private readonly InputAction m_Meditando_Salir;
+    public struct MeditandoActions
     {
         private @ControlesJugador m_Wrapper;
-        public MinijuegandoActions(@ControlesJugador wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Salir => m_Wrapper.m_Minijuegando_Salir;
-        public InputActionMap Get() { return m_Wrapper.m_Minijuegando; }
+        public MeditandoActions(@ControlesJugador wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Respirar => m_Wrapper.m_Meditando_Respirar;
+        public InputAction @Salir => m_Wrapper.m_Meditando_Salir;
+        public InputActionMap Get() { return m_Wrapper.m_Meditando; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(MinijuegandoActions set) { return set.Get(); }
-        public void AddCallbacks(IMinijuegandoActions instance)
+        public static implicit operator InputActionMap(MeditandoActions set) { return set.Get(); }
+        public void AddCallbacks(IMeditandoActions instance)
         {
-            if (instance == null || m_Wrapper.m_MinijuegandoActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_MinijuegandoActionsCallbackInterfaces.Add(instance);
+            if (instance == null || m_Wrapper.m_MeditandoActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_MeditandoActionsCallbackInterfaces.Add(instance);
+            @Respirar.started += instance.OnRespirar;
+            @Respirar.performed += instance.OnRespirar;
+            @Respirar.canceled += instance.OnRespirar;
             @Salir.started += instance.OnSalir;
             @Salir.performed += instance.OnSalir;
             @Salir.canceled += instance.OnSalir;
         }
 
-        private void UnregisterCallbacks(IMinijuegandoActions instance)
+        private void UnregisterCallbacks(IMeditandoActions instance)
         {
+            @Respirar.started -= instance.OnRespirar;
+            @Respirar.performed -= instance.OnRespirar;
+            @Respirar.canceled -= instance.OnRespirar;
             @Salir.started -= instance.OnSalir;
             @Salir.performed -= instance.OnSalir;
             @Salir.canceled -= instance.OnSalir;
         }
 
-        public void RemoveCallbacks(IMinijuegandoActions instance)
+        public void RemoveCallbacks(IMeditandoActions instance)
         {
-            if (m_Wrapper.m_MinijuegandoActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_MeditandoActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(IMinijuegandoActions instance)
+        public void SetCallbacks(IMeditandoActions instance)
         {
-            foreach (var item in m_Wrapper.m_MinijuegandoActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_MeditandoActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_MinijuegandoActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_MeditandoActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public MinijuegandoActions @Minijuegando => new MinijuegandoActions(this);
+    public MeditandoActions @Meditando => new MeditandoActions(this);
 
     // Inicio
     private readonly InputActionMap m_Inicio;
@@ -684,8 +724,9 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
         void OnArriba(InputAction.CallbackContext context);
         void OnAbajo(InputAction.CallbackContext context);
     }
-    public interface IMinijuegandoActions
+    public interface IMeditandoActions
     {
+        void OnRespirar(InputAction.CallbackContext context);
         void OnSalir(InputAction.CallbackContext context);
     }
     public interface IInicioActions

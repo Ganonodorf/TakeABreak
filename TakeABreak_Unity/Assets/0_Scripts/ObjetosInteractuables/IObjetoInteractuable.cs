@@ -6,7 +6,5 @@ public interface IObjetoInteractuable
 
     string TextoAMostrar { get; set; }
 
-    Sprite Sprite { get; set; }
-
     void Accion();
 }

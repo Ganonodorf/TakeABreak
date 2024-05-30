@@ -292,9 +292,18 @@
             ]
         },
         {
-            "name": "Minijuegando",
+            "name": "Meditando",
             "id": "f497169e-2805-45f8-99c9-00b676160297",
             "actions": [
+                {
+                    "name": "Respirar",
+                    "type": "Button",
+                    "id": "35dc5f93-43fb-4c55-8233-6478e52f93cf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
                 {
                     "name": "Salir",
                     "type": "Button",
@@ -314,6 +323,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Salir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "565958ab-98c8-49a1-8b90-16c9c843e11e",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Respirar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0360cbde-95c9-432e-8552-fc227a1ef3d0",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Respirar",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

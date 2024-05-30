@@ -19,12 +19,6 @@ public class OI_Espejo : MonoBehaviour, IObjetoInteractuable
         set => _textoAMostrar = value;
     }
 
-    public Sprite Sprite
-    {
-        get => _sprite;
-        set => _sprite = value;
-    }
-
     private void Start()
     {
         _nombre = Constantes.ObjetosInteractuables.ESPEJO_NOMBRE;

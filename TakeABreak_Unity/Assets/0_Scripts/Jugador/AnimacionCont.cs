@@ -24,7 +24,12 @@ public class AnimacionCont : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         movimientoCont = GetComponent<MovimientoCont>();
-        animacionActual = Constantes.Jugador.Animacion.IDLE_ALANTE;
+        animacionActual = Constantes.Animacion.Jugador.IDLE_ALANTE;
+    }
+
+    public EstadoMovimiento GetEstadoMovimientoActual()
+    {
+        return estadoMovimientoActual;
     }
 
     private void MovimientoCont_OnMovimientoChanged(EstadoMovimiento nuevoEstadoMovimiento)
@@ -36,62 +41,68 @@ public class AnimacionCont : MonoBehaviour
         switch (nuevoEstadoMovimiento)
         {
             case EstadoMovimiento.IdleEspalda:
-                animacionNueva = Constantes.Jugador.Animacion.IDLE_ESPALDA;
+                animacionNueva = Constantes.Animacion.Jugador.IDLE_ESPALDA;
                 break;
             case EstadoMovimiento.Girandose:
-                animacionNueva = Constantes.Jugador.Animacion.GIRANDOSE;
+                animacionNueva = Constantes.Animacion.Jugador.GIRANDOSE;
                 GameManager.Instance.CambiarEstadoJuego(EstadoJuego.HaciendoAnimacion);
                 break;
             case EstadoMovimiento.IdleAlante:
-                animacionNueva = Constantes.Jugador.Animacion.IDLE_ALANTE;
+                animacionNueva = Constantes.Animacion.Jugador.IDLE_ALANTE;
                 break;
             case EstadoMovimiento.IdleAtras:
-                animacionNueva = Constantes.Jugador.Animacion.IDLE_ATRAS;
+                animacionNueva = Constantes.Animacion.Jugador.IDLE_ATRAS;
                 break;
             case EstadoMovimiento.AndandoAlante:
-                animacionNueva = Constantes.Jugador.Animacion.ANDANDO_ALANTE;
+                animacionNueva = Constantes.Animacion.Jugador.ANDANDO_ALANTE;
                 break;
             case EstadoMovimiento.AndandoAtras:
-                animacionNueva = Constantes.Jugador.Animacion.ANDANDO_ATRAS;
+                animacionNueva = Constantes.Animacion.Jugador.ANDANDO_ATRAS;
                 break;
             case EstadoMovimiento.SubiendoEscIzq:
-                animacionNueva = Constantes.Jugador.Animacion.NADA;
-                duracionAnimacion = Constantes.Jugador.Animacion.DURACION_ESCALERAS;
-                Invoke("ActuarTrasAnimacion", duracionAnimacion);
+                animacionNueva = Constantes.Animacion.Jugador.NADA;
+                duracionAnimacion = Constantes.Animacion.Escaleras.DURACION_ESCALERAS;
+                Invoke("FinSubiendoEscIzq", duracionAnimacion);
                 GameManager.Instance.CambiarEstadoJuego(EstadoJuego.HaciendoAnimacion);
                 break;
             case EstadoMovimiento.BajandoEscIzq:
-                animacionNueva = Constantes.Jugador.Animacion.NADA;
-                duracionAnimacion = Constantes.Jugador.Animacion.DURACION_ESCALERAS;
-                Invoke("ActuarTrasAnimacion", duracionAnimacion);
+                animacionNueva = Constantes.Animacion.Jugador.NADA;
+                duracionAnimacion = Constantes.Animacion.Escaleras.DURACION_ESCALERAS;
+                Invoke("FinBajandoEscIzq", duracionAnimacion);
                 GameManager.Instance.CambiarEstadoJuego(EstadoJuego.HaciendoAnimacion);
                 break;
             case EstadoMovimiento.SubiendoEscDer:
-                animacionNueva = Constantes.Jugador.Animacion.NADA;
-                duracionAnimacion = Constantes.Jugador.Animacion.DURACION_ESCALERAS;
-                Invoke("ActuarTrasAnimacion", duracionAnimacion);
+                animacionNueva = Constantes.Animacion.Jugador.NADA;
+                duracionAnimacion = Constantes.Animacion.Escaleras.DURACION_ESCALERAS;
+                Invoke("FinSubiendoEscDer", duracionAnimacion);
                 GameManager.Instance.CambiarEstadoJuego(EstadoJuego.HaciendoAnimacion);
                 break;
             case EstadoMovimiento.BajandoEscDer:
-                animacionNueva = Constantes.Jugador.Animacion.NADA;
-                duracionAnimacion = Constantes.Jugador.Animacion.DURACION_ESCALERAS;
-                Invoke("ActuarTrasAnimacion", duracionAnimacion);
+                animacionNueva = Constantes.Animacion.Jugador.NADA;
+                duracionAnimacion = Constantes.Animacion.Escaleras.DURACION_ESCALERAS;
+                Invoke("FinBajandoEscDer", duracionAnimacion);
                 GameManager.Instance.CambiarEstadoJuego(EstadoJuego.HaciendoAnimacion);
                 break;
             case EstadoMovimiento.SentandoseSillon:
-                animacionNueva = Constantes.Jugador.Animacion.NADA;
-                duracionAnimacion = Constantes.Jugador.Animacion.DURACION_SENTANDOSE_SILLON;
-                Invoke("ActuarTrasAnimacion", duracionAnimacion);
+                animacionNueva = Constantes.Animacion.Jugador.NADA;
+                duracionAnimacion = Constantes.Animacion.Sillon.DURACION_SENTANDOSE_SILLON;
+                Invoke("FinSentandoseSillon", duracionAnimacion);
                 GameManager.Instance.CambiarEstadoJuego(EstadoJuego.HaciendoAnimacion);
+                break;
+            case EstadoMovimiento.SentandoSillon:
+                animacionNueva = Constantes.Animacion.Jugador.NADA;
                 break;
             case EstadoMovimiento.LevantandoseSillon:
-                animacionNueva = Constantes.Jugador.Animacion.NADA;
-                duracionAnimacion = Constantes.Jugador.Animacion.DURACION_LEVANTANDOSE_SILLON;
-                Invoke("ActuarTrasAnimacion", duracionAnimacion);
+                animacionNueva = Constantes.Animacion.Jugador.NADA;
+                duracionAnimacion = Constantes.Animacion.Sillon.DURACION_LEVANTANDOSE_SILLON;
+                Invoke("FinLevantandoseSillon", duracionAnimacion);
                 GameManager.Instance.CambiarEstadoJuego(EstadoJuego.HaciendoAnimacion);
                 break;
+            case EstadoMovimiento.Meditando:
+                animacionNueva = Constantes.Animacion.Jugador.NADA;
+                break;
             default:
-                animacionNueva = Constantes.Jugador.Animacion.IDLE_ALANTE;
+                animacionNueva = Constantes.Animacion.Jugador.IDLE_ALANTE;
                 GameManager.Instance.CambiarEstadoJuego(EstadoJuego.Andando);
                 break;
         }
@@ -102,31 +113,6 @@ public class AnimacionCont : MonoBehaviour
             animacionActual = animacionNueva;
         }
 
-    }
-
-    private void ActuarTrasAnimacion()
-    {
-        switch (estadoMovimientoActual)
-        {
-            case EstadoMovimiento.SubiendoEscIzq:
-                FinSubiendoEscIzq();
-                break;
-            case EstadoMovimiento.BajandoEscIzq:
-                FinBajandoEscIzq();
-                break;
-            case EstadoMovimiento.SubiendoEscDer:
-                FinSubiendoEscDer();
-                break;
-            case EstadoMovimiento.BajandoEscDer:
-                FinBajandoEscDer();
-                break;
-            case EstadoMovimiento.SentandoseSillon:
-                FinSentandoseSillon();
-                break;
-            case EstadoMovimiento.LevantandoseSillon:
-                FinLevantandoseSillon();
-                break;
-        }
     }
 
     private void FinSubiendoEscIzq()
@@ -155,7 +141,8 @@ public class AnimacionCont : MonoBehaviour
 
     private void FinSentandoseSillon()
     {
-        FinAnimacion(EstadoJuego.Minijuego);
+        movimientoCont.CambiarEstadoMovimiento(EstadoMovimiento.SentandoSillon);
+        FinAnimacion(EstadoJuego.SentadoSillon);
     }
 
     private void FinLevantandoseSillon()

@@ -36,5 +36,6 @@ public enum InterlocutorEnum
 {
     Jugador,
     NPC,
-    Eleccion
+    Eleccion,
+    Sillon
 }

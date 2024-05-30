@@ -10,7 +10,6 @@ public class OI_Escaleras_Izq_Arriba : MonoBehaviour, IObjetoInteractuable
     private GameObject jugadorGO;
     public string Nombre { get => _nombre; set => _nombre = value; }
     public string TextoAMostrar { get => _textoAMostrar; set => _textoAMostrar = value; }
-    public Sprite Sprite { get => _sprite; set => _sprite = value; }
 
     public void Accion()
     {
@@ -26,7 +25,7 @@ public class OI_Escaleras_Izq_Arriba : MonoBehaviour, IObjetoInteractuable
 
     private void BajarEscaleras()
     {
-        GetComponent<Animator>().Play(Constantes.Jugador.Animacion.BAJANDO_ESCALERAS_IZQ);
+        GetComponent<Animator>().Play(Constantes.Animacion.Escaleras.BAJANDO_ESCALERAS_IZQ);
 
         if (jugadorGO.TryGetComponent(out MovimientoCont movimientoCont))
         {

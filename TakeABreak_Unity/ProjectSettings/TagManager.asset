@@ -10,6 +10,8 @@ TagManager:
   - SpriteJugador
   - SpriteNPC
   - BocadilloAccion
+  - Casa
+  - Mar
   layers:
   - Default
   - TransparentFX
@@ -52,6 +54,9 @@ TagManager:
     locked: 0
   - name: Suelo
     uniqueID: 556821125
+    locked: 0
+  - name: Reflejo
+    uniqueID: 4240943545
     locked: 0
   - name: Objetos
     uniqueID: 585711717
