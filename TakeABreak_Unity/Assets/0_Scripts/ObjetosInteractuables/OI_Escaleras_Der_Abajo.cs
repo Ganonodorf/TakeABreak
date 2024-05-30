@@ -10,7 +10,6 @@ public class OI_Escaleras_Der_Abajo : MonoBehaviour, IObjetoInteractuable
     private GameObject jugadorGO;
     public string Nombre { get => _nombre; set => _nombre = value; }
     public string TextoAMostrar { get => _textoAMostrar; set => _textoAMostrar = value; }
-    public Sprite Sprite { get => _sprite; set => _sprite = value; }
 
     public void Accion()
     {

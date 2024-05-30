@@ -123,6 +123,6 @@ public class OI_NPC_Prueba : MonoBehaviour, IObjetoInteractuable
             }
         );
 
-        DialogueManager.Instance.IniciarConversacion(conversacionInicio, _sprite);
+        DialogueManager.Instance.IniciarConversacion(this.gameObject, conversacionInicio, _sprite);
     }
 }

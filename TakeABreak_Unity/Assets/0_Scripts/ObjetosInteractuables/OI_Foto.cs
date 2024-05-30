@@ -18,12 +18,6 @@ public class OI_Foto : MonoBehaviour, IObjetoInteractuable
         set => _textoAMostrar = value;
     }
 
-    public Sprite Sprite
-    {
-        get => _sprite;
-        set => _sprite = value;
-    }
-
     private void Start()
     {
         _nombre = Constantes.ObjetosInteractuables.FOTO_NOMBRE;

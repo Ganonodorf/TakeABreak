@@ -1,8 +1,9 @@
 using System;
 using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class OI_Sillon : MonoBehaviour, IObjetoInteractuable
+public class OI_Sillon : MonoBehaviour, IObjetoInteractuable, IObjetoDialogable
 {
     private string _nombre;
     private string _textoAMostrar;
@@ -36,8 +37,6 @@ public class OI_Sillon : MonoBehaviour, IObjetoInteractuable
         BuscarGO();
 
         RecogerInfoInputs();
-
-        SuscribirseEventos();
     }
 
     private void Update()
@@ -48,6 +47,8 @@ public class OI_Sillon : MonoBehaviour, IObjetoInteractuable
 
             if(timerRespiracion > 5.0f)
             {
+                timerRespiracion = 0.0f;
+
                 FinalizarMeditacion();
             }
         }
@@ -63,8 +64,17 @@ public class OI_Sillon : MonoBehaviour, IObjetoInteractuable
         }
     }
 
+    private void FinSentarse()
+    {
+        SillonConversacion();
+    }
+
     private void ComenzarMeditacion()
     {
+        GameManager.Instance.CambiarEstadoJuego(EstadoJuego.Meditando);
+
+        jugadorGO.GetComponent<MovimientoCont>().CambiarEstadoMovimiento(EstadoMovimiento.Meditando);
+
         GetComponent<Animator>().Play(Constantes.Animacion.Sillon.QUIETO);
 
         marAnimator.Play(Constantes.Animacion.Mar.QUIETO);
@@ -74,13 +84,17 @@ public class OI_Sillon : MonoBehaviour, IObjetoInteractuable
 
     private void FinalizarMeditacion()
     {
-        Levantarse();
+        GameManager.Instance.CambiarEstadoJuego(EstadoJuego.SentadoSillon);
+
+        jugadorGO.GetComponent<MovimientoCont>().CambiarEstadoMovimiento(EstadoMovimiento.SentandoSillon);
+
+        GetComponent<Animator>().Play(Constantes.Animacion.Sillon.SENTADO_SILLON);
 
         marAnimator.Play(Constantes.Animacion.Mar.IDLE);
 
         FadeInCasa();
 
-        conversacionInicial = false;
+        SillonConversacion();
     }
 
     private void Levantarse()
@@ -90,6 +104,35 @@ public class OI_Sillon : MonoBehaviour, IObjetoInteractuable
         if (jugadorGO.TryGetComponent(out MovimientoCont movimientoCont))
         {
             movimientoCont.CambiarEstadoMovimiento(EstadoMovimiento.LevantandoseSillon);
+        }
+    }
+
+    public void RespuestaDialogo(int codigoRespuesta)
+    {
+        switch (codigoRespuesta)
+        {
+            case Constantes.Dialogos.SILLON_MEDITAR:
+                ComenzarMeditacion();
+                break;
+            case Constantes.Dialogos.SILLON_LEVANTARSE:
+                Levantarse();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void SillonConversacion()
+    {
+        if (!conversacionInicial)
+        {
+            conversacionInicial = true;
+
+            DialogueManager.Instance.IniciarConversacion(this.gameObject, Constantes.ObjetosInteractuables.SILLON_CONVERSACION_SENTARSE, null);
+        }
+        else
+        {
+            DialogueManager.Instance.IniciarConversacion(this.gameObject, Constantes.ObjetosInteractuables.SILLON_CONVERSACION_PARAR_MEDITAR, null);
         }
     }
 
@@ -197,40 +240,5 @@ public class OI_Sillon : MonoBehaviour, IObjetoInteractuable
         InputManager.Instance.controlesJugador.Meditando.Salir.performed += contexto => FinalizarMeditacion();
         InputManager.Instance.controlesJugador.Meditando.Respirar.started += contexto => Inhalar();
         InputManager.Instance.controlesJugador.Meditando.Respirar.canceled += contexto => Exhalar();
-    }
-
-    private void SuscribirseEventos()
-    {
-        GameManager.CambioEstadoJuego += GameManager_CambioEstadoJuego;
-    }
-
-    private void GameManager_CambioEstadoJuego(EstadoJuego nuevoEstadoJuego)
-    {
-        switch (nuevoEstadoJuego)
-        {
-            case EstadoJuego.SentadoSillon:
-                SillonConversacion();
-                timerRespiracion = 0.0f;
-                break;
-            case EstadoJuego.Meditando:
-                ComenzarMeditacion();
-                break;
-            default:
-                break;
-        }
-    }
-
-    private void SillonConversacion()
-    {
-        if (!conversacionInicial)
-        {
-            conversacionInicial = true;
-
-            DialogueManager.Instance.IniciarConversacion(Constantes.ObjetosInteractuables.SILLON_CONVERSACION_SENTARSE, null);
-        }
-        else
-        {
-            DialogueManager.Instance.IniciarConversacion(Constantes.ObjetosInteractuables.SILLON_CONVERSACION_PARAR_MEDITAR, null);
-        }
     }
 }

@@ -5,48 +5,50 @@ public class Constantes
 {
     public class Dialogos
     {
-        public static readonly int FIN_CONVERSACION = -1;
-        public static readonly int SILLON_MEDITAR = -2;
-        public static readonly int SILLON_LEVANTARSE = -3;
+        public const int FIN_CONVERSACION = -1;
+        public const int SILLON_MEDITAR = -2;
+        public const int SILLON_LEVANTARSE = -3;
 
-        public static readonly int DISTANCIA_BOTONES = 11;
+        public const int DISTANCIA_BOTONES = 11;
+
+        public const float TIEMPO_ENTRE_LETRAS = 0.001f;
     }
 
     public class Tags
     {
-        public static readonly string INTERACTUABLE = "Interactuable";
-        public static readonly string BOCADILLO = "Bocadillo";
-        public static readonly string BOCADILLO_ACCION = "BocadilloAccion";
-        public static readonly string SPRITE_JUGADOR = "SpriteJugador";
-        public static readonly string SPRITE_NPC = "SpriteNPC";
-        public static readonly string PANEL_OPCIONES = "PanelOpciones";
-        public static readonly string JUGADOR = "Player";
-        public static readonly string CAMARA = "MainCamera";
-        public static readonly string CASA = "Casa";
-        public static readonly string MAR = "Mar";
+        public const string INTERACTUABLE = "Interactuable";
+        public const string BOCADILLO = "Bocadillo";
+        public const string BOCADILLO_ACCION = "BocadilloAccion";
+        public const string SPRITE_JUGADOR = "SpriteJugador";
+        public const string SPRITE_NPC = "SpriteNPC";
+        public const string PANEL_OPCIONES = "PanelOpciones";
+        public const string JUGADOR = "Player";
+        public const string CAMARA = "MainCamera";
+        public const string CASA = "Casa";
+        public const string MAR = "Mar";
     }
 
     public class ObjetosInteractuables
     {
-        public static readonly string ESPEJO_NOMBRE = "Espejo";
-        public static readonly string ESPEJO_TEXTOAMOSTRAR = "Pulsa Q para mirarte al espejo";
+        public const string ESPEJO_NOMBRE = "Espejo";
+        public const string ESPEJO_TEXTOAMOSTRAR = "Pulsa Q para mirarte al espejo";
 
-        public static readonly string FOTO_NOMBRE = "Foto";
-        public static readonly string FOTO_TEXTOAMOSTRAR = "Pulsa Q para ver la foto";
+        public const string FOTO_NOMBRE = "Foto";
+        public const string FOTO_TEXTOAMOSTRAR = "Pulsa Q para ver la foto";
 
-        public static readonly string TAZA_NOMBRE = "Taza";
-        public static readonly string TAZA_TEXTOAMOSTRAR = "Pulsa Q para coger la taza";
+        public const string TAZA_NOMBRE = "Taza";
+        public const string TAZA_TEXTOAMOSTRAR = "Pulsa Q para coger la taza";
 
-        public static readonly string NPC_PRUEBA_NOMBRE = "NPC";
-        public static readonly string NPC_PRUEBA_TEXTOAMOSTRAR = "Pulsa Q para hablar con este NPC";
-        public static readonly string NPC_PRUEBA_PATH_SPRITE = "Assets/Sprites/Jugador/Jugador_Cabeza_Inversa.png";
+        public const string NPC_PRUEBA_NOMBRE = "NPC";
+        public const string NPC_PRUEBA_TEXTOAMOSTRAR = "Pulsa Q para hablar con este NPC";
+        public const string NPC_PRUEBA_PATH_SPRITE = "Assets/Sprites/Jugador/Jugador_Cabeza_Inversa.png";
 
-        public static readonly string ESCALERAS_NOMBRE = "Escaleras";
-        public static readonly string ESCALERAS_ABAJO_TEXTOAMOSTRAR = "Pulsa Q para subir las escaleras";
-        public static readonly string ESCALERAS_ARRIBA_TEXTOAMOSTRAR = "Pulsa Q para bajar las escaleras";
+        public const string ESCALERAS_NOMBRE = "Escaleras";
+        public const string ESCALERAS_ABAJO_TEXTOAMOSTRAR = "Pulsa Q para subir las escaleras";
+        public const string ESCALERAS_ARRIBA_TEXTOAMOSTRAR = "Pulsa Q para bajar las escaleras";
 
-        public static readonly string SILLON_NOMBRE = "Sillon";
-        public static readonly string SILLON_TEXTOAMOSTRAR = "Pulsa Q para sentarte en el sillón";
+        public const string SILLON_NOMBRE = "Sillon";
+        public const string SILLON_TEXTOAMOSTRAR = "Pulsa Q para sentarte en el sillón";
 
         public static readonly Conversacion SILLON_CONVERSACION_SENTARSE = new Conversacion(
             id: 0,
@@ -142,77 +144,77 @@ public class Constantes
     {
         public class Jugador
         {
-            public static readonly string IDLE_ESPALDA = "Jugador_Idle_Espalda";
-            public static readonly string GIRANDOSE = "Jugador_Girandose";
-            public static readonly string IDLE_ALANTE = "Jugador_Idle_Alante";
-            public static readonly string IDLE_ATRAS = "Jugador_Idle_Atras";
-            public static readonly string ANDANDO_ALANTE = "Jugador_Andando_Alante";
-            public static readonly string ANDANDO_ATRAS = "Jugador_Andando_Atras";
-            public static readonly string NADA = "Jugador_Nada";
+            public const string IDLE_ESPALDA = "Jugador_Idle_Espalda";
+            public const string GIRANDOSE = "Jugador_Girandose";
+            public const string IDLE_ALANTE = "Jugador_Idle_Alante";
+            public const string IDLE_ATRAS = "Jugador_Idle_Atras";
+            public const string ANDANDO_ALANTE = "Jugador_Andando_Alante";
+            public const string ANDANDO_ATRAS = "Jugador_Andando_Atras";
+            public const string NADA = "Jugador_Nada";
         }
 
         public class Escaleras
         {
-            public static readonly string SUBIENDO_ESCALERAS_DER = "Subiendo_Escaleras_Der";
-            public static readonly string BAJANDO_ESCALERAS_DER = "Bajando_Escaleras_Der";
-            public static readonly string SUBIENDO_ESCALERAS_IZQ = "Subiendo_Escaleras_Izq";
-            public static readonly string BAJANDO_ESCALERAS_IZQ = "Bajando_Escaleras_Izq";
+            public const string SUBIENDO_ESCALERAS_DER = "Subiendo_Escaleras_Der";
+            public const string BAJANDO_ESCALERAS_DER = "Bajando_Escaleras_Der";
+            public const string SUBIENDO_ESCALERAS_IZQ = "Subiendo_Escaleras_Izq";
+            public const string BAJANDO_ESCALERAS_IZQ = "Bajando_Escaleras_Izq";
 
-            public static readonly float DURACION_ESCALERAS = 2.4f;
+            public const float DURACION_ESCALERAS = 2.4f;
         }
 
         public class Sillon
         {
 
-            public static readonly string SENTANDOSE_SILLON = "Sentandose_Sillon";
-            public static readonly string SENTADO_SILLON = "Idle_Sentado";
-            public static readonly string LEVANTANDOSE_SILLON = "Levantandose_Sillon";
+            public const string SENTANDOSE_SILLON = "Sentandose_Sillon";
+            public const string SENTADO_SILLON = "Idle_Sentado";
+            public const string LEVANTANDOSE_SILLON = "Levantandose_Sillon";
 
-            public static readonly string MEDITANDO = "Meditando";
-            public static readonly string MEDITANDO_INHALAR = "Meditando_Inhalar";
-            public static readonly string MEDITANDO_EXHALAR = "Meditando_Exhalar";
+            public const string MEDITANDO = "Meditando";
+            public const string MEDITANDO_INHALAR = "Meditando_Inhalar";
+            public const string MEDITANDO_EXHALAR = "Meditando_Exhalar";
 
-            public static readonly string QUIETO = "Quieto";
+            public const string QUIETO = "Quieto";
 
-            public static readonly float DURACION_SENTANDOSE_SILLON = 5.2f;
-            public static readonly float DURACION_LEVANTANDOSE_SILLON = 3.2f;
+            public const float DURACION_SENTANDOSE_SILLON = 5.2f;
+            public const float DURACION_LEVANTANDOSE_SILLON = 3.2f;
         }
 
         public class Mar
         {
-            public static readonly string IDLE = "Mar";
-            public static readonly string INHALAR = "MarInhalar";
-            public static readonly string EXHALAR = "MarExhalar";
-            public static readonly string QUIETO = "MarQuieto";
+            public const string IDLE = "Mar";
+            public const string INHALAR = "MarInhalar";
+            public const string EXHALAR = "MarExhalar";
+            public const string QUIETO = "MarQuieto";
         }
 
         public class Reflejo
         {
-            public static readonly string IDLE_ESPALDAS_ALANTE = "Jugador_idle_espaldas";
-            public static readonly string IDLE_ESPALDAS_ATRAS = "Jugador_idle_espaldas_atras";
-            public static readonly string ANDANDO_ESPALDAS_ALANTE = "Jugador_andando_espaldas";
-            public static readonly string ANDANDO_ESPALDAS_ATRAS = "Jugador_andando_espaldas_atras";
-            public static readonly string NADA = "Nada";
+            public const string IDLE_ESPALDAS_ALANTE = "Jugador_idle_espaldas";
+            public const string IDLE_ESPALDAS_ATRAS = "Jugador_idle_espaldas_atras";
+            public const string ANDANDO_ESPALDAS_ALANTE = "Jugador_andando_espaldas";
+            public const string ANDANDO_ESPALDAS_ATRAS = "Jugador_andando_espaldas_atras";
+            public const string NADA = "Nada";
         }
     }
 
     public class PosicionesClave
     {
-        public static readonly float PosXInicial = -30.0f;
+        public const float PosXInicial = -30.0f;
 
-        public static readonly float PosYDentroDeCasa = -28.0f;
-        public static readonly float PosYFueraDeCasa = -37.0f;
+        public const float PosYDentroDeCasa = -28.0f;
+        public const float PosYFueraDeCasa = -37.0f;
 
-        public static readonly float PosLimiteArribaEscalerasIzq = 143.0f;
-        public static readonly float PosLimiteAbajoEscalerasIzq = 122.0f;
+        public const float PosLimiteArribaEscalerasIzq = 143.0f;
+        public const float PosLimiteAbajoEscalerasIzq = 122.0f;
         public static readonly Vector2 ArribaBajandoEscalerasIzq = new Vector2(144.0f, PosYDentroDeCasa);
         public static readonly Vector2 AbajoBajandoEscalerasIzq = new Vector2(116.0f, PosYFueraDeCasa);
         public static readonly Vector2 ArribaSubiendoEscalerasIzq = new Vector2(148.0f, PosYDentroDeCasa);
         public static readonly Vector2 AbajoSubiendoEscalerasIzq = new Vector2(121.0f, PosYFueraDeCasa);
 
 
-        public static readonly float PosLimiteArribaEscalerasDer = 613.0f;
-        public static readonly float PosLimiteAbajoEscalerasDer = 635.0f;
+        public const float PosLimiteArribaEscalerasDer = 613.0f;
+        public const float PosLimiteAbajoEscalerasDer = 635.0f;
         public static readonly Vector2 ArribaBajandoEscalerasDer = new Vector2(612.0f, PosYDentroDeCasa);
         public static readonly Vector2 AbajoBajandoEscalerasDer = new Vector2(640.0f, PosYFueraDeCasa);
         public static readonly Vector2 ArribaSubiendoEscalerasDer = new Vector2(609.0f, PosYDentroDeCasa);
@@ -221,17 +223,17 @@ public class Constantes
 
         public static readonly Vector2 Sillon = new Vector2(315.0f, PosYDentroDeCasa);
 
-        public static readonly float DistanciaReflejo = 11.0f;
+        public const float DistanciaReflejo = 11.0f;
     }
 
     public class Camara
     {
-        public static readonly float VELOCIDAD = 20.0f; // El original son 20
-        public static readonly float LIMITE_IZQ = 0.0f;
-        public static readonly float LIMITE_DER = 640.0f;
+        public const float VELOCIDAD = 20.0f; // El original son 20
+        public const float LIMITE_IZQ = 0.0f;
+        public const float LIMITE_DER = 640.0f;
 
-        public static readonly float DIRECCION_ESCALERAS = 0.6f;
+        public const float DIRECCION_ESCALERAS = 0.6f;
 
-        public static readonly float POSICION_MEDITANDO = 388.0f;
+        public const float POSICION_MEDITANDO = 388.0f;
     }
 }

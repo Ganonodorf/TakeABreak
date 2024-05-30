@@ -17,15 +17,15 @@ public class DialogueManager : MonoBehaviour
     private TextMeshProUGUI textoBocadillo;
     private GameObject panelOpcionesGO;
     private GameObject jugadorSpriteGO;
-    private GameObject npcSpriteGO;
+    private GameObject interlocutorSpriteGO;
     private GameObject jugadorGO;
+
+    private GameObject interlocutorGO;
 
     private Image imagenJugador;
     private Image imagenNPC;
 
     private Coroutine mostrarTextoCoroutine;
-
-    private float tiempoEntreLetras = 0.05f;
 
     private Conversacion conversacionActual;
     private Frase fraseActual;
@@ -63,7 +63,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letra in texto.ToCharArray())
         {
             textoBocadillo.text += letra;
-            yield return new WaitForSeconds(tiempoEntreLetras);
+            yield return new WaitForSeconds(Constantes.Dialogos.TIEMPO_ENTRE_LETRAS);
         }
 
         if(fraseActual.SiguienteFrase.Length > 1)
@@ -132,9 +132,11 @@ public class DialogueManager : MonoBehaviour
     }
 
 
-    public void IniciarConversacion(Conversacion conversacion, Sprite sprite)
+    public void IniciarConversacion(GameObject interlocutor, Conversacion conversacion, Sprite sprite)
     {
         GameManager.Instance.CambiarEstadoJuego(EstadoJuego.Conversando);
+
+        interlocutorGO = interlocutor;
 
         conversacionActual = conversacion;
 
@@ -145,37 +147,27 @@ public class DialogueManager : MonoBehaviour
         MostrarBocadillo(fraseActual);
     }
 
-    public void FinalizarConversacion()
+    public void FinalizarConversacion(int respuestaDialogo)
     {
         OcultarBocadillo();
 
+        if(interlocutorGO.TryGetComponent(out IObjetoDialogable objetoDialogable))
+        {
+            objetoDialogable.RespuestaDialogo(respuestaDialogo);
+        }
+
         conversacionActual = null;
+
         fraseActual = null;
+
         imagenNPC.sprite = null;
     }
 
     private void SiguienteFrase()
     {
-        // Si hay un fin de conversación, se acaba
-        if (fraseActual.SiguienteFrase.Contains(Constantes.Dialogos.FIN_CONVERSACION))
+        if(fraseActual.SiguienteFrase[0] < 0)
         {
-            FinalizarConversacion();
-
-            GameManager.Instance.CambiarEstadoJuego(EstadoJuego.Andando);
-        }
-        else if (fraseActual.SiguienteFrase.Contains(Constantes.Dialogos.SILLON_MEDITAR))
-        {
-            FinalizarConversacion();
-
-            GameManager.Instance.CambiarEstadoJuego(EstadoJuego.Meditando);
-
-            jugadorGO.GetComponent<MovimientoCont>().CambiarEstadoMovimiento(EstadoMovimiento.Meditando);
-        }
-        else if (fraseActual.SiguienteFrase.Contains(Constantes.Dialogos.SILLON_LEVANTARSE))
-        {
-            FinalizarConversacion();
-
-            jugadorGO.GetComponent<MovimientoCont>().CambiarEstadoMovimiento(EstadoMovimiento.LevantandoseSillon);
+            FinalizarConversacion(fraseActual.SiguienteFrase[0]);
         }
         else
         {
@@ -247,7 +239,7 @@ public class DialogueManager : MonoBehaviour
         bocadilloGO = GameObject.FindGameObjectWithTag(Constantes.Tags.BOCADILLO);
         panelOpcionesGO = GameObject.FindGameObjectWithTag(Constantes.Tags.PANEL_OPCIONES);
         jugadorSpriteGO = GameObject.FindGameObjectWithTag(Constantes.Tags.SPRITE_JUGADOR);
-        npcSpriteGO = GameObject.FindGameObjectWithTag(Constantes.Tags.SPRITE_NPC);
+        interlocutorSpriteGO = GameObject.FindGameObjectWithTag(Constantes.Tags.SPRITE_NPC);
         jugadorGO = GameObject.FindGameObjectWithTag(Constantes.Tags.JUGADOR);
     }
 
@@ -260,7 +252,7 @@ public class DialogueManager : MonoBehaviour
         imagenJugador = jugadorSpriteGO.GetComponent<Image>();
         imagenJugador.enabled = false;
 
-        imagenNPC = npcSpriteGO.GetComponent<Image>();
+        imagenNPC = interlocutorSpriteGO.GetComponent<Image>();
         imagenNPC.enabled = false;
 
         conversacionActual = null;
