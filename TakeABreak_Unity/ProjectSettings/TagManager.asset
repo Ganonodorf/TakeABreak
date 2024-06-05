@@ -12,6 +12,7 @@ TagManager:
   - BocadilloAccion
   - Casa
   - Mar
+  - EventSystem
   layers:
   - Default
   - TransparentFX

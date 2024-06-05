@@ -26,6 +26,7 @@ public class Constantes
         public const string CAMARA = "MainCamera";
         public const string CASA = "Casa";
         public const string MAR = "Mar";
+        public const string EVENT_SYSTEM = "EventSystem";
     }
 
     public class ObjetosInteractuables
@@ -43,12 +44,18 @@ public class Constantes
         public const string NPC_PRUEBA_TEXTOAMOSTRAR = "Pulsa Q para hablar con este NPC";
         public const string NPC_PRUEBA_PATH_SPRITE = "Assets/Sprites/Jugador/Jugador_Cabeza_Inversa.png";
 
+        public const string TU_MISMO_NOMBRE = "Tú mismo";
+        public const string TU_MISMO_TEXTOAMOSTRAR = "Pulsa Q para hablar contigo mismo";
+        public const string TU_MISMO_PATH_SPRITE = "Assets/Sprites/Jugador/Tu_Mismo_Cabeza_Inversa.png";
+
         public const string ESCALERAS_NOMBRE = "Escaleras";
         public const string ESCALERAS_ABAJO_TEXTOAMOSTRAR = "Pulsa Q para subir las escaleras";
         public const string ESCALERAS_ARRIBA_TEXTOAMOSTRAR = "Pulsa Q para bajar las escaleras";
 
         public const string SILLON_NOMBRE = "Sillon";
         public const string SILLON_TEXTOAMOSTRAR = "Pulsa Q para sentarte en el sillón";
+
+        public const string SPRITE_VACIO = "Assets/Sprites/UI/DialoganteVacio.png";
 
         public static readonly Conversacion SILLON_CONVERSACION_SENTARSE = new Conversacion(
             id: 0,
@@ -80,7 +87,7 @@ public class Constantes
                           Mostrar: true,
                           SiguienteFrase: new int[1] { 7 }),
                 new Frase(ID: 5,
-                          Texto: "Intenta seguir una respiración pausada, cuenta 5 segundo en cada inspiración y exhalación.",
+                          Texto: "Intenta seguir una respiración pausada, cuenta 5 segundos en cada inspiración y exhalación.",
                           Interlocutor: InterlocutorEnum.Sillon,
                           Mostrar: true,
                           SiguienteFrase: new int[1] { 6 }),
@@ -138,6 +145,9 @@ public class Constantes
                           SiguienteFrase: new int[1] { Constantes.Dialogos.SILLON_LEVANTARSE })
             }
         );
+
+        public const string BANCO_NOMBRE = "Banco";
+        public const string BANCO_TEXTOAMOSTRAR = "Pulsa Q para sentarte en el banco";
 
         public static readonly Conversacion CONVERSACION_FINAL = new Conversacion(
             id: 0,
@@ -747,7 +757,6 @@ public class Constantes
 
         public class Sillon
         {
-
             public const string SENTANDOSE_SILLON = "Sentandose_Sillon";
             public const string SENTADO_SILLON = "Idle_Sentado";
             public const string LEVANTANDOSE_SILLON = "Levantandose_Sillon";
@@ -777,6 +786,13 @@ public class Constantes
             public const string ANDANDO_ESPALDAS_ALANTE = "Jugador_andando_espaldas";
             public const string ANDANDO_ESPALDAS_ATRAS = "Jugador_andando_espaldas_atras";
             public const string NADA = "Nada";
+        }
+
+        public class Banco
+        {
+            public const string SENTANDOSE_BANCO = "Jugador_Sentandose_Banco";
+
+            public const float DURACION_SENTANDOSE_BANCO = 0.1f;
         }
     }
 

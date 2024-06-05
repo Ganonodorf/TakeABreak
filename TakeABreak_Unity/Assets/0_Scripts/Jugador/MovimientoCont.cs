@@ -143,5 +143,7 @@ public enum EstadoMovimiento
     SentandoseSillon,
     SentandoSillon,
     Meditando,
-    LevantandoseSillon
+    LevantandoseSillon,
+    SentandoseBanco,
+    SentadoBanco
 }

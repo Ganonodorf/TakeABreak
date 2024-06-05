@@ -65,7 +65,7 @@ public class InputManager : MonoBehaviour
 
     private void EnablearControlesEligiendo()
     {
-        controlesJugador.Conversando.Enable();
+        controlesJugador.Eligiendo.Enable();
     }
 
     private void EnablearControlesMeditando()
