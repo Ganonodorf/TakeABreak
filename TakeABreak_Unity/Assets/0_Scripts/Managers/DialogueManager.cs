@@ -16,7 +16,12 @@ public class DialogueManager : MonoBehaviour
     // Private fields
     private GameObject bocadilloGO;
     private Image imagenBocadillo;
+    private GameObject nombreConversacionGO;
+    private GameObject textoConversacionGO;
+    private GameObject flechaGO;
+    private TextMeshProUGUI textoNombre;
     private TextMeshProUGUI textoBocadillo;
+    private Animator flechaAnimator;
     private GameObject panelOpcionesGO;
     private GameObject jugadorSpriteGO;
     private GameObject interlocutorGO;
@@ -66,12 +71,29 @@ public class DialogueManager : MonoBehaviour
             MostrarEleccion();
         }
 
+        else
+        {
+            MostrarFlecha();
+        }
+
         estaEscribiendo = false;
+    }
+
+    private void MostrarFlecha()
+    {
+        flechaAnimator.Play(Constantes.Animacion.UI.FLECHA);
+    }
+
+    private void OcultarFlecha()
+    {
+        flechaAnimator.Play("Nada");
     }
 
     public void MostrarBocadillo(Frase frase)
     {
         MostrarImagenes(frase.Interlocutor);
+
+        MostrarNombre(frase.Interlocutor);
 
         MostrarTexto(frase.Texto);
     }
@@ -90,8 +112,22 @@ public class DialogueManager : MonoBehaviour
             imagenJugador.enabled = false;
             imagenNPC.enabled = true;
         }
-
     }
+
+    private void MostrarNombre(InterlocutorEnum interlocutor)
+    {
+        if (interlocutor == InterlocutorEnum.Jugador)
+        {
+            textoNombre.color = new Color(68.0f / 255.0f, 112.0f / 255.0f, 76.0f / 255.0f);
+            textoNombre.text = "Juanjo";
+        }
+        else
+        {
+            textoNombre.color = new Color(108.0f / 255.0f, 73.0f / 255.0f, 140.0f / 255.0f);
+            textoNombre.text = "Joseju";
+        }
+    }
+
     private void MostrarTexto(string texto)
     {
         if (mostrarTextoCoroutine != null)
@@ -168,7 +204,9 @@ public class DialogueManager : MonoBehaviour
 
     private void SiguienteFrase()
     {
-        if(fraseActual.SiguienteFrase[0] < 0)
+        OcultarFlecha();
+
+        if (fraseActual.SiguienteFrase[0] < 0)
         {
             FinalizarConversacion(fraseActual.SiguienteFrase[0]);
         }
@@ -281,6 +319,9 @@ public class DialogueManager : MonoBehaviour
     private void BuscarGO()
     {
         bocadilloGO = GameObject.FindGameObjectWithTag(Constantes.Tags.BOCADILLO);
+        nombreConversacionGO = GameObject.FindGameObjectWithTag(Constantes.Tags.NOMBRE_CONVERSACION);
+        textoConversacionGO = GameObject.FindGameObjectWithTag(Constantes.Tags.TEXTO_CONVERSACION);
+        flechaGO = GameObject.FindGameObjectWithTag(Constantes.Tags.FLECHA);
         panelOpcionesGO = GameObject.FindGameObjectWithTag(Constantes.Tags.PANEL_OPCIONES);
         jugadorSpriteGO = GameObject.FindGameObjectWithTag(Constantes.Tags.SPRITE_JUGADOR);
         interlocutorSpriteGO = GameObject.FindGameObjectWithTag(Constantes.Tags.SPRITE_NPC);
@@ -288,7 +329,10 @@ public class DialogueManager : MonoBehaviour
 
     private void InicializarVariables()
     {
-        textoBocadillo = bocadilloGO.GetComponentInChildren<TextMeshProUGUI>();
+        textoNombre = nombreConversacionGO.GetComponentInChildren<TextMeshProUGUI>();
+        textoBocadillo = textoConversacionGO.GetComponentInChildren<TextMeshProUGUI>();
+        flechaAnimator = flechaGO.GetComponent<Animator>();
+
         imagenBocadillo = bocadilloGO.GetComponent<Image>();
         imagenBocadillo.enabled = false;
 

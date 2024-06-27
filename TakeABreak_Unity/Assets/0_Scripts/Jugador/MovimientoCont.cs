@@ -6,6 +6,8 @@ public class MovimientoCont : MonoBehaviour
 {
     public static event Action<EstadoMovimiento> OnMovimientoChanged;
 
+    public static event Action<bool> OnMirandoDerechaChanged;
+
     private void Start()
     {
         RecogerInfoInputs();
@@ -15,6 +17,12 @@ public class MovimientoCont : MonoBehaviour
     {
         switch (nuevoEstadoMovimiento)
         {
+            case EstadoMovimiento.AndandoAlante:
+                OnMirandoDerechaChanged?.Invoke(true);
+                break;
+            case EstadoMovimiento.AndandoAtras:
+                OnMirandoDerechaChanged?.Invoke(false);
+                break;
             case EstadoMovimiento.SubiendoEscDer:
                 SubirEscalerasDer();
                 break;
@@ -39,28 +47,35 @@ public class MovimientoCont : MonoBehaviour
 
     public void SubirEscalerasDer()
     {
+        OnMirandoDerechaChanged?.Invoke(false);
+
         ColocarArribaSubiendoEscDer();
     }
 
     public void SubirEscalerasIzq()
     {
+        OnMirandoDerechaChanged?.Invoke(true);
+
         ColocarArribaSubiendoEscIzq();
     }
 
     public void BajarEscalerasDer()
     {
+        OnMirandoDerechaChanged?.Invoke(true);
+
         ColocarAbajoBajandoEscDer();
     }
 
     public void BajarEscalerasIzq()
     {
+        OnMirandoDerechaChanged?.Invoke(false);
+
         ColocarAbajoBajandoEscIzq();
     }
 
     public void SentarseSillon()
     {
         ColocarPosFinalLevantarseSillon();
-
     }
 
     public void MovimientoHorizontal(float cantidadMovimiento)

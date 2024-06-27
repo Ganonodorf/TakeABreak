@@ -17,7 +17,11 @@ public class Constantes
     {
         public const string INTERACTUABLE = "Interactuable";
         public const string BOCADILLO = "Bocadillo";
+        public const string NOMBRE_CONVERSACION = "NombreConversacion";
+        public const string TEXTO_CONVERSACION = "TextoConversacion";
+        public const string FLECHA = "Flecha";
         public const string BOCADILLO_ACCION = "BocadilloAccion";
+        public const string EXCLAMACION = "Exclamacion";
         public const string SPRITE_JUGADOR = "SpriteJugador";
         public const string SPRITE_NPC = "SpriteNPC";
         public const string PANEL_OPCIONES = "PanelOpciones";
@@ -834,6 +838,12 @@ new Frase(ID: 132,
             public const string NADA = "Jugador_Nada";
         }
 
+        public class ObjetosInteractuables
+        {
+            public const string EXCLAMACION = "Exclamacion";
+            public const string NADA = "Nada";
+        }
+
         public class Escaleras
         {
             public const string SUBIENDO_ESCALERAS_DER = "Subiendo_Escaleras_Der";
@@ -883,6 +893,11 @@ new Frase(ID: 132,
 
             public const float DURACION_SENTANDOSE_BANCO = 0.1f;
         }
+
+        public class UI
+        {
+            public const string FLECHA = "Flecha";
+        }
     }
 
     public class PosicionesClave
@@ -911,6 +926,9 @@ new Frase(ID: 132,
         public static readonly Vector2 Sillon = new Vector2(315.0f, PosYDentroDeCasa);
 
         public const float DistanciaReflejo = 11.0f;
+
+        public static readonly Vector2 PosDerechaExclamacion = new Vector2(10.0f, 23.0f);
+        public static readonly Vector2 PosIzquierdaExclamacion = new Vector2(-10.0f, 23.0f);
     }
 
     public class Camara
