@@ -8,6 +8,7 @@ public class InteractuableCont : MonoBehaviour
     private IObjetoInteractuable _objetoInteractuable;
 
     private Animator exclamacionAnimator;
+    private SpriteRenderer exclamacionSpriteRenderer;
 
     private void Awake()
     {
@@ -78,12 +79,14 @@ public class InteractuableCont : MonoBehaviour
     {
         if(_objetoInteractuable != null && GameManager.Instance.GetEstadoJuego() == EstadoJuego.Andando)
         {
+            exclamacionSpriteRenderer.enabled = true;
             exclamacionAnimator.Play(Constantes.Animacion.ObjetosInteractuables.EXCLAMACION);
         }
     }
 
     private void OcultarAccionV2()
     {
+        exclamacionSpriteRenderer.enabled = false;
         exclamacionAnimator.Play(Constantes.Animacion.ObjetosInteractuables.NADA);
     }
 
@@ -126,6 +129,7 @@ public class InteractuableCont : MonoBehaviour
         _objetoInteractuable = null;
 
         exclamacionAnimator = GameObject.FindGameObjectWithTag(Constantes.Tags.EXCLAMACION).GetComponent<Animator>();
+        exclamacionSpriteRenderer = GameObject.FindGameObjectWithTag(Constantes.Tags.EXCLAMACION).GetComponent<SpriteRenderer>();
     }
 
     private void RecogerInfoInputs()
