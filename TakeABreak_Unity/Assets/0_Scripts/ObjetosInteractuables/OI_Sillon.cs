@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class OI_Sillon : MonoBehaviour, IObjetoInteractuable, IObjetoDialogable
 {
@@ -128,11 +130,11 @@ public class OI_Sillon : MonoBehaviour, IObjetoInteractuable, IObjetoDialogable
         {
             conversacionInicial = true;
 
-            DialogueManager.Instance.IniciarConversacion(this.gameObject, Constantes.ObjetosInteractuables.SILLON_CONVERSACION_SENTARSE, null);
+            DialogueManager.Instance.IniciarConversacion(this.gameObject, Constantes.ObjetosInteractuables.SILLON_CONVERSACION_SENTARSE, _sprite);
         }
         else
         {
-            DialogueManager.Instance.IniciarConversacion(this.gameObject, Constantes.ObjetosInteractuables.SILLON_CONVERSACION_PARAR_MEDITAR, null);
+            DialogueManager.Instance.IniciarConversacion(this.gameObject, Constantes.ObjetosInteractuables.SILLON_CONVERSACION_PARAR_MEDITAR, _sprite);
         }
     }
 
@@ -226,9 +228,20 @@ public class OI_Sillon : MonoBehaviour, IObjetoInteractuable, IObjetoDialogable
         conversacionInicial = false;
 
         timerRespiracion = 0.0f;
+
+        AsyncOperationHandle<Sprite> cargadoSpritenAsync = Addressables.LoadAssetAsync<Sprite>(Constantes.ObjetosInteractuables.SPRITE_VACIO);
+        cargadoSpritenAsync.Completed += CargaSpriteCuandoAcabes;
     }
 
-    private void BuscarGO()
+    void CargaSpriteCuandoAcabes(AsyncOperationHandle<Sprite> handleToCheck)
+    {
+        if (handleToCheck.Status == AsyncOperationStatus.Succeeded)
+        {
+            _sprite = handleToCheck.Result;
+        }
+    }
+
+        private void BuscarGO()
     {
         jugadorGO = GameObject.FindGameObjectWithTag(Constantes.Tags.JUGADOR);
         casaGO = GameObject.FindGameObjectWithTag(Constantes.Tags.CASA);

@@ -37,5 +37,6 @@ public enum InterlocutorEnum
     Jugador,
     NPC,
     Eleccion,
-    Sillon
+    Sillon,
+    TuMismo
 }

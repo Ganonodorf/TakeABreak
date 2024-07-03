@@ -12,6 +12,11 @@ TagManager:
   - BocadilloAccion
   - Casa
   - Mar
+  - EventSystem
+  - NombreConversacion
+  - TextoConversacion
+  - Flecha
+  - Exclamacion
   layers:
   - Default
   - TransparentFX

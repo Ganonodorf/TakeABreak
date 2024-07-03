@@ -27,6 +27,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5350882c7e665d745acc39043aa3f7e4
+    m_Address: Assets/Sprites/Jugador/Tu_Mismo_Cabeza_Inversa.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fa7644946b09c02498d0c97f7d82aa4c
+    m_Address: Assets/Sprites/UI/DialoganteVacio.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 152afba237baf6f43acb6198de4b6a58, type: 2}
   m_SchemaSet:

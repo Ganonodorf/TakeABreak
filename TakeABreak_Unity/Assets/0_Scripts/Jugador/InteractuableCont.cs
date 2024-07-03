@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -6,6 +7,16 @@ public class InteractuableCont : MonoBehaviour
     private GameObject _objetoInteractuableGO;
     private IObjetoInteractuable _objetoInteractuable;
 
+    private Animator exclamacionAnimator;
+    private SpriteRenderer exclamacionSpriteRenderer;
+
+    private void Awake()
+    {
+        MovimientoCont.OnMirandoDerechaChanged += MovimientoCont_OnMirandoDerechaChanged;
+
+        GameManager.CambioEstadoJuego += GameManager_CambioEstadoJuego;
+    }
+
     private void Start()
     {
         InicializarVariables(); 
@@ -13,12 +24,32 @@ public class InteractuableCont : MonoBehaviour
         RecogerInfoInputs();
     }
 
+    private void MovimientoCont_OnMirandoDerechaChanged(bool mirandoDerecha)
+    {
+        exclamacionAnimator.transform.localPosition = mirandoDerecha ? Constantes.PosicionesClave.PosDerechaExclamacion :
+                                                                       Constantes.PosicionesClave.PosIzquierdaExclamacion;
+    }
+
+    private void GameManager_CambioEstadoJuego(EstadoJuego nuevoEstadoJuego)
+    {
+        if (nuevoEstadoJuego == EstadoJuego.Andando)
+        {
+            MostrarAccionV2();
+        }
+
+        if (nuevoEstadoJuego == EstadoJuego.HaciendoAnimacion)
+        {
+            OcultarAccionV2();
+        }
+    }
+
     private void EjecutarAccion()
     {
         if (_objetoInteractuable != null)
         {
+            OcultarAccionV2();
+
             _objetoInteractuable.Accion();
-            OcultarAccion(_objetoInteractuableGO);
         }
     }
 
@@ -29,7 +60,7 @@ public class InteractuableCont : MonoBehaviour
             _objetoInteractuableGO = collision.gameObject;
             _objetoInteractuable = objetoInteractuable;
 
-            MostrarAccion(_objetoInteractuableGO, objetoInteractuable);
+            MostrarAccionV2();
         }
     }
 
@@ -37,11 +68,26 @@ public class InteractuableCont : MonoBehaviour
     {
         if (collision.TryGetComponent(out IObjetoInteractuable objetoInteractuable))
         {
-            OcultarAccion(_objetoInteractuableGO);
+            OcultarAccionV2();
 
             _objetoInteractuableGO = null;
             _objetoInteractuable = null;
         }
+    }
+
+    private void MostrarAccionV2()
+    {
+        if(_objetoInteractuable != null && GameManager.Instance.GetEstadoJuego() == EstadoJuego.Andando)
+        {
+            exclamacionSpriteRenderer.enabled = true;
+            exclamacionAnimator.Play(Constantes.Animacion.ObjetosInteractuables.EXCLAMACION);
+        }
+    }
+
+    private void OcultarAccionV2()
+    {
+        exclamacionSpriteRenderer.enabled = false;
+        exclamacionAnimator.Play(Constantes.Animacion.ObjetosInteractuables.NADA);
     }
 
     private void MostrarAccion(GameObject objetoInteractuableGO, IObjetoInteractuable objetoInteractuable)
@@ -81,6 +127,9 @@ public class InteractuableCont : MonoBehaviour
     {
         _objetoInteractuableGO = null;
         _objetoInteractuable = null;
+
+        exclamacionAnimator = GameObject.FindGameObjectWithTag(Constantes.Tags.EXCLAMACION).GetComponent<Animator>();
+        exclamacionSpriteRenderer = GameObject.FindGameObjectWithTag(Constantes.Tags.EXCLAMACION).GetComponent<SpriteRenderer>();
     }
 
     private void RecogerInfoInputs()

@@ -4,7 +4,6 @@ public class OI_Escaleras_Izq_Abajo : MonoBehaviour, IObjetoInteractuable
 {
     private string _nombre;
     private string _textoAMostrar;
-    private Sprite _sprite;
     private GameObject jugadorGO;
     public string Nombre { get => _nombre; set => _nombre = value; }
     public string TextoAMostrar { get => _textoAMostrar; set => _textoAMostrar = value; }
