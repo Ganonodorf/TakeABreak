@@ -114,7 +114,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 720
+        y: 1008
         width: 448
         height: 144
       alignment: 0
@@ -135,7 +135,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
-        y: 720
+        y: 1008
         width: 448
         height: 144
       alignment: 0
@@ -156,7 +156,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 896
-        y: 720
+        y: 1008
         width: 448
         height: 144
       alignment: 0
@@ -177,7 +177,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1344
-        y: 720
+        y: 1008
         width: 448
         height: 144
       alignment: 0
@@ -198,7 +198,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 576
+        y: 864
         width: 448
         height: 144
       alignment: 0
@@ -219,7 +219,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
-        y: 576
+        y: 864
         width: 448
         height: 144
       alignment: 0
@@ -240,7 +240,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 896
-        y: 576
+        y: 864
         width: 448
         height: 144
       alignment: 0
@@ -261,7 +261,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1344
-        y: 576
+        y: 864
         width: 448
         height: 144
       alignment: 0
@@ -282,7 +282,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 432
+        y: 720
         width: 448
         height: 144
       alignment: 0
@@ -303,7 +303,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
-        y: 432
+        y: 720
         width: 448
         height: 144
       alignment: 0
@@ -324,7 +324,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 896
-        y: 432
+        y: 720
         width: 448
         height: 144
       alignment: 0
@@ -345,7 +345,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1344
-        y: 432
+        y: 720
         width: 448
         height: 144
       alignment: 0
@@ -366,7 +366,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 288
+        y: 576
         width: 448
         height: 144
       alignment: 0
@@ -387,7 +387,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
-        y: 288
+        y: 576
         width: 448
         height: 144
       alignment: 0
@@ -408,7 +408,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 896
-        y: 288
+        y: 576
         width: 448
         height: 144
       alignment: 0
@@ -429,7 +429,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1344
-        y: 288
+        y: 576
         width: 448
         height: 144
       alignment: 0
@@ -450,7 +450,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 144
+        y: 432
         width: 448
         height: 144
       alignment: 0
@@ -471,7 +471,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
-        y: 144
+        y: 432
         width: 448
         height: 144
       alignment: 0
@@ -492,7 +492,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 896
-        y: 144
+        y: 432
         width: 448
         height: 144
       alignment: 0
@@ -513,7 +513,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1344
-        y: 144
+        y: 432
         width: 448
         height: 144
       alignment: 0
@@ -534,7 +534,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 288
         width: 448
         height: 144
       alignment: 0
@@ -555,7 +555,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
-        y: 0
+        y: 288
         width: 448
         height: 144
       alignment: 0
@@ -576,7 +576,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 896
-        y: 0
+        y: 288
         width: 448
         height: 144
       alignment: 0
@@ -597,7 +597,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1344
-        y: 0
+        y: 288
         width: 448
         height: 144
       alignment: 0
@@ -609,6 +609,132 @@ TextureImporter:
       bones: []
       spriteID: e8749b9c38066824fbc5069b5f4d7bd4
       internalID: -747897789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Montanias_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 448
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beb97789b4b0be34e9bab46c3a948f13
+      internalID: -161851551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Montanias_25
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 144
+        width: 448
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b48358d74064abf47a91b77a90eaf3ee
+      internalID: -633232191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Montanias_26
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 144
+        width: 448
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b69fdb7db98d39b44974449bfafc98c6
+      internalID: 1251700767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Montanias_27
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 144
+        width: 448
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 512d7bb7b839603488cd6a5aa9d8f276
+      internalID: -2147319160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Montanias_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 448
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b79eea951b52f74bbb49a01741d1c95
+      internalID: -1912866835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Montanias_29
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 448
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5d41cabc1c77d5408b6cb147410c288
+      internalID: 1002561760
       vertices: []
       indices: 
       edges: []
@@ -641,6 +767,12 @@ TextureImporter:
       Montanias_21: -616390533
       Montanias_22: -1531903170
       Montanias_23: -747897789
+      Montanias_24: -161851551
+      Montanias_25: -633232191
+      Montanias_26: 1251700767
+      Montanias_27: -2147319160
+      Montanias_28: -1912866835
+      Montanias_29: 1002561760
       Montanias_3: -768858235
       Montanias_4: -2085646669
       Montanias_5: 1456570611
