@@ -21,7 +21,7 @@ public class OI_Sillon : MonoBehaviour, IObjetoInteractuable, IObjetoDialogable
 
     private bool conversacionInicial;
 
-    private float timerRespiracion;
+    public float timerRespiracion;
 
     public string Nombre { get => _nombre; set => _nombre = value; }
     public string TextoAMostrar { get => _textoAMostrar; set => _textoAMostrar = value; }
@@ -45,7 +45,7 @@ public class OI_Sillon : MonoBehaviour, IObjetoInteractuable, IObjetoDialogable
     {
         if (GameManager.Instance.GetEstadoJuego() == EstadoJuego.Meditando)
         {
-            timerRespiracion += Time.fixedDeltaTime;
+            timerRespiracion += Time.deltaTime;
 
             if(timerRespiracion > 5.0f)
             {
