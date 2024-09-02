@@ -96,7 +96,9 @@ public class MovimientoCont : MonoBehaviour
     private bool SePuede(float posicionDeseada)
     {
         if ((posicionDeseada >= PosicionesClave.PosLimiteAbajoEscalerasIzq && posicionDeseada <= PosicionesClave.PosLimiteArribaEscalerasIzq) ||
-            (posicionDeseada >= PosicionesClave.PosLimiteArribaEscalerasDer && posicionDeseada <= PosicionesClave.PosLimiteAbajoEscalerasDer))
+            (posicionDeseada >= PosicionesClave.PosLimiteArribaEscalerasDer && posicionDeseada <= PosicionesClave.PosLimiteAbajoEscalerasDer) ||
+            posicionDeseada <= PosicionesClave.PosLimiteIzq ||
+            posicionDeseada >= PosicionesClave.PosLimiteDer)
         {
             return false;
         }
