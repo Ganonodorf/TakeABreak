@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     private EstadoJuego estado;
     private GameObject jugador;
 
+    //[SerializeField] private EstadoJuego estadoJuegoInicial;
+
     // Variables públicas
     public static GameManager Instance;
 
@@ -23,9 +25,9 @@ public class GameManager : MonoBehaviour
     {
         RecogerInfoInputs();
 
-        CambiarEstadoJuego(EstadoJuego.Inicio);
+        EstablecerResolucionYRaton();
 
-        Screen.SetResolution(1024, 576, true);
+        CambiarEstadoJuego(EstadoJuego.Intro);
     }
 
     public EstadoJuego GetEstadoJuego()
@@ -39,8 +41,14 @@ public class GameManager : MonoBehaviour
 
         switch (nuevoEstado)
         {
+            case EstadoJuego.Intro:
+                Debug.Log("Estado del juego: Intro");
+                break;
+            case EstadoJuego.Titulo:
+                EstadoMenu();
+                Debug.Log("Estado del juego: Titulo");
+                break;
             case EstadoJuego.Inicio:
-                EstadoInicial();
                 Debug.Log("Estado del juego: Inicio");
                 break;
             case EstadoJuego.Andando:
@@ -61,6 +69,10 @@ public class GameManager : MonoBehaviour
             case EstadoJuego.Meditando:
                 Debug.Log("Estado del juego: Meditando");
                 break;
+            case EstadoJuego.FinJuego:
+                EstadoFinJuego();
+                Debug.Log("Estado del juego: FinJuego");
+                break;
             default:
                 break;
         }
@@ -68,9 +80,14 @@ public class GameManager : MonoBehaviour
         CambioEstadoJuego?.Invoke(nuevoEstado);
     }
 
-    private void EstadoInicial()
+    private void EstadoMenu()
     {
         jugador.GetComponent<MovimientoCont>().CambiarEstadoMovimiento(EstadoMovimiento.IdleEspalda);
+    }
+
+    private void EstadoFinJuego()
+    {
+        throw new NotImplementedException();
     }
 
     private void IniciarJuego()
@@ -100,15 +117,26 @@ public class GameManager : MonoBehaviour
     {
         InputManager.Instance.controlesJugador.Inicio.Accion.performed += contexto => IniciarJuego();
     }
+
+    private void EstablecerResolucionYRaton()
+    {
+        Screen.SetResolution(1024, 576, true);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
 }
 
 public enum EstadoJuego
 {
+    Intro,
+    Titulo,
     Inicio,
     Andando,
     Conversando,
     Eligiendo,
     HaciendoAnimacion,
     SentadoSillon,
-    Meditando
+    Meditando,
+    FinJuego
 }

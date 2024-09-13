@@ -28,7 +28,10 @@ public class OI_Banco : MonoBehaviour, IObjetoInteractuable, IObjetoDialogable
 
     public void RespuestaDialogo(int codigoRespuesta)
     {
-        throw new NotImplementedException();
+        if(codigoRespuesta == -1)
+        {
+            GameManager.Instance.CambiarEstadoJuego(EstadoJuego.FinJuego);
+        }
     }
 
     public void Accion()

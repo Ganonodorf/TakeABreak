@@ -10,7 +10,13 @@ public class Constantes
 
         public const int DISTANCIA_BOTONES = 11;
 
-        public const float TIEMPO_ENTRE_LETRAS = 0.001f;
+        public const float TIEMPO_ENTRE_LETRAS = 0.1f;
+
+        public const string NOMBRE_PLAYER = "Juanjo";
+        public const string NOMBRE_TUMISMO = "Joseju";
+        public const string NOMBRE_SILLON = "Sillón";
+        public const string NOMBRE_DEFAULT = "Default";
+
     }
 
     public class Tags
@@ -30,6 +36,11 @@ public class Constantes
         public const string CASA = "Casa";
         public const string MAR = "Mar";
         public const string EVENT_SYSTEM = "EventSystem";
+        public const string MUSICA = "Musica";
+        public const string VIENTO = "Viento";
+        public const string INTRO = "Intro";
+        public const string TITULO = "Titulo";
+        public const string FINJUEGO = "FinJuego";
     }
 
     public class ObjetosInteractuables
@@ -55,7 +66,7 @@ public class Constantes
         public const string ESCALERAS_ABAJO_TEXTOAMOSTRAR = "Pulsa Q para subir las escaleras";
         public const string ESCALERAS_ARRIBA_TEXTOAMOSTRAR = "Pulsa Q para bajar las escaleras";
 
-        public const string SILLON_NOMBRE = "Sillon";
+        public const string SILLON_NOMBRE = "Sillón";
         public const string SILLON_TEXTOAMOSTRAR = "Pulsa Q para sentarte en el sillón";
 
         public const string SPRITE_VACIO = "Assets/Sprites/UI/DialoganteVacio.png";
@@ -160,7 +171,7 @@ public class Constantes
                 Texto: "...",
                 Interlocutor: InterlocutorEnum.Jugador,
                 Mostrar: true,
-                SiguienteFrase: new int[1] { 1 }),
+                SiguienteFrase: new int[1] { -1 }),
                 new Frase(ID: 1,
                 Texto: "¿No vas a decir nada?",
                 Interlocutor: InterlocutorEnum.TuMismo,
@@ -911,7 +922,9 @@ public class Constantes
 
         public class UI
         {
+            public const string INTRO = "Intro";
             public const string FLECHA = "Flecha";
+            public const string NADA = "Nada";
         }
     }
 

@@ -24,6 +24,151 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
     ""name"": ""ControlesJugador"",
     ""maps"": [
         {
+            ""name"": ""Titulo"",
+            ""id"": ""aa9d70a9-d420-4efb-988c-579c9b482f5d"",
+            ""actions"": [
+                {
+                    ""name"": ""Presionar"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""f21c37e6-240a-48ad-87a9-9a684f5dedc2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Arriba"",
+                    ""type"": ""Button"",
+                    ""id"": ""1fb4e046-acc1-401a-844f-2cd5249ab775"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Abajo"",
+                    ""type"": ""Button"",
+                    ""id"": ""c9fb14bc-ace3-4094-a918-ef9b1e306255"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""d7cb12b1-8a12-481f-89cd-82b53ee8bf43"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Presionar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""58b87478-39ae-4c2b-8cc0-2c350b9c84f7"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Presionar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""28923f09-01dc-4475-b02b-d11c40904812"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Arriba"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""79409386-13b5-4c3b-9bd2-d08b713b08e7"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Arriba"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9f37c4b9-b256-4f27-965e-6b9dff6c88ac"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Arriba"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b0f6b1ee-a84c-472f-a871-2bee33163941"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Arriba"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c3d4ed52-7745-438c-8da5-c8a1eeeeb9e0"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Abajo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4a5aa375-43c5-401d-8d4e-a6c90b9f3237"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Abajo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c150e826-2e4e-4cec-93a9-0961486d6b66"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Abajo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""80837c2f-99b2-4b0e-a8ec-1a1396d7ff89"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Abajo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""Andando"",
             ""id"": ""eab7c0c6-20f7-4a12-85a3-4418ed3f181a"",
             ""actions"": [
@@ -416,15 +561,6 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
             ""id"": ""e289ed3d-dbd2-4b7d-85d0-ab2e689a45c4"",
             ""actions"": [
                 {
-                    ""name"": ""Puntero"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""39a432f5-9bd2-4f2d-840a-b75993ee0dca"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
                     ""name"": ""Navegar"",
                     ""type"": ""PassThrough"",
                     ""id"": ""ca49938b-7862-4f42-8196-c9bd344443ac"",
@@ -462,17 +598,6 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""fdf48d2c-6784-4349-9734-16a9ba7fb118"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Presionar"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
                 {
                     ""name"": """",
                     ""id"": ""3ea26bcb-49f4-4b6e-93a2-eafdd4bcc1af"",
@@ -761,39 +886,6 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""9419fc32-735b-4b13-a5e1-54e9d3e5ac04"",
-                    ""path"": ""<Mouse>/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Puntero"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""7dd7bf1e-efff-448a-bf27-d42bf3ae430f"",
-                    ""path"": ""<Pen>/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Puntero"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b14a75e9-2cd7-467c-8c30-16b0dbc4176b"",
-                    ""path"": ""<Touchscreen>/touch*/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Puntero"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""4ffa797c-f8f7-43da-91fc-742904a4dabf"",
                     ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
@@ -883,7 +975,7 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""UI"",
+            ""name"": ""UI_Default"",
             ""id"": ""903ba538-56f4-4752-aedf-ad01529cbbf1"",
             ""actions"": [
                 {
@@ -1397,10 +1489,160 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""FinJuego"",
+            ""id"": ""cc8d7955-4aaf-46b8-a493-370c9581bd5c"",
+            ""actions"": [
+                {
+                    ""name"": ""Presionar"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""6c991616-8fc1-4b0c-8d44-b6c6cb7a8d3b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Arriba"",
+                    ""type"": ""Button"",
+                    ""id"": ""89525539-0218-44f3-aca6-c71a6d3f2eb5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Abajo"",
+                    ""type"": ""Button"",
+                    ""id"": ""113f76a6-fb75-4250-b430-e9fd5321a337"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""bb235672-51cd-4cee-be48-141c490919d9"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Abajo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7e4e08c3-34f1-428d-a6a1-98f6871f65f8"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Abajo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""443367c8-3b20-4d95-bf2f-f258b3445ac7"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Abajo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""653f6604-8182-4523-be66-4a8ec2376281"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Abajo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9d4f9e8e-e013-48c5-9621-cb9b3a9b1f9b"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Presionar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ad523a3b-23bf-4ec8-b864-bf50a2cdc016"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Presionar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d970a619-9b55-439b-b8a6-a00d7ce38da6"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Arriba"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9b905ea4-e7ab-4120-b6ed-7cee414c4a31"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Arriba"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""44816e2d-7867-4e2c-b26a-32e2ee0fb5b7"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Arriba"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""23af6973-ddb3-4093-8d09-8b82b7f64402"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Arriba"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
 }");
+        // Titulo
+        m_Titulo = asset.FindActionMap("Titulo", throwIfNotFound: true);
+        m_Titulo_Presionar = m_Titulo.FindAction("Presionar", throwIfNotFound: true);
+        m_Titulo_Arriba = m_Titulo.FindAction("Arriba", throwIfNotFound: true);
+        m_Titulo_Abajo = m_Titulo.FindAction("Abajo", throwIfNotFound: true);
         // Andando
         m_Andando = asset.FindActionMap("Andando", throwIfNotFound: true);
         m_Andando_Derecha = m_Andando.FindAction("Derecha", throwIfNotFound: true);
@@ -1420,23 +1662,27 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
         m_Inicio_Accion = m_Inicio.FindAction("Accion", throwIfNotFound: true);
         // Eligiendo
         m_Eligiendo = asset.FindActionMap("Eligiendo", throwIfNotFound: true);
-        m_Eligiendo_Puntero = m_Eligiendo.FindAction("Puntero", throwIfNotFound: true);
         m_Eligiendo_Navegar = m_Eligiendo.FindAction("Navegar", throwIfNotFound: true);
         m_Eligiendo_Presionar = m_Eligiendo.FindAction("Presionar", throwIfNotFound: true);
         m_Eligiendo_Arriba = m_Eligiendo.FindAction("Arriba", throwIfNotFound: true);
         m_Eligiendo_Abajo = m_Eligiendo.FindAction("Abajo", throwIfNotFound: true);
-        // UI
-        m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
-        m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
-        m_UI_Submit = m_UI.FindAction("Submit", throwIfNotFound: true);
-        m_UI_Cancel = m_UI.FindAction("Cancel", throwIfNotFound: true);
-        m_UI_Point = m_UI.FindAction("Point", throwIfNotFound: true);
-        m_UI_Click = m_UI.FindAction("Click", throwIfNotFound: true);
-        m_UI_ScrollWheel = m_UI.FindAction("ScrollWheel", throwIfNotFound: true);
-        m_UI_MiddleClick = m_UI.FindAction("MiddleClick", throwIfNotFound: true);
-        m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
-        m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
-        m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+        // UI_Default
+        m_UI_Default = asset.FindActionMap("UI_Default", throwIfNotFound: true);
+        m_UI_Default_Navigate = m_UI_Default.FindAction("Navigate", throwIfNotFound: true);
+        m_UI_Default_Submit = m_UI_Default.FindAction("Submit", throwIfNotFound: true);
+        m_UI_Default_Cancel = m_UI_Default.FindAction("Cancel", throwIfNotFound: true);
+        m_UI_Default_Point = m_UI_Default.FindAction("Point", throwIfNotFound: true);
+        m_UI_Default_Click = m_UI_Default.FindAction("Click", throwIfNotFound: true);
+        m_UI_Default_ScrollWheel = m_UI_Default.FindAction("ScrollWheel", throwIfNotFound: true);
+        m_UI_Default_MiddleClick = m_UI_Default.FindAction("MiddleClick", throwIfNotFound: true);
+        m_UI_Default_RightClick = m_UI_Default.FindAction("RightClick", throwIfNotFound: true);
+        m_UI_Default_TrackedDevicePosition = m_UI_Default.FindAction("TrackedDevicePosition", throwIfNotFound: true);
+        m_UI_Default_TrackedDeviceOrientation = m_UI_Default.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+        // FinJuego
+        m_FinJuego = asset.FindActionMap("FinJuego", throwIfNotFound: true);
+        m_FinJuego_Presionar = m_FinJuego.FindAction("Presionar", throwIfNotFound: true);
+        m_FinJuego_Arriba = m_FinJuego.FindAction("Arriba", throwIfNotFound: true);
+        m_FinJuego_Abajo = m_FinJuego.FindAction("Abajo", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1494,6 +1740,68 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
     {
         return asset.FindBinding(bindingMask, out action);
     }
+
+    // Titulo
+    private readonly InputActionMap m_Titulo;
+    private List<ITituloActions> m_TituloActionsCallbackInterfaces = new List<ITituloActions>();
+    private readonly InputAction m_Titulo_Presionar;
+    private readonly InputAction m_Titulo_Arriba;
+    private readonly InputAction m_Titulo_Abajo;
+    public struct TituloActions
+    {
+        private @ControlesJugador m_Wrapper;
+        public TituloActions(@ControlesJugador wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Presionar => m_Wrapper.m_Titulo_Presionar;
+        public InputAction @Arriba => m_Wrapper.m_Titulo_Arriba;
+        public InputAction @Abajo => m_Wrapper.m_Titulo_Abajo;
+        public InputActionMap Get() { return m_Wrapper.m_Titulo; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(TituloActions set) { return set.Get(); }
+        public void AddCallbacks(ITituloActions instance)
+        {
+            if (instance == null || m_Wrapper.m_TituloActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_TituloActionsCallbackInterfaces.Add(instance);
+            @Presionar.started += instance.OnPresionar;
+            @Presionar.performed += instance.OnPresionar;
+            @Presionar.canceled += instance.OnPresionar;
+            @Arriba.started += instance.OnArriba;
+            @Arriba.performed += instance.OnArriba;
+            @Arriba.canceled += instance.OnArriba;
+            @Abajo.started += instance.OnAbajo;
+            @Abajo.performed += instance.OnAbajo;
+            @Abajo.canceled += instance.OnAbajo;
+        }
+
+        private void UnregisterCallbacks(ITituloActions instance)
+        {
+            @Presionar.started -= instance.OnPresionar;
+            @Presionar.performed -= instance.OnPresionar;
+            @Presionar.canceled -= instance.OnPresionar;
+            @Arriba.started -= instance.OnArriba;
+            @Arriba.performed -= instance.OnArriba;
+            @Arriba.canceled -= instance.OnArriba;
+            @Abajo.started -= instance.OnAbajo;
+            @Abajo.performed -= instance.OnAbajo;
+            @Abajo.canceled -= instance.OnAbajo;
+        }
+
+        public void RemoveCallbacks(ITituloActions instance)
+        {
+            if (m_Wrapper.m_TituloActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ITituloActions instance)
+        {
+            foreach (var item in m_Wrapper.m_TituloActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_TituloActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public TituloActions @Titulo => new TituloActions(this);
 
     // Andando
     private readonly InputActionMap m_Andando;
@@ -1722,7 +2030,6 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
     // Eligiendo
     private readonly InputActionMap m_Eligiendo;
     private List<IEligiendoActions> m_EligiendoActionsCallbackInterfaces = new List<IEligiendoActions>();
-    private readonly InputAction m_Eligiendo_Puntero;
     private readonly InputAction m_Eligiendo_Navegar;
     private readonly InputAction m_Eligiendo_Presionar;
     private readonly InputAction m_Eligiendo_Arriba;
@@ -1731,7 +2038,6 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
     {
         private @ControlesJugador m_Wrapper;
         public EligiendoActions(@ControlesJugador wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Puntero => m_Wrapper.m_Eligiendo_Puntero;
         public InputAction @Navegar => m_Wrapper.m_Eligiendo_Navegar;
         public InputAction @Presionar => m_Wrapper.m_Eligiendo_Presionar;
         public InputAction @Arriba => m_Wrapper.m_Eligiendo_Arriba;
@@ -1745,9 +2051,6 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_EligiendoActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_EligiendoActionsCallbackInterfaces.Add(instance);
-            @Puntero.started += instance.OnPuntero;
-            @Puntero.performed += instance.OnPuntero;
-            @Puntero.canceled += instance.OnPuntero;
             @Navegar.started += instance.OnNavegar;
             @Navegar.performed += instance.OnNavegar;
             @Navegar.canceled += instance.OnNavegar;
@@ -1764,9 +2067,6 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
 
         private void UnregisterCallbacks(IEligiendoActions instance)
         {
-            @Puntero.started -= instance.OnPuntero;
-            @Puntero.performed -= instance.OnPuntero;
-            @Puntero.canceled -= instance.OnPuntero;
             @Navegar.started -= instance.OnNavegar;
             @Navegar.performed -= instance.OnNavegar;
             @Navegar.canceled -= instance.OnNavegar;
@@ -1797,42 +2097,42 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
     }
     public EligiendoActions @Eligiendo => new EligiendoActions(this);
 
-    // UI
-    private readonly InputActionMap m_UI;
-    private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
-    private readonly InputAction m_UI_Navigate;
-    private readonly InputAction m_UI_Submit;
-    private readonly InputAction m_UI_Cancel;
-    private readonly InputAction m_UI_Point;
-    private readonly InputAction m_UI_Click;
-    private readonly InputAction m_UI_ScrollWheel;
-    private readonly InputAction m_UI_MiddleClick;
-    private readonly InputAction m_UI_RightClick;
-    private readonly InputAction m_UI_TrackedDevicePosition;
-    private readonly InputAction m_UI_TrackedDeviceOrientation;
-    public struct UIActions
+    // UI_Default
+    private readonly InputActionMap m_UI_Default;
+    private List<IUI_DefaultActions> m_UI_DefaultActionsCallbackInterfaces = new List<IUI_DefaultActions>();
+    private readonly InputAction m_UI_Default_Navigate;
+    private readonly InputAction m_UI_Default_Submit;
+    private readonly InputAction m_UI_Default_Cancel;
+    private readonly InputAction m_UI_Default_Point;
+    private readonly InputAction m_UI_Default_Click;
+    private readonly InputAction m_UI_Default_ScrollWheel;
+    private readonly InputAction m_UI_Default_MiddleClick;
+    private readonly InputAction m_UI_Default_RightClick;
+    private readonly InputAction m_UI_Default_TrackedDevicePosition;
+    private readonly InputAction m_UI_Default_TrackedDeviceOrientation;
+    public struct UI_DefaultActions
     {
         private @ControlesJugador m_Wrapper;
-        public UIActions(@ControlesJugador wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Navigate => m_Wrapper.m_UI_Navigate;
-        public InputAction @Submit => m_Wrapper.m_UI_Submit;
-        public InputAction @Cancel => m_Wrapper.m_UI_Cancel;
-        public InputAction @Point => m_Wrapper.m_UI_Point;
-        public InputAction @Click => m_Wrapper.m_UI_Click;
-        public InputAction @ScrollWheel => m_Wrapper.m_UI_ScrollWheel;
-        public InputAction @MiddleClick => m_Wrapper.m_UI_MiddleClick;
-        public InputAction @RightClick => m_Wrapper.m_UI_RightClick;
-        public InputAction @TrackedDevicePosition => m_Wrapper.m_UI_TrackedDevicePosition;
-        public InputAction @TrackedDeviceOrientation => m_Wrapper.m_UI_TrackedDeviceOrientation;
-        public InputActionMap Get() { return m_Wrapper.m_UI; }
+        public UI_DefaultActions(@ControlesJugador wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Navigate => m_Wrapper.m_UI_Default_Navigate;
+        public InputAction @Submit => m_Wrapper.m_UI_Default_Submit;
+        public InputAction @Cancel => m_Wrapper.m_UI_Default_Cancel;
+        public InputAction @Point => m_Wrapper.m_UI_Default_Point;
+        public InputAction @Click => m_Wrapper.m_UI_Default_Click;
+        public InputAction @ScrollWheel => m_Wrapper.m_UI_Default_ScrollWheel;
+        public InputAction @MiddleClick => m_Wrapper.m_UI_Default_MiddleClick;
+        public InputAction @RightClick => m_Wrapper.m_UI_Default_RightClick;
+        public InputAction @TrackedDevicePosition => m_Wrapper.m_UI_Default_TrackedDevicePosition;
+        public InputAction @TrackedDeviceOrientation => m_Wrapper.m_UI_Default_TrackedDeviceOrientation;
+        public InputActionMap Get() { return m_Wrapper.m_UI_Default; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
-        public void AddCallbacks(IUIActions instance)
+        public static implicit operator InputActionMap(UI_DefaultActions set) { return set.Get(); }
+        public void AddCallbacks(IUI_DefaultActions instance)
         {
-            if (instance == null || m_Wrapper.m_UIActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_UIActionsCallbackInterfaces.Add(instance);
+            if (instance == null || m_Wrapper.m_UI_DefaultActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_UI_DefaultActionsCallbackInterfaces.Add(instance);
             @Navigate.started += instance.OnNavigate;
             @Navigate.performed += instance.OnNavigate;
             @Navigate.canceled += instance.OnNavigate;
@@ -1865,7 +2165,7 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
             @TrackedDeviceOrientation.canceled += instance.OnTrackedDeviceOrientation;
         }
 
-        private void UnregisterCallbacks(IUIActions instance)
+        private void UnregisterCallbacks(IUI_DefaultActions instance)
         {
             @Navigate.started -= instance.OnNavigate;
             @Navigate.performed -= instance.OnNavigate;
@@ -1899,21 +2199,89 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
             @TrackedDeviceOrientation.canceled -= instance.OnTrackedDeviceOrientation;
         }
 
-        public void RemoveCallbacks(IUIActions instance)
+        public void RemoveCallbacks(IUI_DefaultActions instance)
         {
-            if (m_Wrapper.m_UIActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_UI_DefaultActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(IUIActions instance)
+        public void SetCallbacks(IUI_DefaultActions instance)
         {
-            foreach (var item in m_Wrapper.m_UIActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_UI_DefaultActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_UIActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_UI_DefaultActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public UIActions @UI => new UIActions(this);
+    public UI_DefaultActions @UI_Default => new UI_DefaultActions(this);
+
+    // FinJuego
+    private readonly InputActionMap m_FinJuego;
+    private List<IFinJuegoActions> m_FinJuegoActionsCallbackInterfaces = new List<IFinJuegoActions>();
+    private readonly InputAction m_FinJuego_Presionar;
+    private readonly InputAction m_FinJuego_Arriba;
+    private readonly InputAction m_FinJuego_Abajo;
+    public struct FinJuegoActions
+    {
+        private @ControlesJugador m_Wrapper;
+        public FinJuegoActions(@ControlesJugador wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Presionar => m_Wrapper.m_FinJuego_Presionar;
+        public InputAction @Arriba => m_Wrapper.m_FinJuego_Arriba;
+        public InputAction @Abajo => m_Wrapper.m_FinJuego_Abajo;
+        public InputActionMap Get() { return m_Wrapper.m_FinJuego; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(FinJuegoActions set) { return set.Get(); }
+        public void AddCallbacks(IFinJuegoActions instance)
+        {
+            if (instance == null || m_Wrapper.m_FinJuegoActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_FinJuegoActionsCallbackInterfaces.Add(instance);
+            @Presionar.started += instance.OnPresionar;
+            @Presionar.performed += instance.OnPresionar;
+            @Presionar.canceled += instance.OnPresionar;
+            @Arriba.started += instance.OnArriba;
+            @Arriba.performed += instance.OnArriba;
+            @Arriba.canceled += instance.OnArriba;
+            @Abajo.started += instance.OnAbajo;
+            @Abajo.performed += instance.OnAbajo;
+            @Abajo.canceled += instance.OnAbajo;
+        }
+
+        private void UnregisterCallbacks(IFinJuegoActions instance)
+        {
+            @Presionar.started -= instance.OnPresionar;
+            @Presionar.performed -= instance.OnPresionar;
+            @Presionar.canceled -= instance.OnPresionar;
+            @Arriba.started -= instance.OnArriba;
+            @Arriba.performed -= instance.OnArriba;
+            @Arriba.canceled -= instance.OnArriba;
+            @Abajo.started -= instance.OnAbajo;
+            @Abajo.performed -= instance.OnAbajo;
+            @Abajo.canceled -= instance.OnAbajo;
+        }
+
+        public void RemoveCallbacks(IFinJuegoActions instance)
+        {
+            if (m_Wrapper.m_FinJuegoActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IFinJuegoActions instance)
+        {
+            foreach (var item in m_Wrapper.m_FinJuegoActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_FinJuegoActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public FinJuegoActions @FinJuego => new FinJuegoActions(this);
+    public interface ITituloActions
+    {
+        void OnPresionar(InputAction.CallbackContext context);
+        void OnArriba(InputAction.CallbackContext context);
+        void OnAbajo(InputAction.CallbackContext context);
+    }
     public interface IAndandoActions
     {
         void OnDerecha(InputAction.CallbackContext context);
@@ -1937,13 +2305,12 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
     }
     public interface IEligiendoActions
     {
-        void OnPuntero(InputAction.CallbackContext context);
         void OnNavegar(InputAction.CallbackContext context);
         void OnPresionar(InputAction.CallbackContext context);
         void OnArriba(InputAction.CallbackContext context);
         void OnAbajo(InputAction.CallbackContext context);
     }
-    public interface IUIActions
+    public interface IUI_DefaultActions
     {
         void OnNavigate(InputAction.CallbackContext context);
         void OnSubmit(InputAction.CallbackContext context);
@@ -1955,5 +2322,11 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
         void OnRightClick(InputAction.CallbackContext context);
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
+    }
+    public interface IFinJuegoActions
+    {
+        void OnPresionar(InputAction.CallbackContext context);
+        void OnArriba(InputAction.CallbackContext context);
+        void OnAbajo(InputAction.CallbackContext context);
     }
 }

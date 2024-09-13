@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
@@ -27,7 +28,7 @@ public class DialogueManager : MonoBehaviour
     private GameObject interlocutorGO;
     private GameObject interlocutorSpriteGO;
 
-    private Button[] listaBotones;
+    private BotonEleccion[] listaBotones;
     private int botonSeleccionado;
 
     private Image imagenJugador;
@@ -39,6 +40,8 @@ public class DialogueManager : MonoBehaviour
     private Frase fraseActual;
     private int[] listaOpciones;
     private bool estaEscribiendo;
+
+    [SerializeField] float tiempoEntreletras;
 
     private void Awake()
     {
@@ -63,7 +66,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letra in texto.ToCharArray())
         {
             textoBocadillo.text += letra;
-            yield return new WaitForSeconds(Constantes.Dialogos.TIEMPO_ENTRE_LETRAS);
+            yield return new WaitForSeconds(tiempoEntreletras);
         }
 
         if(fraseActual.SiguienteFrase.Length > 1)
@@ -86,7 +89,7 @@ public class DialogueManager : MonoBehaviour
 
     private void OcultarFlecha()
     {
-        flechaAnimator.Play("Nada");
+        flechaAnimator.Play(Constantes.Animacion.UI.NADA);
     }
 
     public void MostrarBocadillo(Frase frase)
@@ -116,15 +119,24 @@ public class DialogueManager : MonoBehaviour
 
     private void MostrarNombre(InterlocutorEnum interlocutor)
     {
-        if (interlocutor == InterlocutorEnum.Jugador)
+        switch(interlocutor)
         {
-            textoNombre.color = new Color(68.0f / 255.0f, 112.0f / 255.0f, 76.0f / 255.0f);
-            textoNombre.text = "Juanjo";
-        }
-        else
-        {
-            textoNombre.color = new Color(108.0f / 255.0f, 73.0f / 255.0f, 140.0f / 255.0f);
-            textoNombre.text = "Joseju";
+            case InterlocutorEnum.Jugador:
+                textoNombre.color = new Color(68.0f / 255.0f, 112.0f / 255.0f, 76.0f / 255.0f);
+                textoNombre.text = Constantes.Dialogos.NOMBRE_PLAYER;
+                break;
+            case InterlocutorEnum.Sillon:
+                textoNombre.color = new Color(202.0f / 255.0f, 116.0f / 255.0f, 51.0f / 255.0f);
+                textoNombre.text = Constantes.Dialogos.NOMBRE_SILLON;
+                break;
+            case InterlocutorEnum.TuMismo:
+                textoNombre.color = new Color(108.0f / 255.0f, 73.0f / 255.0f, 140.0f / 255.0f);
+                textoNombre.text = Constantes.Dialogos.NOMBRE_TUMISMO;
+                break;
+            default:
+                textoNombre.color = new Color(255.0f / 255.0f, 255.0f / 255.0f, 255.0f / 255.0f);
+                textoNombre.text = Constantes.Dialogos.NOMBRE_DEFAULT;
+                break;
         }
     }
 
@@ -160,6 +172,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         textoBocadillo.text = string.Empty;
+        textoNombre.text = string.Empty;
     }
 
 
@@ -224,7 +237,7 @@ public class DialogueManager : MonoBehaviour
 
         int counter = 0;
 
-        listaBotones = new Button[listaOpciones.Count()];
+        listaBotones = new BotonEleccion[listaOpciones.Count()];
 
         foreach (int ID in listaOpciones)
         {
@@ -236,15 +249,13 @@ public class DialogueManager : MonoBehaviour
 
             createdButton.GetComponentInChildren<TextMeshProUGUI>().text = fraseButton.Texto;
 
-            createdButton.GetComponent<Button>().onClick.AddListener(delegate { SeleccionBoton(fraseButton.SiguienteFrase[0]); }) ;
-
             if(counter == 0)
             {
                 createdButton.GetComponent<Button>().Select();
                 botonSeleccionado = 0;
             }
 
-            listaBotones[counter] = createdButton.GetComponent<Button>();
+            listaBotones[counter] = new BotonEleccion(createdButton, fraseButton.SiguienteFrase[0]);
 
             counter++;
         }
@@ -254,7 +265,10 @@ public class DialogueManager : MonoBehaviour
 
     private void Presionar()
     {
-        listaBotones[botonSeleccionado].onClick.Invoke();
+        if (listaBotones != null)
+        {
+            SeleccionBoton(listaBotones[botonSeleccionado].SiguienteFrase);
+        }
     }
 
     private void SeleccionArriba()
@@ -262,7 +276,7 @@ public class DialogueManager : MonoBehaviour
         if(botonSeleccionado - 1 >= 0)
         {
             botonSeleccionado -= 1;
-            listaBotones[botonSeleccionado].Select();
+            listaBotones[botonSeleccionado].Boton.GetComponent<Button>().Select();
         }
     }
 
@@ -271,14 +285,12 @@ public class DialogueManager : MonoBehaviour
         if (botonSeleccionado + 1 < listaBotones.Count())
         {
             botonSeleccionado += 1;
-            listaBotones[botonSeleccionado].Select();
+            listaBotones[botonSeleccionado].Boton.GetComponent<Button>().Select();
         }
     }
 
     private void SeleccionBoton(int idSiguienteFrase)
     {
-        GameManager.Instance.CambiarEstadoJuego(EstadoJuego.Conversando);
-
         fraseActual = conversacionActual.Frases[idSiguienteFrase];
 
         listaOpciones = null;
@@ -291,6 +303,8 @@ public class DialogueManager : MonoBehaviour
         botonSeleccionado = 0;
 
         listaBotones = null;
+
+        GameManager.Instance.CambiarEstadoJuego(EstadoJuego.Conversando);
 
         MostrarBocadillo(fraseActual);
     }

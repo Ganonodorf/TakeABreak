@@ -2,6 +2,151 @@
     "name": "ControlesJugador",
     "maps": [
         {
+            "name": "Titulo",
+            "id": "aa9d70a9-d420-4efb-988c-579c9b482f5d",
+            "actions": [
+                {
+                    "name": "Presionar",
+                    "type": "PassThrough",
+                    "id": "f21c37e6-240a-48ad-87a9-9a684f5dedc2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Arriba",
+                    "type": "Button",
+                    "id": "1fb4e046-acc1-401a-844f-2cd5249ab775",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Abajo",
+                    "type": "Button",
+                    "id": "c9fb14bc-ace3-4094-a918-ef9b1e306255",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d7cb12b1-8a12-481f-89cd-82b53ee8bf43",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Presionar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "58b87478-39ae-4c2b-8cc0-2c350b9c84f7",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Presionar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "28923f09-01dc-4475-b02b-d11c40904812",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Arriba",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "79409386-13b5-4c3b-9bd2-d08b713b08e7",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Arriba",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9f37c4b9-b256-4f27-965e-6b9dff6c88ac",
+                    "path": "<Gamepad>/leftStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Arriba",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b0f6b1ee-a84c-472f-a871-2bee33163941",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Arriba",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c3d4ed52-7745-438c-8da5-c8a1eeeeb9e0",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Abajo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4a5aa375-43c5-401d-8d4e-a6c90b9f3237",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Abajo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c150e826-2e4e-4cec-93a9-0961486d6b66",
+                    "path": "<Gamepad>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Abajo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "80837c2f-99b2-4b0e-a8ec-1a1396d7ff89",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Abajo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "Andando",
             "id": "eab7c0c6-20f7-4a12-85a3-4418ed3f181a",
             "actions": [
@@ -394,15 +539,6 @@
             "id": "e289ed3d-dbd2-4b7d-85d0-ab2e689a45c4",
             "actions": [
                 {
-                    "name": "Puntero",
-                    "type": "PassThrough",
-                    "id": "39a432f5-9bd2-4f2d-840a-b75993ee0dca",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
                     "name": "Navegar",
                     "type": "PassThrough",
                     "id": "ca49938b-7862-4f42-8196-c9bd344443ac",
@@ -440,17 +576,6 @@
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "fdf48d2c-6784-4349-9734-16a9ba7fb118",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Presionar",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "",
                     "id": "3ea26bcb-49f4-4b6e-93a2-eafdd4bcc1af",
@@ -739,39 +864,6 @@
                 },
                 {
                     "name": "",
-                    "id": "9419fc32-735b-4b13-a5e1-54e9d3e5ac04",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Puntero",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7dd7bf1e-efff-448a-bf27-d42bf3ae430f",
-                    "path": "<Pen>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Puntero",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b14a75e9-2cd7-467c-8c30-16b0dbc4176b",
-                    "path": "<Touchscreen>/touch*/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Puntero",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "4ffa797c-f8f7-43da-91fc-742904a4dabf",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
@@ -861,7 +953,7 @@
             ]
         },
         {
-            "name": "UI",
+            "name": "UI_Default",
             "id": "903ba538-56f4-4752-aedf-ad01529cbbf1",
             "actions": [
                 {
@@ -1371,6 +1463,151 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "FinJuego",
+            "id": "cc8d7955-4aaf-46b8-a493-370c9581bd5c",
+            "actions": [
+                {
+                    "name": "Presionar",
+                    "type": "PassThrough",
+                    "id": "6c991616-8fc1-4b0c-8d44-b6c6cb7a8d3b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Arriba",
+                    "type": "Button",
+                    "id": "89525539-0218-44f3-aca6-c71a6d3f2eb5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Abajo",
+                    "type": "Button",
+                    "id": "113f76a6-fb75-4250-b430-e9fd5321a337",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "bb235672-51cd-4cee-be48-141c490919d9",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Abajo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7e4e08c3-34f1-428d-a6a1-98f6871f65f8",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Abajo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "443367c8-3b20-4d95-bf2f-f258b3445ac7",
+                    "path": "<Gamepad>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Abajo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "653f6604-8182-4523-be66-4a8ec2376281",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Abajo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9d4f9e8e-e013-48c5-9621-cb9b3a9b1f9b",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Presionar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ad523a3b-23bf-4ec8-b864-bf50a2cdc016",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Presionar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d970a619-9b55-439b-b8a6-a00d7ce38da6",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Arriba",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9b905ea4-e7ab-4120-b6ed-7cee414c4a31",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Arriba",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "44816e2d-7867-4e2c-b26a-32e2ee0fb5b7",
+                    "path": "<Gamepad>/leftStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Arriba",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "23af6973-ddb3-4093-8d09-8b82b7f64402",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Arriba",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

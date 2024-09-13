@@ -17,6 +17,13 @@ TagManager:
   - TextoConversacion
   - Flecha
   - Exclamacion
+  - Titulo
+  - Musica
+  - Viento
+  - FinJuego
+  - Intro
+  - Canvas
+  - Dialogo
   layers:
   - Default
   - TransparentFX

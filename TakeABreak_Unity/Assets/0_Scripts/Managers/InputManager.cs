@@ -22,6 +22,9 @@ public class InputManager : MonoBehaviour
 
         switch (nuevoEstadoJuego)
         {
+            case EstadoJuego.Titulo:
+                EnablearControlesTitulo();
+                break;
             case EstadoJuego.Inicio:
                 EnablearControlesInicio();
                 break;
@@ -43,9 +46,17 @@ public class InputManager : MonoBehaviour
             case EstadoJuego.Meditando:
                 EnablearControlesMeditando();
                 break;
+            case EstadoJuego.FinJuego:
+                EnablearControlesFinJuego();
+                break;
             default:
                 break;
         }
+    }
+
+    private void EnablearControlesTitulo()
+    {
+        controlesJugador.Titulo.Enable();
     }
 
     private void EnablearControlesInicio()
@@ -73,12 +84,20 @@ public class InputManager : MonoBehaviour
         controlesJugador.Meditando.Enable();
     }
 
+    private void EnablearControlesFinJuego()
+    {
+        controlesJugador.FinJuego.Enable();
+    }
+
     private void DisablearTodo()
     {
+        controlesJugador.Titulo.Disable();
+        controlesJugador.Inicio.Disable();
         controlesJugador.Andando.Disable();
         controlesJugador.Conversando.Disable();
+        controlesJugador.Eligiendo.Disable();
         controlesJugador.Meditando.Disable();
-        controlesJugador.Inicio.Disable();
+        controlesJugador.FinJuego.Disable();
     }
 
     private void HacerInmortal()
@@ -98,7 +117,6 @@ public class InputManager : MonoBehaviour
     private void InicializarVariables()
     {
         controlesJugador = new ControlesJugador();
-        controlesJugador.Andando.Enable();
     }
 
     private void SuscribirseEventos()

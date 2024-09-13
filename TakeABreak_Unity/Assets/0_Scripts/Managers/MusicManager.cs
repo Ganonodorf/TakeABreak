@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static Constantes.Animacion;
 
 public class MusicManager : MonoBehaviour
 {
-    private GameObject jugador;
+    private GameObject musica;
+    private GameObject viento;
 
     public static MusicManager Instance;
 
@@ -17,12 +15,35 @@ public class MusicManager : MonoBehaviour
     void Start()
     {
         BuscarGO();
+
+        SuscribirseEventos();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void GameManager_CambioEstadoJuego(EstadoJuego nuevoEstadoJuego)
     {
+        switch (nuevoEstadoJuego)
+        {
+            case EstadoJuego.Intro:
+                DescargarMusica();
+                break;
+            case EstadoJuego.Inicio:
+                CargarMusica();
+                break;
+            default:
+                break;
+        }
+    }
 
+    private void CargarMusica()
+    {
+        musica.GetComponent<AudioSource>().enabled = true;
+        viento.GetComponent<AudioSource>().enabled = true;
+    }
+
+    private void DescargarMusica()
+    {
+        musica.GetComponent<AudioSource>().enabled = false;
+        viento.GetComponent<AudioSource>().enabled = false;
     }
 
     private void HacerInmortal()
@@ -40,6 +61,12 @@ public class MusicManager : MonoBehaviour
 
     private void BuscarGO()
     {
-        jugador = GameObject.FindWithTag(Constantes.Tags.JUGADOR);
+        musica = GameObject.FindWithTag(Constantes.Tags.MUSICA);
+        viento = GameObject.FindWithTag(Constantes.Tags.VIENTO);
+    }
+
+    private void SuscribirseEventos()
+    {
+        GameManager.CambioEstadoJuego += GameManager_CambioEstadoJuego;
     }
 }
