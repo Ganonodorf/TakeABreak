@@ -4,7 +4,8 @@ public class Constantes
 {
     public class Dialogos
     {
-        public const int FIN_CONVERSACION_FINAL = -1;
+        public const int FIN_CONVERSACION = -1;
+        public const int ANIMACION_PEDO = -2;
         public const int SILLON_MEDITAR = -2;
         public const int SILLON_LEVANTARSE = -3;
 
@@ -171,7 +172,7 @@ public class Constantes
                 Texto: "...",
                 Interlocutor: InterlocutorEnum.Jugador,
                 Mostrar: true,
-                SiguienteFrase: new int[1] { -1 }),
+                SiguienteFrase: new int[1] { 1 }),
                 new Frase(ID: 1,
                 Texto: "¿No vas a decir nada?",
                 Interlocutor: InterlocutorEnum.TuMismo,
@@ -846,7 +847,7 @@ public class Constantes
                 Texto: "Te voy a matar...",
                 Interlocutor: InterlocutorEnum.Jugador,
                 Mostrar: true,
-                SiguienteFrase: new int[1] { Constantes.Dialogos.FIN_CONVERSACION_FINAL })
+                SiguienteFrase: new int[1] { Constantes.Dialogos.FIN_CONVERSACION })
             }
         );
     }
@@ -930,7 +931,8 @@ public class Constantes
 
     public class PosicionesClave
     {
-        public const float PosXInicial = -30.0f;
+        public const float PosXInicialJugador = -30.0f;
+        public const float PosXInicialCamara = 0.0f;
 
         public const float PosYDentroDeCasa = -28.0f;
         public const float PosYFueraDeCasa = -37.0f;

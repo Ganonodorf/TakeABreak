@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -29,59 +28,54 @@ public class CanvasController : MonoBehaviour
         switch (nuevoEstadoJuego)
         {
             case EstadoJuego.Intro:
-                OcultarMenu(CanvasTitulo);
-                OcultarMenu(CanvasFinJuego);
                 CargarIntro();
                 break;
             case EstadoJuego.Titulo:
-                OcultarMenu(CanvasIntro);
-                OcultarMenu(CanvasFinJuego);
-                CargarMenu(CanvasTitulo);
+                CargarTitulo();
                 break;
             case EstadoJuego.FinJuego:
-                OcultarMenu(CanvasIntro);
-                OcultarMenu(CanvasTitulo);
-                CargarMenu(CanvasFinJuego);
+                CargarFinJuego();
                 break;
             default:
                 break;
         }
     }
 
+    private void CargarFinJuego()
+    {
+        OcultarMenu(CanvasIntro);
+
+        OcultarMenu(CanvasTitulo);
+
+        FadeInMenu(CanvasFinJuego);
+    }
+
+    private void CargarTitulo()
+    {
+        OcultarMenu(CanvasIntro);
+
+        OcultarMenu(CanvasFinJuego);
+
+        FadeInMenu(CanvasTitulo);
+    }
+
     private void CargarIntro()
     {
+        OcultarMenu(CanvasTitulo);
+
+        OcultarMenu(CanvasFinJuego);
+
         Image imagen = CanvasIntro.GetComponent<Image>();
         imagen.color = new Color(imagen.color.r, imagen.color.g, imagen.color.b, 1.0f);
 
         CanvasIntro.GetComponent<Animator>().Play(Constantes.Animacion.UI.INTRO);
     }
 
-    private void CargarMenu(GameObject menuACargar)
-    {
-        botonSeleccionado = 0;
-
-        listaBotones = menuACargar.GetComponentsInChildren<Button>();
-
-        listaBotones[botonSeleccionado].Select();
-
-        Image[] imagenes = menuACargar.GetComponentsInChildren<Image>();
-        TextMeshProUGUI[] textos = menuACargar.GetComponentsInChildren<TextMeshProUGUI>();
-
-        foreach (Image image in imagenes)
-        {
-            image.color = new Color(image.color.r, image.color.g, image.color.b, 1.0f);
-        }
-
-        foreach (TextMeshProUGUI texto in textos)
-        {
-            texto.color = new Color(texto.color.r, texto.color.g, texto.color.b, 1.0f);
-        }
-    }
-
     private void OcultarMenu(GameObject menuAOcultar)
     {
         Image[] imagenes = menuAOcultar.GetComponentsInChildren<Image>();
         TextMeshProUGUI[] textos = menuAOcultar.GetComponentsInChildren<TextMeshProUGUI>();
+        Button[] botones = menuAOcultar.GetComponentsInChildren<Button>();
 
         foreach (Image image in imagenes)
         {
@@ -91,6 +85,11 @@ public class CanvasController : MonoBehaviour
         foreach (TextMeshProUGUI texto in textos)
         {
             texto.color = new Color(texto.color.r, texto.color.g, texto.color.b, 0.0f);
+        }
+
+        foreach(Button boton in botones)
+        {
+            boton.enabled = false;
         }
     }
 
@@ -141,7 +140,9 @@ public class CanvasController : MonoBehaviour
     private IEnumerator FadeInCoroutine(GameObject menuACargar)
     {
         Image[] imagenes = menuACargar.GetComponentsInChildren<Image>();
-        TextMeshPro[] textos = menuACargar.GetComponentsInChildren<TextMeshPro>();
+        TextMeshProUGUI[] textos = menuACargar.GetComponentsInChildren<TextMeshProUGUI>();
+        listaBotones = menuACargar.GetComponentsInChildren<Button>();
+
         float alfa = 0.0f;
 
         while (alfa < 1.0f)
@@ -153,13 +154,22 @@ public class CanvasController : MonoBehaviour
                 image.color = new Color(image.color.r, image.color.g, image.color.b, alfa);
             }
 
-            foreach (TextMeshPro texto in textos)
+            foreach (TextMeshProUGUI texto in textos)
             {
                 texto.color = new Color(texto.color.r, texto.color.g, texto.color.b, alfa);
             }
 
             yield return new WaitForFixedUpdate();
         }
+
+        foreach (Button boton in listaBotones)
+        {
+            boton.enabled = true;
+        }
+
+        botonSeleccionado = 0;
+
+        listaBotones[botonSeleccionado].Select();
     }
 
     private void Presionar()

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -28,7 +27,7 @@ public class OI_Banco : MonoBehaviour, IObjetoInteractuable, IObjetoDialogable
 
     public void RespuestaDialogo(int codigoRespuesta)
     {
-        if(codigoRespuesta == -1)
+        if (codigoRespuesta == Constantes.Dialogos.FIN_CONVERSACION)
         {
             GameManager.Instance.CambiarEstadoJuego(EstadoJuego.FinJuego);
         }

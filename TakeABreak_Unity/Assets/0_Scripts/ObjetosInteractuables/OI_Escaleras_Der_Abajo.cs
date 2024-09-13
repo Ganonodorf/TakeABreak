@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class OI_Escaleras_Der_Abajo : MonoBehaviour, IObjetoInteractuable

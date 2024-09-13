@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -39,6 +37,20 @@ public class OI_Sillon : MonoBehaviour, IObjetoInteractuable, IObjetoDialogable
         BuscarGO();
 
         RecogerInfoInputs();
+
+        SuscribirseEventos();
+    }
+
+    private void GameManager_CambioEstadoJuego(EstadoJuego nuevoEstadoJuego)
+    {
+        switch (nuevoEstadoJuego)
+        {
+            case EstadoJuego.Titulo:
+                conversacionInicial = false;
+                break;
+            default:
+                break;
+        }
     }
 
     private void Update()
@@ -253,5 +265,10 @@ public class OI_Sillon : MonoBehaviour, IObjetoInteractuable, IObjetoDialogable
         InputManager.Instance.controlesJugador.Meditando.Salir.performed += contexto => FinalizarMeditacion();
         InputManager.Instance.controlesJugador.Meditando.Respirar.started += contexto => Inhalar();
         InputManager.Instance.controlesJugador.Meditando.Respirar.canceled += contexto => Exhalar();
+    }
+
+    private void SuscribirseEventos()
+    {
+        GameManager.CambioEstadoJuego += GameManager_CambioEstadoJuego;
     }
 }

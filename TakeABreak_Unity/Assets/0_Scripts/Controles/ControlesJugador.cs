@@ -29,12 +29,12 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Presionar"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""f21c37e6-240a-48ad-87a9-9a684f5dedc2"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 },
                 {
                     ""name"": ""Arriba"",
@@ -1496,12 +1496,12 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Presionar"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""6c991616-8fc1-4b0c-8d44-b6c6cb7a8d3b"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 },
                 {
                     ""name"": ""Arriba"",

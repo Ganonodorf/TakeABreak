@@ -103,8 +103,6 @@ public class AnimacionCont : MonoBehaviour
                 break;
             case EstadoMovimiento.SentandoseBanco:
                 animacionNueva = Constantes.Animacion.Jugador.NADA;
-                duracionAnimacion = Constantes.Animacion.Banco.DURACION_SENTANDOSE_BANCO;
-                Invoke("FinSentandoseBanco", duracionAnimacion);
                 GameManager.Instance.CambiarEstadoJuego(EstadoJuego.HaciendoAnimacion);
                 break;
             case EstadoMovimiento.SentadoBanco:
@@ -158,12 +156,6 @@ public class AnimacionCont : MonoBehaviour
     {
         movimientoCont.CambiarEstadoMovimiento(EstadoMovimiento.IdleAlante);
         FinAnimacion(EstadoJuego.Andando);
-    }
-
-    private void FinSentandoseBanco()
-    {
-        movimientoCont.CambiarEstadoMovimiento(EstadoMovimiento.SentadoBanco);
-        FinAnimacion(EstadoJuego.Conversando);
     }
 
     public void FinAnimacion(EstadoJuego nuevoEstadoJuego)

@@ -6,8 +6,9 @@ public class GameManager : MonoBehaviour
     // Variables privadas
     private EstadoJuego estado;
     private GameObject jugador;
+    private GameObject camara;
 
-    //[SerializeField] private EstadoJuego estadoJuegoInicial;
+    [SerializeField] private EstadoJuego estadoJuegoInicial;
 
     // Variables públicas
     public static GameManager Instance;
@@ -27,7 +28,8 @@ public class GameManager : MonoBehaviour
 
         EstablecerResolucionYRaton();
 
-        CambiarEstadoJuego(EstadoJuego.Intro);
+        CambiarEstadoJuego(estadoJuegoInicial);
+        //CambiarEstadoJuego(EstadoJuego.Intro);
     }
 
     public EstadoJuego GetEstadoJuego()
@@ -45,7 +47,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Estado del juego: Intro");
                 break;
             case EstadoJuego.Titulo:
-                EstadoMenu();
+                EstadoTitulo();
                 Debug.Log("Estado del juego: Titulo");
                 break;
             case EstadoJuego.Inicio:
@@ -70,7 +72,6 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Estado del juego: Meditando");
                 break;
             case EstadoJuego.FinJuego:
-                EstadoFinJuego();
                 Debug.Log("Estado del juego: FinJuego");
                 break;
             default:
@@ -80,14 +81,18 @@ public class GameManager : MonoBehaviour
         CambioEstadoJuego?.Invoke(nuevoEstado);
     }
 
-    private void EstadoMenu()
+    private void EstadoTitulo()
     {
         jugador.GetComponent<MovimientoCont>().CambiarEstadoMovimiento(EstadoMovimiento.IdleEspalda);
-    }
 
-    private void EstadoFinJuego()
-    {
-        throw new NotImplementedException();
+        if(jugador.transform.position.x != Constantes.PosicionesClave.PosXInicialJugador)
+        {
+            jugador.transform.position = new Vector2(Constantes.PosicionesClave.PosXInicialJugador,
+                                                     Constantes.PosicionesClave.PosYFueraDeCasa);
+
+            camara.transform.position = new Vector2(Constantes.PosicionesClave.PosXInicialCamara,
+                                                    camara.transform.position.y);
+        }
     }
 
     private void IniciarJuego()
@@ -111,6 +116,7 @@ public class GameManager : MonoBehaviour
     private void BuscarGO()
     {
         jugador = GameObject.FindWithTag(Constantes.Tags.JUGADOR);
+        camara = GameObject.FindWithTag(Constantes.Tags.CAMARA);
     }
 
     private void RecogerInfoInputs()

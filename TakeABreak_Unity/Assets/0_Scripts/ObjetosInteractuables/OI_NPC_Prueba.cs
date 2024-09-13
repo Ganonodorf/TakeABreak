@@ -119,7 +119,7 @@ public class OI_NPC_Prueba : MonoBehaviour, IObjetoInteractuable
                       Texto: "Me alegro de que te guste tanto",
                       Interlocutor: InterlocutorEnum.NPC,
                       Mostrar: true,
-                      SiguienteFrase: new int[1] { Constantes.Dialogos.FIN_CONVERSACION_FINAL })
+                      SiguienteFrase: new int[1] { Constantes.Dialogos.FIN_CONVERSACION })
             }
         );
 

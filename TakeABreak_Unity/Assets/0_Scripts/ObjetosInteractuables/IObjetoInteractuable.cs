@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public interface IObjetoInteractuable
 {
     string Nombre { get; set; }

@@ -26,6 +26,9 @@ public class MusicManager : MonoBehaviour
             case EstadoJuego.Intro:
                 DescargarMusica();
                 break;
+            case EstadoJuego.Titulo:
+                DescargarMusica();
+                break;
             case EstadoJuego.Inicio:
                 CargarMusica();
                 break;
