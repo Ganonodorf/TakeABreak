@@ -59,7 +59,7 @@ public class OI_Sillon : MonoBehaviour, IObjetoInteractuable, IObjetoDialogable
         {
             timerRespiracion += Time.deltaTime;
 
-            if(timerRespiracion > 5.0f)
+            if(timerRespiracion > 6.0f)
             {
                 timerRespiracion = 0.0f;
 
@@ -216,6 +216,8 @@ public class OI_Sillon : MonoBehaviour, IObjetoInteractuable, IObjetoDialogable
 
     private void Inhalar()
     {
+        Debug.Log("Inhalo");
+
         timerRespiracion = 0.0f;
 
         gameObject.GetComponent<Animator>().Play(Constantes.Animacion.Sillon.MEDITANDO_INHALAR);
@@ -225,6 +227,8 @@ public class OI_Sillon : MonoBehaviour, IObjetoInteractuable, IObjetoDialogable
 
     private void Exhalar()
     {
+        Debug.Log("Exhalo");
+
         timerRespiracion = 0.0f;
 
         gameObject.GetComponent<Animator>().Play(Constantes.Animacion.Sillon.MEDITANDO_EXHALAR);

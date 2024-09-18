@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    private GameObject musica;
-    private GameObject viento;
+    private AudioSource musica;
+    private AudioSource guitarra;
+    private AudioSource viento;
 
     public static MusicManager Instance;
 
@@ -11,7 +12,7 @@ public class MusicManager : MonoBehaviour
     {
         HacerInmortal();
     }
-    // Start is called before the first frame update
+
     void Start()
     {
         BuscarGO();
@@ -32,6 +33,12 @@ public class MusicManager : MonoBehaviour
             case EstadoJuego.Inicio:
                 CargarMusica();
                 break;
+            case EstadoJuego.Pausa:
+                PausarMusica();
+                break;
+            case EstadoJuego.Andando:
+                ReanudarMusica();
+                break;
             default:
                 break;
         }
@@ -39,14 +46,39 @@ public class MusicManager : MonoBehaviour
 
     private void CargarMusica()
     {
-        musica.GetComponent<AudioSource>().enabled = true;
-        viento.GetComponent<AudioSource>().enabled = true;
+        musica.enabled = true;
+        guitarra.enabled = true;
+        viento.enabled = true;
     }
 
     private void DescargarMusica()
     {
-        musica.GetComponent<AudioSource>().enabled = false;
-        viento.GetComponent<AudioSource>().enabled = false;
+        musica.enabled = false;
+        guitarra.volume = 0.0f;
+        guitarra.enabled = false;
+        viento.enabled = false;
+    }
+
+    private void PausarMusica()
+    {
+        musica.Pause();
+        guitarra.Pause();
+        viento.Pause();
+    }
+
+    private void ReanudarMusica()
+    {
+        if (!musica.isPlaying)
+        {
+            musica.Play();
+            guitarra.Play();
+            viento.Play();
+        }
+    }
+
+    public void ActivarGuitarra()
+    {
+        guitarra.volume = 1.0f;
     }
 
     private void HacerInmortal()
@@ -64,8 +96,9 @@ public class MusicManager : MonoBehaviour
 
     private void BuscarGO()
     {
-        musica = GameObject.FindWithTag(Constantes.Tags.MUSICA);
-        viento = GameObject.FindWithTag(Constantes.Tags.VIENTO);
+        musica = GameObject.FindWithTag(Constantes.Tags.MUSICA).GetComponent<AudioSource>();
+        guitarra = GameObject.FindWithTag(Constantes.Tags.GUITARRA).GetComponent<AudioSource>();
+        viento = GameObject.FindWithTag(Constantes.Tags.VIENTO).GetComponent<AudioSource>();
     }
 
     private void SuscribirseEventos()

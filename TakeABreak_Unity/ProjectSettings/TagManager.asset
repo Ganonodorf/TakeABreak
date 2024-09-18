@@ -24,6 +24,13 @@ TagManager:
   - Intro
   - Canvas
   - Dialogo
+  - Pausa
+  - Cabeza
+  - Boca
+  - TuMismo
+  - CabezaTuMismo
+  - BocaTuMismo
+  - Guitarra
   layers:
   - Default
   - TransparentFX

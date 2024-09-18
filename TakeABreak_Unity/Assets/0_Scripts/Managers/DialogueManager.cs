@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Linq;
 using TMPro;
@@ -9,6 +10,8 @@ public class DialogueManager : MonoBehaviour
     // Public fields
     public static DialogueManager Instance;
     public GameObject buttonPrefab;
+
+    public static event Action<bool, InterlocutorEnum> EstaHablando;
 
     // Private fields
     private GameObject bocadilloGO;
@@ -59,6 +62,8 @@ public class DialogueManager : MonoBehaviour
 
         estaEscribiendo = true;
 
+        EstaHablando.Invoke(estaEscribiendo, fraseActual.Interlocutor);
+
         foreach (char letra in texto.ToCharArray())
         {
             textoBocadillo.text += letra;
@@ -76,6 +81,8 @@ public class DialogueManager : MonoBehaviour
         }
 
         estaEscribiendo = false;
+
+        EstaHablando.Invoke(estaEscribiendo, fraseActual.Interlocutor);
     }
 
     private void MostrarFlecha()
@@ -118,20 +125,20 @@ public class DialogueManager : MonoBehaviour
         switch(interlocutor)
         {
             case InterlocutorEnum.Jugador:
-                textoNombre.color = new Color(68.0f / 255.0f, 112.0f / 255.0f, 76.0f / 255.0f);
-                textoNombre.text = Constantes.Dialogos.NOMBRE_PLAYER;
+                //textoNombre.color = new Color(68.0f / 255.0f, 112.0f / 255.0f, 76.0f / 255.0f);
+                //textoNombre.text = Constantes.Dialogos.NOMBRE_PLAYER;
                 break;
             case InterlocutorEnum.Sillon:
-                textoNombre.color = new Color(202.0f / 255.0f, 116.0f / 255.0f, 51.0f / 255.0f);
-                textoNombre.text = Constantes.Dialogos.NOMBRE_SILLON;
+                //textoNombre.color = new Color(202.0f / 255.0f, 116.0f / 255.0f, 51.0f / 255.0f);
+                //textoNombre.text = Constantes.Dialogos.NOMBRE_SILLON;
                 break;
             case InterlocutorEnum.TuMismo:
-                textoNombre.color = new Color(108.0f / 255.0f, 73.0f / 255.0f, 140.0f / 255.0f);
-                textoNombre.text = Constantes.Dialogos.NOMBRE_TUMISMO;
+                //textoNombre.color = new Color(108.0f / 255.0f, 73.0f / 255.0f, 140.0f / 255.0f);
+                //textoNombre.text = Constantes.Dialogos.NOMBRE_TUMISMO;
                 break;
             default:
-                textoNombre.color = new Color(255.0f / 255.0f, 255.0f / 255.0f, 255.0f / 255.0f);
-                textoNombre.text = Constantes.Dialogos.NOMBRE_DEFAULT;
+                //textoNombre.color = new Color(255.0f / 255.0f, 255.0f / 255.0f, 255.0f / 255.0f);
+                //textoNombre.text = Constantes.Dialogos.NOMBRE_DEFAULT;
                 break;
         }
     }
@@ -168,11 +175,11 @@ public class DialogueManager : MonoBehaviour
         }
 
         textoBocadillo.text = string.Empty;
-        textoNombre.text = string.Empty;
+        //textoNombre.text = string.Empty;
     }
 
 
-    public void IniciarConversacion(GameObject interlocutor, Conversacion conversacion, Sprite sprite)
+    public void IniciarConversacion(GameObject interlocutor, Conversacion conversacion, Sprite sprite, int comienzoConversacion = 0)
     {
         GameManager.Instance.CambiarEstadoJuego(EstadoJuego.Conversando);
 
@@ -180,7 +187,7 @@ public class DialogueManager : MonoBehaviour
 
         conversacionActual = conversacion;
 
-        fraseActual = conversacionActual.Frases[0];
+        fraseActual = conversacionActual.Frases[comienzoConversacion];
 
         imagenNPC.sprite = sprite;
 
@@ -215,7 +222,7 @@ public class DialogueManager : MonoBehaviour
     {
         OcultarFlecha();
 
-        if (fraseActual.SiguienteFrase[0] < 0)
+        if (fraseActual.SiguienteFrase[0] < 0.0f)
         {
             FinalizarConversacion(fraseActual.SiguienteFrase[0]);
         }
@@ -339,7 +346,7 @@ public class DialogueManager : MonoBehaviour
 
     private void InicializarVariables()
     {
-        textoNombre = nombreConversacionGO.GetComponentInChildren<TextMeshProUGUI>();
+        //textoNombre = nombreConversacionGO.GetComponentInChildren<TextMeshProUGUI>();
         textoBocadillo = textoConversacionGO.GetComponentInChildren<TextMeshProUGUI>();
         flechaAnimator = flechaGO.GetComponent<Animator>();
 

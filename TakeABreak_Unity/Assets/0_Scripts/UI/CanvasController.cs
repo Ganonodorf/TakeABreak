@@ -8,6 +8,7 @@ public class CanvasController : MonoBehaviour
     private GameObject CanvasIntro;
     private GameObject CanvasTitulo;
     private GameObject CanvasFinJuego;
+    private GameObject CanvasPausa;
 
     private Button[] listaBotones;
     private int botonSeleccionado;
@@ -35,6 +36,9 @@ public class CanvasController : MonoBehaviour
                 break;
             case EstadoJuego.FinJuego:
                 CargarFinJuego();
+                break;
+            case EstadoJuego.Pausa:
+                CargarPausa();
                 break;
             default:
                 break;
@@ -70,6 +74,12 @@ public class CanvasController : MonoBehaviour
 
         CanvasIntro.GetComponent<Animator>().Play(Constantes.Animacion.UI.INTRO);
     }
+    
+    private void CargarPausa()
+    {
+        FadeInMenu(CanvasPausa);
+    }
+
 
     private void OcultarMenu(GameObject menuAOcultar)
     {
@@ -107,6 +117,7 @@ public class CanvasController : MonoBehaviour
     {
         Image[] imagenes = menuADescargar.GetComponentsInChildren<Image>();
         TextMeshProUGUI[] textos = menuADescargar.GetComponentsInChildren<TextMeshProUGUI>();
+        listaBotones = null;
         float alfa = 1.0f;
 
         while (alfa > 0.0f)
@@ -172,14 +183,50 @@ public class CanvasController : MonoBehaviour
         listaBotones[botonSeleccionado].Select();
     }
 
-    private void Presionar()
+    private void PresionarTitulo()
     {
         switch (botonSeleccionado)
         {
             case 0:
-                BotonPrimero();
+                OcultarMenu(CanvasTitulo);
+                GameManager.Instance.CambiarEstadoJuego(EstadoJuego.Inicio);
                 break;
             case 1:
+                BotonSalir();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void PresionarFinJuego()
+    {
+        switch (botonSeleccionado)
+        {
+            case 0:
+                GameManager.Instance.CambiarEstadoJuego(EstadoJuego.Titulo);
+                break;
+            case 1:
+                BotonSalir();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void PresionarPausa()
+    {
+        switch (botonSeleccionado)
+        {
+            case 0:
+                OcultarMenu(CanvasPausa);
+                GameManager.Instance.CambiarEstadoJuego(EstadoJuego.Andando);
+                break;
+            case 1:
+                OcultarMenu(CanvasPausa);
+                GameManager.Instance.CambiarEstadoJuego(EstadoJuego.Titulo);
+                break;
+            case 2:
                 BotonSalir();
                 break;
             default:
@@ -205,19 +252,6 @@ public class CanvasController : MonoBehaviour
         }
     }
 
-    private void BotonPrimero()
-    {
-        if(GameManager.Instance.GetEstadoJuego() == EstadoJuego.Titulo)
-        {
-            FadeOutMenu(CanvasTitulo);
-            GameManager.Instance.CambiarEstadoJuego(EstadoJuego.Inicio);
-        }
-        else
-        {
-            GameManager.Instance.CambiarEstadoJuego(EstadoJuego.Titulo);
-        }
-    }
-
     private void BotonSalir()
     {
         Application.Quit();
@@ -228,16 +262,20 @@ public class CanvasController : MonoBehaviour
         CanvasIntro = GameObject.FindGameObjectWithTag(Constantes.Tags.INTRO);
         CanvasTitulo = GameObject.FindGameObjectWithTag(Constantes.Tags.TITULO);
         CanvasFinJuego = GameObject.FindGameObjectWithTag(Constantes.Tags.FINJUEGO);
+        CanvasPausa = GameObject.FindGameObjectWithTag(Constantes.Tags.PAUSA);
     }
 
     private void RecogerInfoInputs()
     {
-        InputManager.Instance.controlesJugador.Titulo.Presionar.performed += contexto => Presionar();
+        InputManager.Instance.controlesJugador.Titulo.Presionar.performed += contexto => PresionarTitulo();
         InputManager.Instance.controlesJugador.Titulo.Arriba.performed += contexto => SeleccionArriba();
         InputManager.Instance.controlesJugador.Titulo.Abajo.performed += contexto => SeleccionAbajo();
-        InputManager.Instance.controlesJugador.FinJuego.Presionar.performed += contexto => Presionar();
+        InputManager.Instance.controlesJugador.FinJuego.Presionar.performed += contexto => PresionarFinJuego();
         InputManager.Instance.controlesJugador.FinJuego.Arriba.performed += contexto => SeleccionArriba();
         InputManager.Instance.controlesJugador.FinJuego.Abajo.performed += contexto => SeleccionAbajo();
+        InputManager.Instance.controlesJugador.Pausa.Presionar.performed += contexto => PresionarPausa();
+        InputManager.Instance.controlesJugador.Pausa.Arriba.performed += contexto => SeleccionArriba();
+        InputManager.Instance.controlesJugador.Pausa.Abajo.performed += contexto => SeleccionAbajo();
     }
 
     private void SuscribirseEventos()

@@ -49,6 +49,9 @@ public class InputManager : MonoBehaviour
             case EstadoJuego.FinJuego:
                 EnablearControlesFinJuego();
                 break;
+            case EstadoJuego.Pausa:
+                EnablearControlesPausa();
+                break;
             default:
                 break;
         }
@@ -89,6 +92,11 @@ public class InputManager : MonoBehaviour
         controlesJugador.FinJuego.Enable();
     }
 
+    private void EnablearControlesPausa()
+    {
+        controlesJugador.Pausa.Enable();
+    }
+
     private void DisablearTodo()
     {
         controlesJugador.Titulo.Disable();
@@ -98,6 +106,7 @@ public class InputManager : MonoBehaviour
         controlesJugador.Eligiendo.Disable();
         controlesJugador.Meditando.Disable();
         controlesJugador.FinJuego.Disable();
+        controlesJugador.Pausa.Disable();
     }
 
     private void HacerInmortal()

@@ -198,6 +198,15 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pausa"",
+                    ""type"": ""Button"",
+                    ""id"": ""76a3591e-4019-4acb-878a-5fc55df95ec1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -308,6 +317,28 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Accion"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4964aa92-6218-484e-866d-c994e6edd767"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pausa"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""64e4c9bf-1105-49e3-aeed-14515f27d0c5"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pausa"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1634,6 +1665,151 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Pausa"",
+            ""id"": ""3843e339-facc-414a-9025-d00b354e9280"",
+            ""actions"": [
+                {
+                    ""name"": ""Presionar"",
+                    ""type"": ""Button"",
+                    ""id"": ""7dbc207c-d89d-4c18-88c2-6d811058b2c0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Arriba"",
+                    ""type"": ""Button"",
+                    ""id"": ""31b1ad7a-c818-4503-af49-3a8c33c54475"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Abajo"",
+                    ""type"": ""Button"",
+                    ""id"": ""2d1993e4-4434-4130-b2aa-0c9b8d642f14"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""7c58a4c0-820a-4c7c-a313-257dac0c2e00"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Presionar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6c937dbb-f517-48fe-81c8-d8ad70e3d295"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Presionar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0557e5ff-4920-44e4-916d-4d3bc3f2f30f"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Arriba"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4cc6ffa4-1bb3-457b-b894-fbf5f8d3006d"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Arriba"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fa37c234-55de-45f2-8eab-0b9f99d27dd3"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Arriba"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8a2324ee-a2f5-4f1d-a29c-86ecb83f68d6"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Arriba"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""00d98eb3-df08-45ea-b2e5-b8fb6f3a90e1"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Abajo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""38d220c4-50b7-49ad-adfd-7692400d79c1"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Abajo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ad69c5ad-71f6-450d-960c-b2c2f94cd5a0"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Abajo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""da10670e-3fb0-40f1-8640-7af0b4487519"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Abajo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -1648,6 +1824,7 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
         m_Andando_Derecha = m_Andando.FindAction("Derecha", throwIfNotFound: true);
         m_Andando_Izquierda = m_Andando.FindAction("Izquierda", throwIfNotFound: true);
         m_Andando_Accion = m_Andando.FindAction("Accion", throwIfNotFound: true);
+        m_Andando_Pausa = m_Andando.FindAction("Pausa", throwIfNotFound: true);
         // Conversando
         m_Conversando = asset.FindActionMap("Conversando", throwIfNotFound: true);
         m_Conversando_Continuar = m_Conversando.FindAction("Continuar", throwIfNotFound: true);
@@ -1683,6 +1860,11 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
         m_FinJuego_Presionar = m_FinJuego.FindAction("Presionar", throwIfNotFound: true);
         m_FinJuego_Arriba = m_FinJuego.FindAction("Arriba", throwIfNotFound: true);
         m_FinJuego_Abajo = m_FinJuego.FindAction("Abajo", throwIfNotFound: true);
+        // Pausa
+        m_Pausa = asset.FindActionMap("Pausa", throwIfNotFound: true);
+        m_Pausa_Presionar = m_Pausa.FindAction("Presionar", throwIfNotFound: true);
+        m_Pausa_Arriba = m_Pausa.FindAction("Arriba", throwIfNotFound: true);
+        m_Pausa_Abajo = m_Pausa.FindAction("Abajo", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1809,6 +1991,7 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
     private readonly InputAction m_Andando_Derecha;
     private readonly InputAction m_Andando_Izquierda;
     private readonly InputAction m_Andando_Accion;
+    private readonly InputAction m_Andando_Pausa;
     public struct AndandoActions
     {
         private @ControlesJugador m_Wrapper;
@@ -1816,6 +1999,7 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
         public InputAction @Derecha => m_Wrapper.m_Andando_Derecha;
         public InputAction @Izquierda => m_Wrapper.m_Andando_Izquierda;
         public InputAction @Accion => m_Wrapper.m_Andando_Accion;
+        public InputAction @Pausa => m_Wrapper.m_Andando_Pausa;
         public InputActionMap Get() { return m_Wrapper.m_Andando; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1834,6 +2018,9 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
             @Accion.started += instance.OnAccion;
             @Accion.performed += instance.OnAccion;
             @Accion.canceled += instance.OnAccion;
+            @Pausa.started += instance.OnPausa;
+            @Pausa.performed += instance.OnPausa;
+            @Pausa.canceled += instance.OnPausa;
         }
 
         private void UnregisterCallbacks(IAndandoActions instance)
@@ -1847,6 +2034,9 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
             @Accion.started -= instance.OnAccion;
             @Accion.performed -= instance.OnAccion;
             @Accion.canceled -= instance.OnAccion;
+            @Pausa.started -= instance.OnPausa;
+            @Pausa.performed -= instance.OnPausa;
+            @Pausa.canceled -= instance.OnPausa;
         }
 
         public void RemoveCallbacks(IAndandoActions instance)
@@ -2276,6 +2466,68 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
         }
     }
     public FinJuegoActions @FinJuego => new FinJuegoActions(this);
+
+    // Pausa
+    private readonly InputActionMap m_Pausa;
+    private List<IPausaActions> m_PausaActionsCallbackInterfaces = new List<IPausaActions>();
+    private readonly InputAction m_Pausa_Presionar;
+    private readonly InputAction m_Pausa_Arriba;
+    private readonly InputAction m_Pausa_Abajo;
+    public struct PausaActions
+    {
+        private @ControlesJugador m_Wrapper;
+        public PausaActions(@ControlesJugador wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Presionar => m_Wrapper.m_Pausa_Presionar;
+        public InputAction @Arriba => m_Wrapper.m_Pausa_Arriba;
+        public InputAction @Abajo => m_Wrapper.m_Pausa_Abajo;
+        public InputActionMap Get() { return m_Wrapper.m_Pausa; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PausaActions set) { return set.Get(); }
+        public void AddCallbacks(IPausaActions instance)
+        {
+            if (instance == null || m_Wrapper.m_PausaActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PausaActionsCallbackInterfaces.Add(instance);
+            @Presionar.started += instance.OnPresionar;
+            @Presionar.performed += instance.OnPresionar;
+            @Presionar.canceled += instance.OnPresionar;
+            @Arriba.started += instance.OnArriba;
+            @Arriba.performed += instance.OnArriba;
+            @Arriba.canceled += instance.OnArriba;
+            @Abajo.started += instance.OnAbajo;
+            @Abajo.performed += instance.OnAbajo;
+            @Abajo.canceled += instance.OnAbajo;
+        }
+
+        private void UnregisterCallbacks(IPausaActions instance)
+        {
+            @Presionar.started -= instance.OnPresionar;
+            @Presionar.performed -= instance.OnPresionar;
+            @Presionar.canceled -= instance.OnPresionar;
+            @Arriba.started -= instance.OnArriba;
+            @Arriba.performed -= instance.OnArriba;
+            @Arriba.canceled -= instance.OnArriba;
+            @Abajo.started -= instance.OnAbajo;
+            @Abajo.performed -= instance.OnAbajo;
+            @Abajo.canceled -= instance.OnAbajo;
+        }
+
+        public void RemoveCallbacks(IPausaActions instance)
+        {
+            if (m_Wrapper.m_PausaActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IPausaActions instance)
+        {
+            foreach (var item in m_Wrapper.m_PausaActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_PausaActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public PausaActions @Pausa => new PausaActions(this);
     public interface ITituloActions
     {
         void OnPresionar(InputAction.CallbackContext context);
@@ -2287,6 +2539,7 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
         void OnDerecha(InputAction.CallbackContext context);
         void OnIzquierda(InputAction.CallbackContext context);
         void OnAccion(InputAction.CallbackContext context);
+        void OnPausa(InputAction.CallbackContext context);
     }
     public interface IConversandoActions
     {
@@ -2324,6 +2577,12 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
     }
     public interface IFinJuegoActions
+    {
+        void OnPresionar(InputAction.CallbackContext context);
+        void OnArriba(InputAction.CallbackContext context);
+        void OnAbajo(InputAction.CallbackContext context);
+    }
+    public interface IPausaActions
     {
         void OnPresionar(InputAction.CallbackContext context);
         void OnArriba(InputAction.CallbackContext context);

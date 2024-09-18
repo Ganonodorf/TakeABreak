@@ -74,6 +74,9 @@ public class GameManager : MonoBehaviour
             case EstadoJuego.FinJuego:
                 Debug.Log("Estado del juego: FinJuego");
                 break;
+            case EstadoJuego.Pausa:
+                Debug.Log("Estado del juego: Pausa");
+                break;
             default:
                 break;
         }
@@ -100,6 +103,11 @@ public class GameManager : MonoBehaviour
         jugador.GetComponent<MovimientoCont>().CambiarEstadoMovimiento(EstadoMovimiento.Girandose);
     }
 
+    private void PausarJuego()
+    {
+        CambiarEstadoJuego(EstadoJuego.Pausa);
+    }
+
     private void HacerInmortal()
     {
         if (Instance == null)
@@ -122,6 +130,7 @@ public class GameManager : MonoBehaviour
     private void RecogerInfoInputs()
     {
         InputManager.Instance.controlesJugador.Inicio.Accion.performed += contexto => IniciarJuego();
+        InputManager.Instance.controlesJugador.Andando.Pausa.performed += contexto => PausarJuego();
     }
 
     private void EstablecerResolucionYRaton()
@@ -144,5 +153,6 @@ public enum EstadoJuego
     HaciendoAnimacion,
     SentadoSillon,
     Meditando,
-    FinJuego
+    FinJuego,
+    Pausa
 }
