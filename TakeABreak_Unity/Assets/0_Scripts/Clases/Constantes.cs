@@ -184,7 +184,7 @@ public class Constantes
                     Texto: "...",
                     Interlocutor: InterlocutorEnum.Jugador,
                     Mostrar: true,
-                    SiguienteFrase: new int[1] { 1 }),
+                    SiguienteFrase: new int[1] { -1 }),
                     new Frase(ID: 1,
                     Texto: "¿No vas a decir nada?",
                     Interlocutor: InterlocutorEnum.TuMismo,
@@ -1016,7 +1016,7 @@ public class Constantes
 
     public class Camara
     {
-        public const float VELOCIDAD = 20.0f; // El original son 20
+        public const float VELOCIDAD = 20.0f;
         public const float LIMITE_IZQ = 0.0f;
         public const float LIMITE_DER = 640.0f;
 

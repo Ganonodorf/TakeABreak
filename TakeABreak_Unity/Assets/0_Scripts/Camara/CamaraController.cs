@@ -23,7 +23,58 @@ public class CamaraController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        TrasladarCamara();
+        TrasladarCamaraV2();
+    }
+    private void TrasladarCamaraV2()
+    {
+        Vector2 dirSoloX;
+
+        if (estadoCamaraActual == EstadoCamara.MovDerecha)
+        {
+            dirSoloX = new Vector2(Constantes.Camara.DIRECCION_ESCALERAS, 0.0f);
+        }
+
+        else if (estadoCamaraActual == EstadoCamara.MovIzquierda)
+        {
+            dirSoloX = new Vector2(-Constantes.Camara.DIRECCION_ESCALERAS, 0.0f);
+        }
+
+        else if (estadoCamaraActual == EstadoCamara.EstaticaMeditando)
+        {
+            Vector3 dirDestino = new Vector3(Constantes.Camara.POSICION_MEDITANDO, 0.0f);
+
+            Vector3 dirNormalizada = Vector3.Normalize(dirDestino - this.transform.position);
+
+            dirSoloX = new Vector2(dirNormalizada.x, 0.0f);
+        }
+
+        else
+        {
+            float xDestino;
+
+            if (jugadorGO.transform.position.x < Constantes.Camara.LIMITE_IZQ)
+            {
+                xDestino = Constantes.Camara.LIMITE_IZQ;
+            }
+            else if (jugadorGO.transform.position.x > Constantes.Camara.LIMITE_DER)
+            {
+                xDestino = Constantes.Camara.LIMITE_DER;
+            }
+            else
+            {
+                xDestino = jugadorGO.transform.position.x;
+            }
+
+            Vector2 velocidad = Vector2.zero;
+
+            Vector2 destino = new Vector2(xDestino, transform.position.y);
+
+            transform.position = Vector2.SmoothDamp(transform.position, destino, ref velocidad, 0.1f);
+
+            return;
+        }
+
+        this.transform.Translate(dirSoloX * Constantes.Camara.VELOCIDAD * Time.fixedDeltaTime);
     }
 
     // Esta funcion hace 2 cosas, por un lado elige la dirección hacia donde tiene que ir: si el player está dentro

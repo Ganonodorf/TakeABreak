@@ -9,7 +9,7 @@ public class VientoController : MonoBehaviour
 
     private float pasoViento = 0.01f;
 
-    private void Awake()
+    private void Start()
     {
         vientoAudioSource = GetComponent<AudioSource>();
     }

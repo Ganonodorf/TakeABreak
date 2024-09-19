@@ -28,8 +28,8 @@ public class GameManager : MonoBehaviour
 
         EstablecerResolucionYRaton();
 
-        CambiarEstadoJuego(estadoJuegoInicial);
-        //CambiarEstadoJuego(EstadoJuego.Intro);
+        //CambiarEstadoJuego(estadoJuegoInicial);
+        CambiarEstadoJuego(EstadoJuego.Intro);
     }
 
     public EstadoJuego GetEstadoJuego()
