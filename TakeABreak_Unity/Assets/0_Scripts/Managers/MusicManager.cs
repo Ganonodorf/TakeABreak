@@ -46,17 +46,17 @@ public class MusicManager : MonoBehaviour
 
     private void CargarMusica()
     {
-        musica.enabled = true;
-        guitarra.enabled = true;
-        viento.enabled = true;
+        musica.Play();
+        guitarra.Play();
+        viento.Play();
     }
 
     private void DescargarMusica()
     {
-        musica.enabled = false;
+        musica.Stop();
         guitarra.volume = 0.0f;
-        guitarra.enabled = false;
-        viento.enabled = false;
+        guitarra.Stop();
+        viento.Stop();
     }
 
     private void PausarMusica()
